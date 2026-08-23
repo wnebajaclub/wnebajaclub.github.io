@@ -41,10 +41,10 @@ the most recent year and paste it directly **above** that block, then edit it.
 
 ```html
 <article class="comp reveal" id="y2027">
-  <div class="comp-photo"><img src="assets/img/comp-2027-somewhere.jpg" alt="Golden Bear Racing at Baja SAE Somewhere 2027"></div>
+  <div class="comp-photo"><img src="assets/img/comp-2027-somewhere.jpg" alt="Golden Bear Racing at Baja SAE Somewhere 2027" width="1085" height="723" loading="lazy" decoding="async"></div>
   <div class="comp-body">
     <div class="comp-year">2027</div>
-    <h3>Baja SAE Somewhere</h3>
+    <h2>Baja SAE Somewhere</h2>
     <span class="overall-chip">Overall: 1st</span>
     <div class="results-grid">
       <div class="result"><div class="r-event">Endurance</div><div class="r-place">1st</div></div>
@@ -116,10 +116,32 @@ for sub-team leads (blue).
 ## Adding photos
 
 Put the file in `assets/img/` and name it like the others:
-`comp-2027-somewhere.jpg`. Resize to roughly 1600px wide before committing —
-full-size phone photos are several megabytes and make the site slow to load.
+`comp-2027-somewhere.jpg`.
 
-Always write a real `alt` description for screen readers.
+Before committing, **resize to about 1600px wide and save at around 80% JPEG
+quality**. Straight-from-the-phone photos are several megabytes each; the ten
+photos already here total 1.4 MB combined, and keeping it that way is what
+makes the site usable on phone data at a competition.
+
+Every `<img>` needs four things:
+
+- `alt="..."` — a real description, for screen readers
+- `width` and `height` — the image's true pixel dimensions. These reserve space
+  so the page does not jump around while photos load. They must match the real
+  dimensions or the photo will look squashed.
+- `loading="lazy"` and `decoding="async"` — on anything below the top of the
+  page, so it only downloads when scrolled near
+
+## Adding a whole new page
+
+Copy an existing page so you inherit the header, footer, and `<head>`. Then
+update, in the `<head>`: the `<title>`, the `description`, the `canonical` link,
+and the `og:title` / `og:description` / `og:url` tags — those last ones control
+what shows when the link is shared on social media, so stale values there are
+visible to everyone.
+
+Add the page to `sitemap.xml`, and add a link to it in the nav on **every**
+page plus the footer list.
 
 ---
 
