@@ -191,6 +191,7 @@ section { padding: 84px 0; }
   position: absolute;
   inset: 0;
   z-index: -2;
+  background-image: url("../img/hero-car-action.jpg");
   background-size: cover;
   background-position: center 45%;
 }
@@ -225,13 +226,39 @@ section { padding: 84px 0; }
 .hero .wrap { display: flex; width: 100%; }
 .hero-content { margin-left: auto; max-width: 620px; }
 
+/* On a tall phone viewport the 16:9 photo crops to a narrow centre slice, which
+   cut the car in half. Mobile instead anchors the crop on the car, sinks the
+   copy to the bottom, and keeps the top of the scrim nearly clear so the car
+   reads as the subject rather than as texture behind the text. */
+/* Cropping the 16:9 photo to a phone's portrait frame sliced the car in half,
+   so mobile gets a purpose-made portrait crop anchored on the cockpit and rear
+   wheel. The copy sinks to the bottom and the scrim stays light across the top
+   two-thirds, so the car reads as the subject rather than as texture. */
 @media (max-width: 900px) {
-  .hero::before {
-    background:
-      linear-gradient(180deg, rgba(4, 7, 13, 0.72) 0%, rgba(4, 7, 13, 0.88) 60%, var(--bg) 100%);
+  .hero {
+    align-items: flex-end;
+    min-height: 96vh;
+    padding-top: 110px;
+    padding-bottom: 48px;
   }
-  .hero::after { left: 8%; }
+  .hero-bg {
+    background-image: url("../img/hero-car-action-mobile.jpg");
+    background-position: center top;
+  }
+  .hero::before {
+    background: linear-gradient(
+      180deg,
+      rgba(4, 7, 13, 0.42) 0%,
+      rgba(4, 7, 13, 0.16) 26%,
+      rgba(4, 7, 13, 0.62) 55%,
+      rgba(4, 7, 13, 0.93) 76%,
+      var(--bg) 100%
+    );
+  }
+  .hero::after { left: 8%; opacity: 0.28; }
   .hero-content { margin-left: 0; max-width: none; }
+  .hero-logo img { width: min(88vw, 400px); }
+  .hero-scroll { display: none; }
 }
 .hero-logo { margin: 0; line-height: 0; }
 .hero-logo img {
