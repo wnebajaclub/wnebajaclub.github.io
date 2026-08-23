@@ -1054,6 +1054,25 @@ section { padding: 84px 0; }
   padding: 6px 12px;
 }
 .featured .f-chip strong { color: var(--gold); }
+.featured .f-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  margin-top: 18px;
+}
+.featured .f-links a {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.featured .f-links a:hover { color: var(--gold-soft); border-bottom-color: var(--gold-soft); }
+.featured .f-place small { text-transform: none; letter-spacing: 0.12em; }
 @media (max-width: 900px) {
   .featured { grid-template-columns: 1fr; gap: 22px; padding: 30px; }
 }
