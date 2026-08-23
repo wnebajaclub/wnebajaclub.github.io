@@ -466,6 +466,37 @@ section { padding: 84px 0; }
   color: var(--ink);
 }
 .sponsor-card:hover { transform: translateY(-4px); }
+
+/* Sponsor logos sit directly on the dark card with no white plaque behind them.
+   Most brand logos are drawn in dark ink for light backgrounds and would be
+   near-invisible here, so they render as solid white via a filter. Hovering the
+   card turns it white and drops the filter, showing the logo in its real brand
+   colours — the only place on a dark page where that is legible. */
+.s-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 72px;
+  margin-bottom: 16px;
+}
+.s-logo img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+  transition: filter 0.25s, opacity 0.25s;
+}
+.sponsor-card.is-partner .s-logo { height: 96px; }
+.sponsor-card.is-bluebear .s-logo { height: 80px; }
+.sponsor-card.is-minor .s-logo { height: 62px; }
+.sponsor-card.is-cub .s-logo { height: 54px; margin-bottom: 12px; }
+
+/* With a logo present the name becomes a caption rather than the headline */
+.sponsor-card.has-logo .s-name { font-size: 0.92rem; letter-spacing: 0.08em; color: var(--muted); }
+.sponsor-card.is-partner.has-logo .s-name { font-size: 1rem; color: var(--ink); }
+
 .sponsor-card .s-name {
   font-family: var(--font-display);
   font-weight: 700;
@@ -497,6 +528,13 @@ section { padding: 84px 0; }
 .sponsor-card.is-cub .s-name, .sponsor-card.is-minor .s-name { font-size: 1rem; color: var(--muted); }
 .sponsor-card.is-minor { min-height: 100px; }
 .sponsor-card.is-major .s-name { color: var(--ink); }
+
+/* Hover reveal — must come after the per-tier colours above, which are equally
+   specific and would otherwise win and leave the name unreadable on white. */
+.sponsor-card.has-logo:hover { background: #fff; border-color: #fff; }
+.sponsor-card.has-logo:hover .s-logo img { filter: none; opacity: 1; }
+.sponsor-card.has-logo:hover .s-name { color: var(--navy); }
+.sponsor-card.has-logo:hover .s-link { color: #966a04; }
 
 /* ---------- history / timeline ---------- */
 .comp {
