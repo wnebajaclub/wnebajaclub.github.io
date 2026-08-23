@@ -8,15 +8,15 @@
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 <header class="site-header">
   <nav class="nav-bar">
-    <a class="brand" href="index.html">
-      <span class="b-gold">Golden</span><span class="b-blue">Bear</span><span class="b-script">Racing</span>
+    <a class="brand" href="index.html" aria-label="Golden Bear Racing - home">
+      <img class="brand-mark" src="assets/img/logo.png" alt="Golden Bear Racing" width="789" height="441">
     </a>
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
     <ul class="nav-links">
@@ -37,10 +37,8 @@
     <div class="hero-bg" style="background-image:url('assets/img/comp-2026-new-york.jpg');"></div>
     <div class="wrap">
       <p class="eyebrow">Western New England University &middot; Baja SAE</p>
-      <h1>
-        <span class="h-gold">Golden</span>
-        <span class="h-blue">Bear</span>
-        <span class="h-script">Racing</span>
+      <h1 class="hero-logo">
+        <img src="assets/img/logo.png" alt="Golden Bear Racing" width="789" height="441">
       </h1>
       <div class="hero-blurb">
         <p>Western New England University&rsquo;s Baja SAE team, where students design, build, test, and race an off-road vehicle from the ground up. Open to all majors and experience levels, the team provides hands-on experience in engineering, manufacturing, and business.</p>
@@ -52,6 +50,29 @@
     </div>
     <span class="hero-scroll">&#9660; Scroll</span>
   </section>
+
+  <!-- ============ RESULTS TICKER ============ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item">2026 New York &mdash; Overall <strong>22nd</strong></span>
+      <span class="ticker-item">Endurance <strong>16th</strong></span>
+      <span class="ticker-item">2025 Maryland &mdash; Suspension <strong>19th</strong></span>
+      <span class="ticker-item">2022 Tennessee Tech &mdash; Maneuverability <strong>13th</strong></span>
+      <span class="ticker-item">2018 Maryland &mdash; Overall <strong>15th</strong></span>
+      <span class="ticker-item">2017 California &mdash; Hill Climb <strong>3rd</strong></span>
+      <span class="ticker-item">2016 Rochester &mdash; Hill Climb <strong>8th</strong></span>
+      <span class="ticker-item">2021 Louisville &mdash; Sales Presentation <strong>6th</strong></span>
+      <!-- duplicated for seamless loop -->
+      <span class="ticker-item">2026 New York &mdash; Overall <strong>22nd</strong></span>
+      <span class="ticker-item">Endurance <strong>16th</strong></span>
+      <span class="ticker-item">2025 Maryland &mdash; Suspension <strong>19th</strong></span>
+      <span class="ticker-item">2022 Tennessee Tech &mdash; Maneuverability <strong>13th</strong></span>
+      <span class="ticker-item">2018 Maryland &mdash; Overall <strong>15th</strong></span>
+      <span class="ticker-item">2017 California &mdash; Hill Climb <strong>3rd</strong></span>
+      <span class="ticker-item">2016 Rochester &mdash; Hill Climb <strong>8th</strong></span>
+      <span class="ticker-item">2021 Louisville &mdash; Sales Presentation <strong>6th</strong></span>
+    </div>
+  </div>
 
   <!-- ============ GBR4 ============ -->
   <section id="gbr4">
@@ -69,13 +90,39 @@
             <div class="stat"><div class="num">11</div><div class="lbl">Competitions</div></div>
           </div>
         </div>
-        <div class="photo-frame reveal">
+        <div class="photo-frame corners reveal">
           <img src="assets/img/comp-2026-new-york.jpg" alt="Golden Bear Racing team with the car at Baja SAE New York 2026">
           <span class="frame-tag">Baja SAE New York &middot; 2026</span>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ============ LATEST RESULT ============ -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Latest Result</p>
+        <h2>Baja SAE <span class="accent">New York</span></h2>
+      </div>
+      <div class="featured reveal">
+        <div class="f-place">22<small>Overall</small></div>
+        <div class="f-meta">
+          <h3>2026 Season Finish</h3>
+          <p>Our strongest endurance run in recent seasons, backed by top-30 finishes in hill climb and the business presentation.</p>
+          <div class="f-highlights">
+            <span class="f-chip">Endurance <strong>16th</strong></span>
+            <span class="f-chip">Business <strong>24th</strong></span>
+            <span class="f-chip">Hill Climb <strong>28th</strong></span>
+            <span class="f-chip">Design <strong>29th</strong></span>
+          </div>
+        </div>
+        <a class="btn btn-outline" href="history.html">Full History</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="checker" aria-hidden="true"></div>
 
   <!-- ============ EXPLORE TILES ============ -->
   <section style="padding-top:0;">
@@ -92,6 +139,7 @@
             <p>Every car and every competition since our 2015 debut.</p>
             <span class="go">View Results &rarr;</span>
           </div>
+          <span class="tile-edge"></span>
         </a>
         <a class="tile reveal" href="team.html" style="background-image:url('assets/img/comp-2024-williamsport.jpg');">
           <span class="tile-label">Team</span>
@@ -100,6 +148,7 @@
             <p>The executive board and sub-team leads behind GBR4.</p>
             <span class="go">Meet Us &rarr;</span>
           </div>
+          <span class="tile-edge"></span>
         </a>
         <a class="tile reveal" href="sponsors.html" style="background-image:url('assets/img/comp-2022-tennessee-tech.jpg');">
           <span class="tile-label">Sponsors</span>
@@ -108,8 +157,26 @@
             <p>The partners who make every build and race season possible.</p>
             <span class="go">See Sponsors &rarr;</span>
           </div>
+          <span class="tile-edge"></span>
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ SPONSOR STRIP ============ -->
+  <section class="sponsor-strip" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow" style="justify-content:center;">Backed By</p>
+      <div class="s-names">
+        <span>OMG Roofing</span>
+        <span>Smith &amp; Wesson</span>
+        <span>JPS Composites</span>
+        <span>SOLIDworks</span>
+        <span>Mastercam</span>
+        <span>SKF</span>
+        <span>Fastenal</span>
+      </div>
+      <a class="go" href="sponsors.html" style="font-family:var(--font-display);letter-spacing:0.2em;text-transform:uppercase;font-size:0.78rem;">All Sponsors &rarr;</a>
     </div>
   </section>
 

@@ -8,15 +8,15 @@
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 <header class="site-header">
   <nav class="nav-bar">
-    <a class="brand" href="index.html">
-      <span class="b-gold">Golden</span><span class="b-blue">Bear</span><span class="b-script">Racing</span>
+    <a class="brand" href="index.html" aria-label="Golden Bear Racing - home">
+      <img class="brand-mark" src="assets/img/logo.png" alt="Golden Bear Racing" width="789" height="441">
     </a>
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
     <ul class="nav-links">
@@ -40,11 +40,27 @@
     </div>
   </section>
 
+  <nav class="year-nav" aria-label="Jump to competition year">
+    <div class="yn-track">
+      <a href="#y2026">2026</a>
+      <a href="#y2025">2025</a>
+      <a href="#y2024">2024</a>
+      <a href="#y2022">2022</a>
+      <a href="#y2021">2021</a>
+      <a href="#y2019tt">2019 &middot; TT</a>
+      <a href="#y2019roc">2019 &middot; ROC</a>
+      <a href="#y2018">2018</a>
+      <a href="#y2017">2017</a>
+      <a href="#y2016">2016</a>
+      <a href="#y2015">2015</a>
+    </div>
+  </nav>
+
   <section style="padding-top:20px;">
     <div class="wrap">
 
       <!-- 2026 -->
-      <article class="comp reveal">
+      <article class="comp reveal" id="y2026">
         <div class="comp-photo"><img src="assets/img/comp-2026-new-york.jpg" alt="Golden Bear Racing team with the number 50 car at Baja SAE New York 2026"></div>
         <div class="comp-body">
           <div class="comp-year">2026</div>
@@ -64,7 +80,7 @@
       </article>
 
       <!-- 2025 -->
-      <article class="comp flip reveal">
+      <article class="comp flip reveal" id="y2025">
         <div class="comp-photo"><img src="assets/img/comp-2025-maryland.jpg" alt="Golden Bear Racing team with the number 85 car at Baja SAE Maryland 2025"></div>
         <div class="comp-body">
           <div class="comp-year">2025</div>
@@ -84,7 +100,7 @@
       </article>
 
       <!-- 2024 -->
-      <article class="comp reveal">
+      <article class="comp reveal" id="y2024">
         <div class="comp-photo"><img src="assets/img/comp-2024-williamsport.jpg" alt="Golden Bear Racing team at Baja SAE Williamsport 2024"></div>
         <div class="comp-body">
           <div class="comp-year">2024</div>
@@ -104,7 +120,7 @@
       </article>
 
       <!-- 2022 -->
-      <article class="comp flip reveal">
+      <article class="comp flip reveal" id="y2022">
         <div class="comp-photo"><img src="assets/img/comp-2022-tennessee-tech.jpg" alt="Golden Bear Racing team with the car at Baja SAE Tennessee Tech 2022"></div>
         <div class="comp-body">
           <div class="comp-year">2022</div>
@@ -124,7 +140,7 @@
       </article>
 
       <!-- 2021 (no photo) -->
-      <article class="comp no-photo reveal">
+      <article class="comp no-photo reveal" id="y2021">
         <div class="comp-body">
           <div class="comp-year">2021</div>
           <h3>Baja Louisville &mdash; Validation Event</h3>
@@ -141,7 +157,7 @@
       </article>
 
       <!-- 2019 Tennessee Tech -->
-      <article class="comp reveal">
+      <article class="comp reveal" id="y2019tt">
         <div class="comp-photo"><img src="assets/img/comp-2019-tennessee-tech.jpg" alt="Golden Bear Racing team with the car at Baja SAE Tennessee Tech 2019"></div>
         <div class="comp-body">
           <div class="comp-year">2019</div>
@@ -161,7 +177,7 @@
       </article>
 
       <!-- 2019 Rochester -->
-      <article class="comp flip reveal">
+      <article class="comp flip reveal" id="y2019roc">
         <div class="comp-photo"><img src="assets/img/comp-2019-rochester.jpg" alt="Golden Bear Racing team with the car at Baja SAE Rochester 2019"></div>
         <div class="comp-body">
           <div class="comp-year">2019</div>
@@ -181,7 +197,7 @@
       </article>
 
       <!-- 2018 -->
-      <article class="comp reveal">
+      <article class="comp reveal" id="y2018">
         <div class="comp-photo"><img src="assets/img/comp-2018-maryland.jpg" alt="Golden Bear Racing team with the car at Baja SAE Maryland 2018"></div>
         <div class="comp-body">
           <div class="comp-year">2018</div>
@@ -201,7 +217,7 @@
       </article>
 
       <!-- 2017 -->
-      <article class="comp flip reveal">
+      <article class="comp flip reveal" id="y2017">
         <div class="comp-photo"><img src="assets/img/comp-2017-california.jpg" alt="Golden Bear Racing team with the car at Baja SAE California 2017"></div>
         <div class="comp-body">
           <div class="comp-year">2017</div>
@@ -221,7 +237,7 @@
       </article>
 
       <!-- 2016 -->
-      <article class="comp reveal">
+      <article class="comp reveal" id="y2016">
         <div class="comp-photo"><img src="assets/img/comp-2016-rochester.jpg" alt="Golden Bear Racing team with the car at Baja SAE Rochester 2016"></div>
         <div class="comp-body">
           <div class="comp-year">2016</div>
@@ -241,7 +257,7 @@
       </article>
 
       <!-- 2015 -->
-      <article class="comp flip reveal">
+      <article class="comp flip reveal" id="y2015">
         <div class="comp-photo"><img src="assets/img/comp-2015-maryland.jpg" alt="Golden Bear Racing team with the car at Baja SAE Maryland 2015, the team's first competition"></div>
         <div class="comp-body">
           <div class="comp-year">2015</div>
