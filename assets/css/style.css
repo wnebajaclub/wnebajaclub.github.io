@@ -488,7 +488,11 @@ section { padding: 84px 0; }
   opacity: 0.85;
   transition: filter 0.25s, opacity 0.25s;
 }
+/* Square or circular marks need more height than a wide wordmark to stay
+   legible, since their width is capped by their height in this slot. */
+.s-logo.is-square { height: 130px; }
 .sponsor-card.is-partner .s-logo { height: 96px; }
+.sponsor-card.is-partner .s-logo.is-square { height: 140px; }
 .sponsor-card.is-bluebear .s-logo { height: 80px; }
 .sponsor-card.is-minor .s-logo { height: 62px; }
 .sponsor-card.is-cub .s-logo { height: 54px; margin-bottom: 12px; }
