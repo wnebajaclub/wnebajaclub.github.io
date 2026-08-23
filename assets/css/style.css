@@ -292,26 +292,36 @@ section { padding: 84px 0; }
    were silently losing to the desktop values. */
 @media (max-width: 900px) {
   .hero {
-    align-items: flex-end;
-    min-height: 96vh;
-    /* this padding is what reserves clear space for the car — the copy is
-       bottom-aligned, so trimming its height alone would not move it down.
-       Sized to clear the photo band sitting at the top of the mobile image */
-    padding-top: 25vh;
-    padding-bottom: 18px;
+    align-items: stretch;
+    min-height: 84vh;
+    /* clears the sticky header; the copy below is distributed with
+       space-evenly rather than pinned to one edge */
+    padding-top: 88px;
+    padding-bottom: 24px;
+  }
+  /* spread the logo, description and buttons down the screen instead of
+     clustering them at the bottom — the car shows through the gaps */
+  .hero .wrap { align-items: stretch; }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 1;
   }
   .hero-bg {
     background-image: url("../img/hero-car-action-mobile.jpg");
     background-position: center top;
   }
+  /* Straight scrim over a full-bleed photo: light across the top so the car
+     shows, deepening behind the copy so the type stays readable. */
   .hero::before {
     background: linear-gradient(
       180deg,
-      rgba(4, 7, 13, 0.42) 0%,
-      rgba(4, 7, 13, 0.16) 26%,
-      rgba(4, 7, 13, 0.62) 55%,
-      rgba(4, 7, 13, 0.93) 76%,
-      var(--bg) 100%
+      rgba(4, 7, 13, 0.34) 0%,
+      rgba(4, 7, 13, 0.18) 30%,
+      rgba(4, 7, 13, 0.58) 58%,
+      rgba(4, 7, 13, 0.86) 82%,
+      rgba(4, 7, 13, 0.95) 100%
     );
   }
   .hero::after { left: 8%; opacity: 0.28; }
@@ -321,18 +331,18 @@ section { padding: 84px 0; }
   /* Everything in the hero tightens up on mobile. The block is bottom-aligned,
      so trimming its height is what drops it down the screen and opens up clear
      space above for the car. */
-  .hero .eyebrow { font-size: 0.66rem; letter-spacing: 0.18em; margin-bottom: 12px; }
+  .hero .eyebrow { font-size: 0.66rem; letter-spacing: 0.18em; margin-bottom: 0; }
   .hero-logo img { width: min(68vw, 280px); }
   /* the tagline is decorative and the vertical budget is tight on a phone —
      the same idea is carried by the intro paragraph right below it */
   .hero-tagline { display: none; }
   .hero-blurb {
-    margin-top: 12px;
+    margin-top: 0;
     padding: 12px 14px;
     border-left-width: 3px;
   }
   .hero-blurb p { font-size: 0.83rem; line-height: 1.45; }
-  .hero .btn-row { gap: 9px; margin-top: 12px; }
+  .hero .btn-row { gap: 9px; margin-top: 0; }
   .hero .btn {
     flex: 1 1 auto;
     text-align: center;
