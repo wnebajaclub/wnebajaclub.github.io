@@ -3,3 +3,8 @@ Website Materials for Claude.docx
 
 # local tooling
 .claude/
+
+# full-size photo originals — optimise into assets/img/ instead of committing
+/*.jpg
+/*.jpeg
+/*.png
