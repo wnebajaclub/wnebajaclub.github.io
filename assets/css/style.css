@@ -394,6 +394,36 @@ section { padding: 84px 0; }
   opacity: 0.4;
   z-index: -1;
 }
+/* Photo-backed page header. The heading is left-aligned, so the scrim is
+   weighted to the left and thins out to the right where the photo can breathe. */
+.page-hero.has-photo {
+  padding: 132px 0 88px;
+  background: var(--bg);
+}
+.page-hero .page-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center 44%;
+}
+.page-hero.has-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(4, 7, 13, 0.94) 0%, rgba(4, 7, 13, 0.86) 38%, rgba(4, 7, 13, 0.5) 100%),
+    linear-gradient(0deg, var(--bg) 0%, transparent 45%);
+}
+@media (max-width: 900px) {
+  .page-hero.has-photo { padding: 104px 0 64px; }
+  .page-hero.has-photo::before {
+    background:
+      linear-gradient(180deg, rgba(4, 7, 13, 0.6) 0%, rgba(4, 7, 13, 0.88) 70%, var(--bg) 100%);
+  }
+}
+
 .page-hero h1 {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 6vw, 4.2rem);
