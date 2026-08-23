@@ -234,32 +234,7 @@ section { padding: 84px 0; }
    so mobile gets a purpose-made portrait crop anchored on the cockpit and rear
    wheel. The copy sinks to the bottom and the scrim stays light across the top
    two-thirds, so the car reads as the subject rather than as texture. */
-@media (max-width: 900px) {
-  .hero {
-    align-items: flex-end;
-    min-height: 96vh;
-    padding-top: 110px;
-    padding-bottom: 48px;
-  }
-  .hero-bg {
-    background-image: url("../img/hero-car-action-mobile.jpg");
-    background-position: center top;
-  }
-  .hero::before {
-    background: linear-gradient(
-      180deg,
-      rgba(4, 7, 13, 0.42) 0%,
-      rgba(4, 7, 13, 0.16) 26%,
-      rgba(4, 7, 13, 0.62) 55%,
-      rgba(4, 7, 13, 0.93) 76%,
-      var(--bg) 100%
-    );
-  }
-  .hero::after { left: 8%; opacity: 0.28; }
-  .hero-content { margin-left: 0; max-width: none; }
-  .hero-logo img { width: min(88vw, 400px); }
-  .hero-scroll { display: none; }
-}
+
 .hero-logo { margin: 0; line-height: 0; }
 .hero-logo img {
   width: clamp(290px, 42vw, 520px);
@@ -310,6 +285,71 @@ section { padding: 84px 0; }
   letter-spacing: 0.3em;
   text-transform: uppercase;
   animation: bob 2.2s ease-in-out infinite;
+}
+
+/* Mobile hero overrides live AFTER the base hero rules above. They share the
+   same specificity, so source order decides the winner — placed earlier they
+   were silently losing to the desktop values. */
+@media (max-width: 900px) {
+  .hero {
+    align-items: flex-end;
+    min-height: 96vh;
+    /* this padding is what reserves clear space for the car — the copy is
+       bottom-aligned, so trimming its height alone would not move it down.
+       Sized to clear the photo band sitting at the top of the mobile image */
+    padding-top: 25vh;
+    padding-bottom: 18px;
+  }
+  .hero-bg {
+    background-image: url("../img/hero-car-action-mobile.jpg");
+    background-position: center top;
+  }
+  .hero::before {
+    background: linear-gradient(
+      180deg,
+      rgba(4, 7, 13, 0.42) 0%,
+      rgba(4, 7, 13, 0.16) 26%,
+      rgba(4, 7, 13, 0.62) 55%,
+      rgba(4, 7, 13, 0.93) 76%,
+      var(--bg) 100%
+    );
+  }
+  .hero::after { left: 8%; opacity: 0.28; }
+  .hero-content { margin-left: 0; max-width: none; }
+  .hero-scroll { display: none; }
+
+  /* Everything in the hero tightens up on mobile. The block is bottom-aligned,
+     so trimming its height is what drops it down the screen and opens up clear
+     space above for the car. */
+  .hero .eyebrow { font-size: 0.66rem; letter-spacing: 0.18em; margin-bottom: 12px; }
+  .hero-logo img { width: min(68vw, 280px); }
+  /* the tagline is decorative and the vertical budget is tight on a phone —
+     the same idea is carried by the intro paragraph right below it */
+  .hero-tagline { display: none; }
+  .hero-blurb {
+    margin-top: 12px;
+    padding: 12px 14px;
+    border-left-width: 3px;
+  }
+  .hero-blurb p { font-size: 0.83rem; line-height: 1.45; }
+  .hero .btn-row { gap: 9px; margin-top: 12px; }
+  .hero .btn {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 13px 16px;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
+}
+
+/* Narrow phones wrap the intro to more lines, which pushed the buttons off
+   screen. Trim the copy rather than the top padding — the padding is what
+   keeps the logo clear of the photo. */
+@media (max-width: 380px) {
+  .hero-logo img { width: min(64vw, 235px); }
+  .hero-blurb { margin-top: 10px; padding: 11px 13px; }
+  .hero-blurb p { font-size: 0.79rem; line-height: 1.42; }
+  .hero .btn { padding: 11px 12px; font-size: 0.68rem; letter-spacing: 0.08em; }
 }
 @keyframes bob { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
 
