@@ -790,6 +790,43 @@ section { padding: 84px 0; }
 .cta-band p { color: var(--muted); max-width: 620px; margin: 14px auto 0; }
 .cta-band .btn-row { justify-content: center; }
 
+/* mailto: only works when the visitor has a mail client registered with their
+   OS. Anyone reading mail in a browser tab gets nothing, so the address is also
+   shown in full and can be copied without leaving the page. */
+.cta-mail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.cta-mail a {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--gold);
+  border-bottom: 1px solid var(--line);
+}
+.cta-mail a:hover { color: var(--gold-soft); }
+.copy-mail {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--line-blue);
+  padding: 5px 11px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.copy-mail:hover { color: var(--ink); border-color: var(--blue-bright); }
+.copy-mail.is-copied { color: var(--gold); border-color: var(--gold); }
+
 /* ---------- footer ---------- */
 .site-footer {
   border-top: 1px solid var(--line);

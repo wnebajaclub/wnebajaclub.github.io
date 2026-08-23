@@ -134,16 +134,22 @@ Every `<img>` needs four things:
 
 ## Changing the contact email
 
-The team address `wnebajaclub@gmail.com` appears in four places on every page,
-plus two call-to-action buttons. Search the whole project for it rather than
-editing one file, or a stale address will linger somewhere:
+The team address `wnebajaclub@gmail.com` appears in several places. Search the
+whole project for it rather than editing one file, or a stale address will
+linger somewhere:
 
 - the footer of `index.html`, `history.html`, `team.html` and `sponsors.html`
-- the **Email the Team** button on `sponsors.html` (Become a Sponsor)
-- the **Email the Team** button on `team.html` (Want to Join?)
+- the "or email us at" line on `sponsors.html` (Become a Sponsor) and
+  `team.html` (Want to Join?) — each appears twice, once in the visible link
+  and once in the `data-mail` attribute on its Copy button
 
 Use a team-owned address, never a personal one. Whoever set it up will
 graduate, and sponsors will keep writing to that inbox for years.
+
+The address is deliberately written out in full rather than hidden behind an
+"Email us" button. A `mailto:` link only opens something if the visitor has a
+mail client registered with their operating system — anyone reading mail in a
+browser tab clicks it and nothing happens at all.
 
 ## Adding a whole new page
 
