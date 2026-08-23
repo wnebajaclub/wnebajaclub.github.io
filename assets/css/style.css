@@ -8,15 +8,18 @@
   --gold: #ffb612;
   --gold-soft: #ffc845;
   --gold-dim: #b8860d;
-  --blue: #2a66b2;
-  --blue-bright: #4d8ad8;
-  --blue-deep: #12355e;
+  /* --blue is the exact blue sampled from BEAR in the team logo. It is too dark
+     to read as text on this background (2.2:1), so --blue-bright is that same
+     hue lightened to pass AA at 5.2:1 and is what type and accents use. */
+  --blue: #13488b;
+  --blue-bright: #3582e3;
+  --blue-deep: #0d3363;
   --navy: #0b1a2e;
   --navy-2: #0e2138;
   --bg: #04070d;
   --panel: #0a1424;
   --line: rgba(255, 182, 18, 0.25);
-  --line-blue: rgba(77, 138, 216, 0.25);
+  --line-blue: rgba(53, 130, 227, 0.28);
   --ink: #eef3fa;
   --muted: #9db0c8;
   --font-display: "Chakra Petch", "Segoe UI", sans-serif;
@@ -27,12 +30,16 @@
 
 html { scroll-behavior: smooth; }
 
+/* Diagonal navy-to-black gradient taken from the team slide deck, replacing the
+   old graph-paper grid. Fixed attachment so it reads as one continuous surface
+   behind the whole page rather than restarting per section. */
 body {
   background:
-    linear-gradient(rgba(157, 176, 200, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(157, 176, 200, 0.035) 1px, transparent 1px),
-    var(--bg);
-  background-size: 56px 56px, 56px 56px, auto;
+    radial-gradient(1100px 700px at 88% 78%, rgba(19, 72, 139, 0.30), transparent 68%),
+    radial-gradient(900px 600px at 12% 8%, rgba(10, 26, 48, 0.55), transparent 70%),
+    linear-gradient(152deg, #04070d 0%, #050d18 42%, #071527 72%, #0a1c33 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 1rem;
@@ -823,11 +830,12 @@ section { padding: 84px 0; }
 
 /* ---------- checkered flag divider ---------- */
 .checker {
-  height: 12px;
+  height: 10px;
+  margin: 18px 0;
   background:
-    repeating-conic-gradient(rgba(255, 182, 18, 0.55) 0% 25%, transparent 0% 50%)
-    0 0 / 24px 24px;
-  opacity: 0.5;
+    repeating-conic-gradient(rgba(255, 182, 18, 0.5) 0% 25%, transparent 0% 50%)
+    0 0 / 20px 20px;
+  opacity: 0.45;
 }
 
 /* ---------- results ticker ---------- */
@@ -1020,17 +1028,8 @@ section { padding: 84px 0; }
 
 /* ---------- footer watermark ---------- */
 .site-footer { position: relative; overflow: hidden; }
-.site-footer::after {
-  content: "";
-  position: absolute;
-  right: -30px;
-  bottom: -40px;
-  width: 440px;
-  height: 246px;
-  background: url("../img/logo.png") no-repeat center / contain;
-  opacity: 0.05;
-  pointer-events: none;
-}
+/* The oversized logo watermark that used to sit here read as a rendering
+   artefact rather than a design element, so it is gone. */
 .site-footer .wrap { position: relative; z-index: 1; }
 
 /* ---------- reveal on scroll ---------- */
