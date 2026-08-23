@@ -773,11 +773,42 @@ section { padding: 84px 0; }
 .cta-band {
   background:
     linear-gradient(100deg, rgba(255, 182, 18, 0.1), transparent 55%),
-    radial-gradient(700px 260px at 90% 50%, rgba(42, 102, 178, 0.25), transparent 70%),
+    radial-gradient(700px 260px at 90% 50%, rgba(19, 72, 139, 0.3), transparent 70%),
     var(--navy);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   text-align: center;
+}
+
+/* Photo-backed variant. The scrim is heavy because this band carries centred
+   white and gold type across its full width — a lighter wash left the headline
+   fighting the background wherever the photo was bright. */
+.cta-band.has-photo {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.cta-band .cta-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center 40%;
+}
+.cta-band.has-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(4, 7, 13, 0.82) 0%, rgba(4, 7, 13, 0.7) 50%, rgba(4, 7, 13, 0.86) 100%),
+    linear-gradient(100deg, rgba(255, 182, 18, 0.08), transparent 60%);
+}
+@media (max-width: 900px) {
+  .cta-band .cta-bg { background-position: center 35%; }
+  .cta-band.has-photo::before {
+    background: linear-gradient(180deg, rgba(4, 7, 13, 0.86) 0%, rgba(4, 7, 13, 0.78) 50%, rgba(4, 7, 13, 0.9) 100%);
+  }
 }
 .cta-band h2 {
   font-family: var(--font-display);
