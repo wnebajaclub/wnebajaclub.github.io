@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#04070d"/>
+  <!-- bear paw in team gold -->
+  <ellipse cx="32" cy="40" rx="13" ry="11" fill="#ffb612"/>
+  <ellipse cx="15" cy="27" rx="5.5" ry="7" transform="rotate(-18 15 27)" fill="#ffb612"/>
+  <ellipse cx="26" cy="18" rx="5.5" ry="7.5" transform="rotate(-6 26 18)" fill="#ffb612"/>
+  <ellipse cx="38" cy="18" rx="5.5" ry="7.5" transform="rotate(6 38 18)" fill="#ffb612"/>
+  <ellipse cx="49" cy="27" rx="5.5" ry="7" transform="rotate(18 49 27)" fill="#ffb612"/>
+</svg>
