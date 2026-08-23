@@ -132,6 +132,19 @@ Every `<img>` needs four things:
 - `loading="lazy"` and `decoding="async"` — on anything below the top of the
   page, so it only downloads when scrolled near
 
+## Changing the contact email
+
+The team address `wnebajaclub@gmail.com` appears in four places on every page,
+plus two call-to-action buttons. Search the whole project for it rather than
+editing one file, or a stale address will linger somewhere:
+
+- the footer of `index.html`, `history.html`, `team.html` and `sponsors.html`
+- the **Email the Team** button on `sponsors.html` (Become a Sponsor)
+- the **Email the Team** button on `team.html` (Want to Join?)
+
+Use a team-owned address, never a personal one. Whoever set it up will
+graduate, and sponsors will keep writing to that inbox for years.
+
 ## Adding a whole new page
 
 Copy an existing page so you inherit the header, footer, and `<head>`. Then
