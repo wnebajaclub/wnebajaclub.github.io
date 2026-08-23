@@ -218,11 +218,29 @@ section { padding: 84px 0; }
 }
 .hero-logo { margin: 0; line-height: 0; }
 .hero-logo img {
-  width: clamp(290px, 44vw, 560px);
+  width: clamp(290px, 42vw, 520px);
   height: auto;
   filter: drop-shadow(0 10px 34px rgba(0, 0, 0, 0.75));
 }
-.hero .eyebrow { margin-bottom: 26px; }
+/* the eyebrow is one unit — never let it break mid-phrase */
+.hero .eyebrow { margin-bottom: 22px; white-space: nowrap; }
+.hero .eyebrow::after { flex: 0 1 90px; }
+
+.hero-tagline {
+  margin-top: 18px;
+  font-family: var(--font-display);
+  font-size: clamp(0.82rem, 1.7vw, 1.02rem);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 560px) {
+  .hero .eyebrow { white-space: normal; }
+  .hero .eyebrow::after { display: none; }
+}
 
 /* the "background bubble" so intro text reads over photos */
 .hero-blurb {
