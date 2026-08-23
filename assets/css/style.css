@@ -192,29 +192,46 @@ section { padding: 84px 0; }
   inset: 0;
   z-index: -2;
   background-size: cover;
-  background-position: center 35%;
+  background-position: center 45%;
 }
+/* The car sits on the left of the hero photo, so the copy is pushed right and
+   the scrim darkens right-to-left — the reverse of a normal left-aligned hero.
+   Keeps the subject readable instead of burying it under the logo. */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(100deg, rgba(4, 7, 13, 0.94) 0%, rgba(4, 7, 13, 0.82) 42%, rgba(6, 12, 24, 0.45) 100%),
-    linear-gradient(0deg, var(--bg) 0%, transparent 30%);
+    linear-gradient(260deg, rgba(4, 7, 13, 0.93) 0%, rgba(4, 7, 13, 0.78) 44%, rgba(6, 12, 24, 0.34) 100%),
+    linear-gradient(0deg, var(--bg) 0%, transparent 34%);
 }
 .hero::after {
   /* diagonal gold slash, echoing the slide */
   content: "";
   position: absolute;
   top: -10%;
-  right: 26%;
+  left: 24%;
   width: 2px;
   height: 130%;
   background: linear-gradient(180deg, transparent, var(--gold), transparent);
   transform: rotate(18deg);
-  opacity: 0.5;
+  opacity: 0.45;
   z-index: -1;
+}
+/* .hero is itself a flex container, so .wrap must be told to span the full
+   width — otherwise it shrink-wraps its content and margin-left:auto below
+   has no free space to push into. */
+.hero .wrap { display: flex; width: 100%; }
+.hero-content { margin-left: auto; max-width: 620px; }
+
+@media (max-width: 900px) {
+  .hero::before {
+    background:
+      linear-gradient(180deg, rgba(4, 7, 13, 0.72) 0%, rgba(4, 7, 13, 0.88) 60%, var(--bg) 100%);
+  }
+  .hero::after { left: 8%; }
+  .hero-content { margin-left: 0; max-width: none; }
 }
 .hero-logo { margin: 0; line-height: 0; }
 .hero-logo img {
