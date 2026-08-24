@@ -202,6 +202,27 @@ section { padding: 84px 0; }
   background-size: cover;
   background-position: center 45%;
 }
+/* Sits directly on top of .hero-bg at the same position, so if the video
+   can't play for any reason (codec support, slow connection, reduced motion)
+   the photo underneath is already showing the same shot - there is no empty
+   gap to fall back into. Desktop/tablet only; mobile keeps the static
+   portrait photo, both for autoplay reliability and so it isn't burning
+   cellular data on a background loop. */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+}
+@media (max-width: 900px) {
+  .hero-video { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; }
+}
 /* The car sits on the left of the hero photo, so the copy is pushed right and
    the scrim darkens right-to-left — the reverse of a normal left-aligned hero.
    Keeps the subject readable instead of burying it under the logo. */
@@ -616,11 +637,10 @@ section { padding: 84px 0; }
 }
 .sponsor-card:hover { transform: translateY(-4px); }
 
-/* Sponsor logos sit directly on the dark card with no white plaque behind them.
-   Most brand logos are drawn in dark ink for light backgrounds and would be
-   near-invisible here, so they render as solid white via a filter. Hovering the
-   card turns it white and drops the filter, showing the logo in its real brand
-   colours — the only place on a dark page where that is legible. */
+/* Full colour at rest, sitting directly on the dark card with no white plaque
+   behind it. Some marks (a couple of the Ursa tiers) are dark ink drawn for a
+   light background and read low-contrast here - that is a real tradeoff of
+   this treatment, not a bug, kept because full-colour-always was the ask. */
 .s-logo {
   display: flex;
   align-items: center;
@@ -633,9 +653,6 @@ section { padding: 84px 0; }
   max-width: 100%;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: 0.85;
-  transition: filter 0.25s, opacity 0.25s;
 }
 /* Square or circular marks need more height than a wide wordmark to stay
    legible, since their width is capped by their height in this slot. */
@@ -681,17 +698,6 @@ section { padding: 84px 0; }
 .sponsor-card.is-cub .s-name, .sponsor-card.is-minor .s-name { font-size: 1rem; color: var(--muted); }
 .sponsor-card.is-minor { min-height: 100px; }
 .sponsor-card.is-major .s-name { color: var(--ink); }
-
-/* Hover reveal — must come after the per-tier colours above, which are equally
-   specific and would otherwise win and leave the name unreadable on white. */
-.sponsor-card.has-logo:hover { background: #fff; border-color: #fff; }
-.sponsor-card.has-logo:hover .s-logo img { filter: none; opacity: 1; }
-/* Logos with no real colour (a white/grey mark with no hue to reveal) go
-   invisible on the white hover card if "native" just means removing the
-   filter. These render as a black silhouette on hover instead. */
-.sponsor-card.has-logo:hover .s-logo.is-mono img { filter: brightness(0); opacity: 1; }
-.sponsor-card.has-logo:hover .s-name { color: var(--navy); }
-.sponsor-card.has-logo:hover .s-link { color: #966a04; }
 
 /* ---------- history / timeline ---------- */
 .comp {
