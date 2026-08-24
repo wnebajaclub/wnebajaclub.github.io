@@ -1182,7 +1182,7 @@ section { padding: 84px 0; }
   /* Row-gap (first value) has to clear the floating .a-tag above a sponsor
      chip - it happens to sit in the top row today so this isn't visible yet,
      but a tag on any later row would otherwise lap into the chip above it. */
-  gap: 34px 24px;
+  gap: 26px 24px;
   margin: 44px 0 4px;
 }
 /* Every logo sits on the same light card, full colour. A soft halo on just
@@ -1224,19 +1224,24 @@ section { padding: 84px 0; }
 .alumni-wall .a-chip-wrap .a-chip { width: 100%; height: 100%; }
 .alumni-wall .a-tag {
   position: absolute;
-  right: 10px;
+  right: 0;
   bottom: 100%;
-  margin-bottom: 6px;
   font-family: var(--font-display);
-  font-size: 0.58rem;
+  font-size: 0.5rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #04070d;
   background: var(--gold);
-  padding: 3px 9px;
-  clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%);
+  padding: 2px 7px;
+  clip-path: polygon(5px 0, 100% 0, 100% 100%, 0 100%);
+  transition: transform 0.2s;
 }
+/* The chip lifts on hover (translateY(-3px)); without this the stationary tag
+   would be left behind and the gap between them would visibly grow. Hovering
+   the chip also triggers :hover on this ancestor wrapper, so both move in
+   lockstep and stay touching at every moment, not just at rest. */
+.alumni-wall .a-chip-wrap:hover .a-tag { transform: translateY(-3px); }
 .alumni-wall .a-note {
   margin-top: 26px;
   font-size: 0.82rem;
@@ -1267,7 +1272,7 @@ section { padding: 84px 0; }
    percentage rather than a smaller fixed px, so it holds at any phone width
    rather than just the one size it was eyeballed against. */
 @media (max-width: 560px) {
-  .alumni-wall .a-logos { gap: 28px 14px; }
+  .alumni-wall .a-logos { gap: 22px 14px; }
   .alumni-wall .a-chip-wrap { width: calc(50% - 7px); height: 68px; }
   .alumni-wall .a-chip {
     width: calc(50% - 7px);
