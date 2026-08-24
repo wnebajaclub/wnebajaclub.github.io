@@ -1085,24 +1085,38 @@ section { padding: 84px 0; }
 .sponsor-strip { text-align: center; }
 .sponsor-strip .eyebrow { justify-content: center; }
 .sponsor-strip .eyebrow::after { display: none; }
-.sponsor-strip .s-names {
+.sponsor-strip .s-logos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: baseline;
-  gap: 20px 46px;
-  margin: 28px 0 6px;
+  align-items: center;
+  gap: 28px 48px;
+  margin: 32px 0 8px;
 }
-.sponsor-strip .s-names span {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(1.2rem, 2.6vw, 1.8rem);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-  transition: color 0.2s;
+/* Every logo sits in the same bounding box (not a fixed height on the <img>
+   itself), so wordmarks of wildly different ratios — Mastercam is nearly 8:1,
+   JPS is almost square — read as "the same size" without distorting either. */
+.sponsor-strip .s-logos a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 130px;
 }
-.sponsor-strip .s-names span:hover { color: var(--gold); }
+.sponsor-strip .s-logos img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.55;
+  transition: filter 0.2s, opacity 0.2s, transform 0.2s;
+}
+.sponsor-strip .s-logos a:hover img {
+  filter: none;
+  opacity: 1;
+  transform: translateY(-2px);
+}
 
 /* ---------- history year nav ---------- */
 .year-nav {
