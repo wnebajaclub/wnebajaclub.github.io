@@ -223,6 +223,14 @@ section { padding: 84px 0; }
 @media (prefers-reduced-motion: reduce) {
   .hero-video { display: none; }
 }
+/* A portrait-ish viewport above the mobile breakpoint (a 1024x1366 tablet, say)
+   makes the hero tall and narrow, and object-fit: cover then has to throw away
+   ~55% of the video's width to fill it — which crops the car out of frame.
+   Letting the hero size to its content there keeps the box nearer the video's
+   own 16:9 and keeps the subject visible. */
+@media (min-width: 901px) and (max-aspect-ratio: 1 / 1) {
+  .hero { min-height: 0; }
+}
 /* The car sits on the left of the hero photo, so the copy is pushed right and
    the scrim darkens right-to-left — the reverse of a normal left-aligned hero.
    Keeps the subject readable instead of burying it under the logo. */
@@ -250,9 +258,28 @@ section { padding: 84px 0; }
 }
 /* .hero is itself a flex container, so .wrap must be told to span the full
    width — otherwise it shrink-wraps its content and margin-left:auto below
-   has no free space to push into. */
-.hero .wrap { display: flex; width: 100%; }
-.hero-content { margin-left: auto; max-width: 620px; }
+   has no free space to push into.
+
+   The hero is a full-bleed panel, so unlike the text sections it is not capped
+   at 1200px. That cap left the copy stranded ~700px short of the right edge on
+   a 2560px display — floating mid-screen rather than anchored to it. A
+   proportional gutter instead holds the copy the same visual distance from the
+   edge at every width. */
+.hero .wrap {
+  display: flex;
+  width: 100%;
+  max-width: none;
+  padding-inline: clamp(24px, 5vw, 128px);
+}
+/* Scales with the viewport rather than locking at a fixed 620px, so the block
+   grows with the display instead of shrinking into a corner of a large screen. */
+.hero-content {
+  margin-left: auto;
+  /* 48vw, not less: at ~1280 a narrower block dropped the tagline to two lines
+     and left "2013" stranded on its own. */
+  width: clamp(540px, 48vw, 780px);
+  max-width: 100%;
+}
 
 /* On a tall phone viewport the 16:9 photo crops to a narrow centre slice, which
    cut the car in half. Mobile instead anchors the crop on the car, sinks the
@@ -265,7 +292,7 @@ section { padding: 84px 0; }
 
 .hero-logo { margin: 0; line-height: 0; }
 .hero-logo img {
-  width: clamp(290px, 42vw, 520px);
+  width: min(100%, clamp(290px, 32vw, 620px));
   height: auto;
   filter: drop-shadow(0 10px 34px rgba(0, 0, 0, 0.75));
 }
@@ -282,6 +309,8 @@ section { padding: 84px 0; }
   text-transform: uppercase;
   color: var(--gold);
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+  /* if it ever does wrap, split it evenly rather than orphaning the year */
+  text-wrap: balance;
 }
 
 @media (max-width: 560px) {
@@ -292,7 +321,7 @@ section { padding: 84px 0; }
 /* the "background bubble" so intro text reads over photos */
 .hero-blurb {
   margin-top: 30px;
-  max-width: 560px;
+  max-width: none;
   background: rgba(7, 15, 28, 0.82);
   border: 1px solid var(--line);
   border-left: 3px solid var(--gold);
@@ -300,7 +329,14 @@ section { padding: 84px 0; }
   padding: 22px 26px;
   clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
 }
-.hero-blurb p { color: var(--ink); font-size: 1.02rem; }
+/* The blurb now fills the full content width, so the type scales with it —
+   held at a fixed size the line length would run past 100 characters on a
+   wide display. */
+.hero-blurb p {
+  color: var(--ink);
+  font-size: clamp(1rem, 0.4vw + 0.88rem, 1.18rem);
+  line-height: 1.6;
+}
 
 .hero-scroll {
   position: absolute;
@@ -353,7 +389,10 @@ section { padding: 84px 0; }
     );
   }
   .hero::after { left: 8%; opacity: 0.28; }
-  .hero-content { margin-left: 0; max-width: none; }
+  /* width: auto resets the fluid clamp() the desktop rule sets — without it the
+     540px minimum would force horizontal overflow on a phone. */
+  .hero-content { margin-left: 0; max-width: none; width: auto; }
+  .hero .wrap { padding-inline: 24px; }
   .hero-scroll { display: none; }
 
   /* Everything in the hero tightens up on mobile. The block is bottom-aligned,
