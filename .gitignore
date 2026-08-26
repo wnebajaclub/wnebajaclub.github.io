@@ -4,7 +4,58 @@ Website Materials for Claude.docx
 # local tooling
 .claude/
 
-# full-size photo originals — optimise into assets/img/ instead of committing
+# ---------------------------------------------------------------------------
+# Full-size photo and video originals.
+#
+# Everything on the site is optimised before it is committed — competition
+# photos, slideshow slides and logos are all resized and re-encoded first, and
+# a straight-off-the-camera file is typically 15–25 MB against roughly 200 KB
+# for the version actually served. A handful of those going in by accident adds
+# hundreds of megabytes to the repository that can never really be removed,
+# because git keeps every version of every file forever.
+#
+# The rules below are deliberately broad: they match how cameras and phones
+# name their exports, not where the files happen to sit, so an original is
+# ignored wherever it is dropped. Optimised site assets are unaffected because
+# they all use descriptive names (comp-2026-new-york.jpg, hl-04-helmet.jpg,
+# sponsors/skf.svg) rather than camera numbering.
+#
+# If you have an original you genuinely need tracked, force it in with:
+#   git add -f path/to/file.jpg
+# ---------------------------------------------------------------------------
+
+# a scratch folder for drop-anything-here originals
+_raw/
+**/_raw/
+
+# camera and phone export naming, anywhere in the tree
+IMG_*
+DSC[0-9]*
+DSCF[0-9]*
+DCIM/
+EB[0-9]*
+P[0-9][0-9][0-9][0-9][0-9]*
+# browser "duplicate download" naming, e.g. y (3).jpg — the trailing * matters,
+# without it the pattern would only match names that end at the closing paren
+y (*
+
+# formats that are never used to serve the site, only ever originals
+*.HEIC
+*.heic
+*.HEIF
+*.heif
+*.CR2
+*.NEF
+*.ARW
+*.DNG
+*.RAF
+*.ORF
+*.MOV
+*.mov
+*.MP4.original
+
+# loose media dropped in the project root
 /*.jpg
 /*.jpeg
 /*.png
+/*.webp

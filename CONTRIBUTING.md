@@ -167,6 +167,32 @@ The slideshow advances on its own every ~5 seconds and holds while the mouse is
 over it. To change the speed, edit `data-interval="5200"` on the
 `<div class="highlights">` — the number is in milliseconds.
 
+## "I added a photo but git doesn't see it"
+
+This is expected, and it is protecting you.
+
+Photos straight off a camera or phone are 15–25 MB each. Everything on the
+site is resized first — the versions actually served are around 200 KB. If a
+few originals get committed by accident they add hundreds of megabytes to the
+repository permanently, because git keeps every version of every file forever.
+
+So `.gitignore` skips files named the way cameras and phones name them —
+`IMG_1234.jpg`, `EB230048.jpg`, `DSC0042.jpg`, `y (3).jpg`, anything `.HEIC`
+or `.MOV`, and anything inside a `_raw/` folder. It does this **wherever the
+file sits**, not just in the project root.
+
+Optimised site images are unaffected, because they all use descriptive names
+(`comp-2026-new-york.jpg`, `hl-04-helmet.jpg`, `skf.svg`) rather than camera
+numbering.
+
+**What to do:** rename the file to something descriptive once it has been
+resized, and it will be tracked normally. If you genuinely need to commit an
+original, force it:
+
+```
+git add -f assets/img/whatever.jpg
+```
+
 ## Changing the contact email
 
 The team address `wnebajaclub@gmail.com` appears in several places. Search the
