@@ -127,6 +127,7 @@
         <h2>Baja SAE <span class="accent">New York</span></h2>
       </div>
       <div class="featured reveal">
+        <div class="f-top">
         <div class="f-place">22<small>of 102 teams</small></div>
         <div class="f-meta">
           <h3>2026 Season Finish</h3>
@@ -143,6 +144,76 @@
           </div>
         </div>
         <a class="btn btn-outline" href="history.html">Full History</a>
+        </div>
+
+      <!-- Highlights slideshow, inside the result card so the two read as one
+           unit. Markup order is display order; the first slide carries
+           is-active and the rest are inert until JS promotes them, so with JS
+           off this degrades to a single static photo, not a blank frame. -->
+      <div class="highlights" data-interval="4500">
+        <div class="hl-bar">
+          <p class="eyebrow">Highlights</p>
+          <div class="hl-controls">
+            <button class="hl-btn" type="button" data-hl="prev" aria-label="Previous highlight">&#8249;</button>
+            <span class="hl-count"><span data-hl="current">1</span> / <span data-hl="total">5</span></span>
+            <button class="hl-btn" type="button" data-hl="next" aria-label="Next highlight">&#8250;</button>
+          </div>
+        </div>
+
+        <div class="hl-stage" role="region" aria-roledescription="carousel" aria-label="Baja SAE New York 2026 highlights">
+          <!-- Ordered as an arc through the weekend: arrive, tech inspection,
+               prep, race, flag, pack up. Only the first slide carries a real
+               src; the rest use data-src and are fetched by main.js just ahead
+               of being shown, so the photo count can keep growing without the
+               whole set downloading at once. -->
+          <figure class="hl-slide is-active"><img src="assets/img/highlights/hl-00-convoy.jpg" alt="The team trailer with the Golden Bear logo on the highway heading to competition" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-01-arriving.jpg" alt="Golden Bear Racing team walking together at Baja SAE New York" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-25-tech-inspection.jpg" alt="GBR4 undergoing technical inspection before competition" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-26-wrenching.jpg" alt="Team members working on GBR4&apos;s engine under the tent" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-28-under-tent.jpg" alt="GBR4 in the team tent with the crew working around it" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-22-tech-line.jpg" alt="The team gathered around GBR4 with officials during the event" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-32-course-walk.jpg" alt="A team member standing in a deep rut on the course, showing how rough the terrain is" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-33-course-fish.jpg" alt="Teams walking the course past a rubber fish someone planted in the dirt" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-29-waiting.jpg" alt="Team members resting beside GBR4 between sessions" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-02-suited-up.jpg" alt="A driver in race suit celebrating with teammates before a run" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-27-in-the-seat.jpg" alt="A driver seated in GBR4 while a teammate helps prepare the car" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-03-paddock.jpg" alt="The team gathered around GBR4 in the paddock with the driver seated" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-04-helmet.jpg" alt="Close-up of a Golden Bear Racing driver in helmet and goggles" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-30-push-up.jpg" alt="Crew pushing GBR4 up the access road under a blue sky" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-23-rolling-out.jpg" alt="Crew rolling GBR4 out of the paddock with the driver aboard" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-1-to-the-line.jpg" alt="The crew walks GBR4 out to the starting line" width="1600" height="900" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-05-cornering.jpg" alt="GBR4 cornering hard and throwing up dirt" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-35-grass-sweep.jpg" alt="GBR4 sweeping through a grass section marked out with hay bales" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-13-grass-run.jpg" alt="GBR4 running a grass section of the course" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-14-dust-trail.jpg" alt="GBR4 kicking up a trail of dust across the field" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-06-hill-dust.jpg" alt="GBR4 climbing a dusty hill on the endurance course" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-16-side-on.jpg" alt="Side view of GBR4 at speed on the dirt course" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-17-airborne.jpg" alt="GBR4 catching air over a jump" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-34-jump.jpg" alt="GBR4 launching off a jump with a flag marshal watching" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-38-obstacle-run.jpg" alt="GBR4 picking a line through the obstacle section" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-07-obstacle.jpg" alt="GBR4 lifting its front wheels over an obstacle" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-15-dirt-climb.jpg" alt="GBR4 climbing a dirt bank as spectators watch" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-20-berm.jpg" alt="GBR4 working a bermed dirt section of the course" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-08-rough.jpg" alt="GBR4 working through rough terrain with the suspension articulated" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-37-treeline.jpg" alt="GBR4 running a wooded section of the endurance course" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-09-steep.jpg" alt="GBR4 on a steep section of the course" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-36-two-up.jpg" alt="GBR4 running the course alongside another team&apos;s car" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-18-wheel-to-wheel.jpg" alt="GBR4 running wheel to wheel with another team&apos;s car" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-10-racing.jpg" alt="GBR4 running alongside another team&apos;s car" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-19-crowd-line.jpg" alt="GBR4 on course in front of a line of spectators" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-21-grid.jpg" alt="Cars lined up on course during the competition" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-24-rollover.jpg" alt="GBR4 on its side after a rollover during a run" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-3-checkered-flag.jpg" alt="GBR4 takes the checkered flag at the end of a run" width="1600" height="900" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-11-pushing-back.jpg" alt="The crew pushing GBR4 back through the paddock after a run" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-12-crowd.jpg" alt="Team and spectators gathered around GBR4" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-31-laughing.jpg" alt="Teammates laughing together at the competition" width="1500" height="844" decoding="async"></figure>
+          <figure class="hl-slide"><img data-src="assets/img/highlights/hl-5-between-runs.jpg" alt="Team members sitting together in camp chairs between competition runs" width="1600" height="900" decoding="async"></figure>
+          <div class="hl-progress" aria-hidden="true"><span></span></div>
+        </div>
+
+        <!-- dots are generated from the slide count by main.js -->
+        <div class="hl-dots" role="tablist" aria-label="Choose a highlight"></div>
+      </div>
       </div>
     </div>
   </section>

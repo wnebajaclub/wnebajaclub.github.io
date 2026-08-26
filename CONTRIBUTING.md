@@ -132,6 +132,41 @@ Every `<img>` needs four things:
 - `loading="lazy"` and `decoding="async"` — on anything below the top of the
   page, so it only downloads when scrolled near
 
+## Adding a photo to the Highlights slideshow
+
+The slideshow sits inside the Latest Result card on the home page. Adding a
+photo is **one line** — the counter ("1 / 5") and the dots underneath are
+generated from however many slides exist, so there is nothing else to keep in
+sync.
+
+1. Put the photo in `assets/img/highlights/`.
+2. In `index.html`, find `<div class="hl-stage"`. Copy any existing
+   `<figure class="hl-slide">` line and paste it wherever you want the photo to
+   appear in the rotation, then change the filename and the `alt` text:
+
+```html
+<figure class="hl-slide">
+  <img src="assets/img/highlights/YOUR-PHOTO.jpg" alt="Short description of what is happening" loading="lazy" decoding="async">
+</figure>
+```
+
+Two things to know:
+
+- **The first slide is special.** The one at the top carries
+  `class="hl-slide is-active"` — that is the photo people see before the
+  slideshow starts moving, and it's the only one that shows if JavaScript is
+  off. If you want a different photo first, move the `is-active` onto it and
+  take it off the old one. Only ever one slide has it.
+- **Any shape of photo works.** The frame is a fixed 16:9 widescreen box and
+  photos are cropped from the centre to fill it, so nothing will break the
+  layout. But a tall or square photo will lose a lot off the top and bottom —
+  if you care exactly what gets cropped, crop it to 16:9 yourself first
+  (1600&times;900 is the size the existing ones use).
+
+The slideshow advances on its own every ~5 seconds and holds while the mouse is
+over it. To change the speed, edit `data-interval="5200"` on the
+`<div class="highlights">` — the number is in milliseconds.
+
 ## Changing the contact email
 
 The team address `wnebajaclub@gmail.com` appears in several places. Search the
