@@ -46,6 +46,20 @@ document.querySelectorAll(".highlights").forEach((root) => {
   const currentEl = root.querySelector('[data-hl="current"]');
   if (slides.length < 2) return;
 
+  // Shuffled per page load, so a repeat visitor doesn't get the same run of
+  // photos every time. Only this array is reordered, not the DOM: the slides
+  // are all absolutely positioned at inset:0, so their document order has no
+  // bearing on what's shown, and leaving the markup alone keeps the no-JS
+  // fallback (the one slide carrying is-active) intact.
+  //
+  // Fisher-Yates, not [].sort(() => Math.random() - 0.5) — the sort trick is a
+  // genuinely biased shuffle, because a comparator that answers inconsistently
+  // breaks the assumptions the sort algorithm relies on.
+  for (let i = slides.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [slides[i], slides[j]] = [slides[j], slides[i]];
+  }
+
   // Dots are built from however many slides exist rather than hand-written in
   // the HTML. Adding a photo is then a single <figure> in index.html - no
   // second edit to keep a dot list in sync, which is the kind of thing that
@@ -153,8 +167,23 @@ document.querySelectorAll(".highlights").forEach((root) => {
   }, { threshold: 0.25 });
   vis.observe(root);
 
-  setPaused(reduced);
-  show(0);
+  // The slide that ships with a real src is fixed in the markup, but after the
+  // shuffle it is usually no longer the one shown first. Switching to an
+  // unloaded slide immediately would flash: eager photo -> empty frame -> new
+  // photo. So hold on whatever the markup is already showing, start fetching
+  // the shuffled first slide, and only swap once it can actually paint.
+  const firstImg = slides[0].querySelector("img");
+  ensureLoaded(0);
+  const begin = () => { show(0); setPaused(reduced); };
+
+  setPaused(true);
+  if (firstImg.complete && firstImg.naturalWidth > 0) {
+    begin();
+  } else {
+    firstImg.addEventListener("load", begin, { once: true });
+    // a broken file shouldn't strand the slideshow on slide one forever
+    firstImg.addEventListener("error", begin, { once: true });
+  }
 });
 
 // Reveal-on-scroll

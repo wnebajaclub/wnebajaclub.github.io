@@ -161,11 +161,12 @@
         </div>
 
         <div class="hl-stage" role="region" aria-roledescription="carousel" aria-label="Baja SAE New York 2026 highlights">
-          <!-- Ordered as an arc through the weekend: arrive, tech inspection,
-               prep, race, flag, pack up. Only the first slide carries a real
-               src; the rest use data-src and are fetched by main.js just ahead
-               of being shown, so the photo count can keep growing without the
-               whole set downloading at once. -->
+          <!-- main.js shuffles these on every page load, so the order here is
+               not the display order — a new photo can be added anywhere in the
+               list. Only the first slide carries a real src; the rest use
+               data-src and are fetched by main.js just ahead of being shown, so
+               the photo count can keep growing without the whole set
+               downloading at once. -->
           <figure class="hl-slide is-active"><img src="assets/img/highlights/hl-00-convoy.jpg" alt="The team trailer with the Golden Bear logo on the highway heading to competition" width="1500" height="844" decoding="async"></figure>
           <figure class="hl-slide"><img data-src="assets/img/highlights/hl-01-arriving.jpg" alt="Golden Bear Racing team walking together at Baja SAE New York" width="1500" height="844" decoding="async"></figure>
           <figure class="hl-slide"><img data-src="assets/img/highlights/hl-25-tech-inspection.jpg" alt="GBR4 undergoing technical inspection before competition" width="1500" height="844" decoding="async"></figure>
