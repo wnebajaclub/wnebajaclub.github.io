@@ -1160,6 +1160,15 @@ section { padding: 84px 0; }
 .hl-dot.is-active { background: var(--gold); }
 .hl-dot:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
+.hl-credit {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+.hl-credit a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+.hl-credit a:hover { color: var(--gold); }
+
 @media (max-width: 700px) {
   .hl-stage { clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px)); }
 }
