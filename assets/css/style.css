@@ -290,12 +290,30 @@ section { padding: 84px 0; }
    wheel. The copy sinks to the bottom and the scrim stays light across the top
    two-thirds, so the car reads as the subject rather than as texture. */
 
-.hero-logo { margin: 0; line-height: 0; }
-.hero-logo img {
-  width: min(100%, clamp(290px, 32vw, 620px));
-  height: auto;
-  filter: drop-shadow(0 10px 34px rgba(0, 0, 0, 0.75));
+/* Text wordmark, sized off the hero-content block itself (not a fixed image),
+   so it always fills the same right-hand column the rest of the copy fills. */
+.hero-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.02;
+  text-shadow: 0 10px 34px rgba(0, 0, 0, 0.75);
 }
+.hero-title .ht-line {
+  display: block;
+  font-size: clamp(2.6rem, 5.6vw, 4.8rem);
+  letter-spacing: 0.02em;
+}
+/* "Racing" alone is one short word next to "Golden Bear" above it, so it is
+   spread with extra letter-spacing to read as evenly filling the same width
+   rather than sitting short on the left. */
+.hero-title .ht-wide {
+  letter-spacing: 0.34em;
+  color: var(--ink);
+}
+.hero-title .accent { color: var(--gold); }
+.hero-title .accent-blue { color: var(--blue-bright); }
 /* the eyebrow is one unit — never let it break mid-phrase */
 .hero .eyebrow { margin-bottom: 22px; white-space: nowrap; }
 .hero .eyebrow::after { flex: 0 1 90px; }
@@ -399,7 +417,8 @@ section { padding: 84px 0; }
      so trimming its height is what drops it down the screen and opens up clear
      space above for the car. */
   .hero .eyebrow { font-size: 0.66rem; letter-spacing: 0.18em; margin-bottom: 0; }
-  .hero-logo img { width: min(68vw, 280px); }
+  .hero-title .ht-line { font-size: min(13vw, 3rem); }
+  .hero-title .ht-wide { letter-spacing: 0.22em; }
   /* the tagline is decorative and the vertical budget is tight on a phone —
      the same idea is carried by the intro paragraph right below it */
   .hero-tagline { display: none; }
@@ -423,7 +442,8 @@ section { padding: 84px 0; }
    screen. Trim the copy rather than the top padding — the padding is what
    keeps the logo clear of the photo. */
 @media (max-width: 380px) {
-  .hero-logo img { width: min(64vw, 235px); }
+  .hero-title .ht-line { font-size: min(12vw, 2.5rem); }
+  .hero-title .ht-wide { letter-spacing: 0.16em; }
   .hero-blurb { margin-top: 10px; padding: 11px 13px; }
   .hero-blurb p { font-size: 0.79rem; line-height: 1.42; }
   .hero .btn { padding: 11px 12px; font-size: 0.68rem; letter-spacing: 0.08em; }
