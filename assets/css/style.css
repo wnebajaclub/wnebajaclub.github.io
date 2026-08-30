@@ -661,6 +661,9 @@ section { padding: 84px 0; }
 .sg-partner { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .sg-bluebear { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
 .sg-std { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.sg-major { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .sg-major { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .sg-major { grid-template-columns: 1fr; } }
 
 .sponsor-card {
   display: flex;
