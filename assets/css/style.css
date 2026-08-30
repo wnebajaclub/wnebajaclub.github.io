@@ -305,9 +305,9 @@ section { padding: 84px 0; }
   font-size: clamp(2.6rem, 5.6vw, 4.8rem);
   letter-spacing: 0.02em;
 }
-.hero-title .accent { color: var(--gold); }
+.hero-title .accent { color: var(--ink); }
 /* the eyebrow is one unit — never let it break mid-phrase */
-.hero .eyebrow { margin-bottom: 22px; white-space: nowrap; }
+.hero .eyebrow { font-size: clamp(0.9rem, 1.6vw, 1.15rem); margin-bottom: 22px; white-space: nowrap; }
 .hero .eyebrow::after { flex: 0 1 90px; }
 
 .hero-tagline {
