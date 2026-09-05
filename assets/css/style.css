@@ -469,6 +469,12 @@ section { padding: 84px 0; }
 .page-hero.has-photo {
   padding: 96px 0 64px;
   background: var(--bg);
+  /* On very wide displays the section gets short and extremely wide, so
+     background-size:cover crops the photo down to a thin sliver. A min-height
+     that scales with viewport width keeps the crop sane on ultrawide screens
+     without affecting normal desktop sizes, where the content is already
+     taller than this floor. */
+  min-height: clamp(420px, 26vw, 620px);
 }
 .page-hero .page-hero-bg {
   position: absolute;
