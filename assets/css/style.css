@@ -487,15 +487,6 @@ section { padding: 84px 0; }
   background-position: center 44%;
   background-repeat: no-repeat;
 }
-/* background-size:cover always scales the photo to match container width
-   exactly, so on very wide screens the section doesn't just reveal more of
-   the photo — it zooms in further, making people in it render noticeably
-   larger and closer. Capping the render width past a point stops that zoom
-   from growing; the extra width just shows the section's own dark
-   background on either side instead of an ever-larger photo. */
-@media (min-width: 1700px) {
-  .page-hero .page-hero-bg { background-size: 1700px auto; }
-}
 .page-hero.has-photo::before {
   content: "";
   position: absolute;
