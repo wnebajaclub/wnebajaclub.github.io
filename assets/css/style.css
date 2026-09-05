@@ -477,7 +477,7 @@ section { padding: 84px 0; }
      that scales with viewport width keeps the crop sane on ultrawide screens
      without affecting normal desktop sizes, where the content is already
      taller than this floor. */
-  min-height: clamp(460px, 34vw, 640px);
+  min-height: clamp(460px, 30vw, 540px);
 }
 .page-hero .page-hero-bg {
   position: absolute;
@@ -485,6 +485,16 @@ section { padding: 84px 0; }
   z-index: -2;
   background-size: cover;
   background-position: center 44%;
+  background-repeat: no-repeat;
+}
+/* background-size:cover always scales the photo to match container width
+   exactly, so on very wide screens the section doesn't just reveal more of
+   the photo — it zooms in further, making people in it render noticeably
+   larger and closer. Capping the render width past a point stops that zoom
+   from growing; the extra width just shows the section's own dark
+   background on either side instead of an ever-larger photo. */
+@media (min-width: 1700px) {
+  .page-hero .page-hero-bg { background-size: 1700px auto; }
 }
 .page-hero.has-photo::before {
   content: "";
