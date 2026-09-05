@@ -501,6 +501,11 @@ section { padding: 84px 0; }
     background:
       linear-gradient(180deg, rgba(4, 7, 13, 0.6) 0%, rgba(4, 7, 13, 0.88) 70%, var(--bg) 100%);
   }
+  /* The desktop crop leans on the left-heavy scrim to hide most of the
+     frame, so it can stay horizontally centered. Mobile's scrim is even
+     top-to-bottom instead, which exposes the full width, so this photo's
+     off-center helmet needs its own horizontal position to stay in view. */
+  .page-hero-bg.pos-helmet { background-position: 62% 44%; }
 }
 
 .page-hero h1 {
