@@ -477,7 +477,7 @@ section { padding: 84px 0; }
      that scales with viewport width keeps the crop sane on ultrawide screens
      without affecting normal desktop sizes, where the content is already
      taller than this floor. */
-  min-height: clamp(460px, 40vw, 760px);
+  min-height: clamp(460px, 34vw, 640px);
 }
 .page-hero .page-hero-bg {
   position: absolute;
@@ -510,7 +510,7 @@ section { padding: 84px 0; }
 
 .page-hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-size: clamp(2.4rem, 7vw, 5.4rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -519,7 +519,8 @@ section { padding: 84px 0; }
 }
 .page-hero h1 .accent { color: var(--gold); }
 .page-hero h1 .accent-blue { color: var(--blue-bright); }
-.page-hero p.lede { color: var(--muted); max-width: 660px; margin-top: 16px; }
+.page-hero p.lede { color: var(--muted); max-width: 660px; margin-top: 16px; font-size: clamp(1rem, 1.3vw, 1.3rem); }
+.page-hero .eyebrow { font-size: clamp(0.8rem, 1vw, 1.05rem); }
 
 /* ---------- feature tiles (home, like dribbble category cards) ---------- */
 .tile-grid {
