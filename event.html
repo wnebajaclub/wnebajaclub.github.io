@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Sponsor &amp; Alumni Appreciation Event — Golden Bear Racing</title>
+<meta name="description" content="RSVP for Golden Bear Racing's Sponsor &amp; Alumni Appreciation Event, October 10 at Western New England University.">
+<link rel="canonical" href="https://wneu-bajasae.com/event.html">
+<meta name="theme-color" content="#04070d">
+<link rel="icon" href="assets/img/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png?v=2">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .event-main { padding: 48px 0 100px; }
+  .event-narrow { max-width: 780px; margin: 0 auto; }
+  .event-eyebrow-tag {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(255, 182, 18, 0.1);
+    border: 1px solid rgba(255, 182, 18, 0.35);
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 22px;
+  }
+  .event-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    font-size: clamp(2rem, 5.2vw, 3.4rem);
+    margin: 0 0 20px;
+  }
+  .event-title .hl {
+    background: var(--gold);
+    color: #04070d;
+    padding: 0.02em 0.18em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  .event-intro { color: var(--muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 32px; }
+  .event-photo {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .event-photo img { display: block; width: 100%; height: auto; }
+  .event-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .event-info-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .event-info-label {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .event-info-card strong { display: block; font-size: 1.15rem; margin-bottom: 2px; }
+  .event-info-sub { color: var(--muted); font-size: 0.85rem; }
+  .event-cal-link {
+    display: inline-block;
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin-bottom: 48px;
+  }
+  .rsvp-step {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+  }
+  .rsvp-step .num { color: var(--gold); font-size: 0.85rem; }
+  .rsvp-note { color: var(--muted); margin-bottom: 24px; }
+  .rsvp-form {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px;
+  }
+  .rsvp-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .rsvp-field { margin-bottom: 20px; }
+  .rsvp-field label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.95rem; }
+  .rsvp-field label .opt { color: var(--muted); font-weight: 400; font-size: 0.82rem; }
+  .rsvp-field input[type="text"],
+  .rsvp-field input[type="email"],
+  .rsvp-field textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 11px 13px;
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+  }
+  .rsvp-field input::placeholder, .rsvp-field textarea::placeholder { color: var(--muted); opacity: 0.7; }
+  .rsvp-field textarea { resize: vertical; min-height: 90px; }
+  .rsvp-toggle-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .rsvp-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+  .rsvp-toggle:has(input:checked) { border-color: var(--gold); color: var(--gold); background: rgba(255, 182, 18, 0.08); }
+  .rsvp-footer-note { color: var(--muted); margin-top: 22px; font-size: 0.92rem; }
+  .rsvp-footer-note a { color: var(--gold); }
+  @media (max-width: 640px) {
+    .event-info-grid { grid-template-columns: 1fr; }
+    .rsvp-row { grid-template-columns: 1fr; }
+    .rsvp-form { padding: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+<nav class="nav-bar">
+<a class="brand" href="index.html" aria-label="Golden Bear Racing - home">
+<img class="brand-mark" src="assets/img/logo.png" alt="Golden Bear Racing" width="1100" height="606">
+</a>
+</nav>
+</header>
+
+<main class="event-main">
+<div class="wrap event-narrow">
+
+<span class="event-eyebrow-tag">Sponsor &amp; Alumni Appreciation Event</span>
+<h1 class="event-title">You&rsquo;re on the <span class="hl">Grid</span>: Join Us October 10</h1>
+<p class="event-intro">Golden Bear Racing, WNE&rsquo;s Baja SAE team, is inviting the sponsors and alumni who keep our car on course to an afternoon on campus. It&rsquo;s a chance to see what your support builds, meet the current engineers, and talk shop before the next competition.</p>
+
+<div class="event-photo">
+<img src="assets/img/hero-car-action.jpg" alt="Golden Bear Racing's car kicking up dust through the cones at competition" width="2400" height="1350" loading="lazy" decoding="async">
+</div>
+
+<div class="event-info-grid">
+<div class="event-info-card">
+<span class="event-info-label">Date</span>
+<strong>Sat, Oct 10</strong>
+<span class="event-info-sub">2026</span>
+</div>
+<div class="event-info-card">
+<span class="event-info-label">Start Time</span>
+<strong>1:00 PM</strong>
+<span class="event-info-sub">Eastern</span>
+</div>
+<div class="event-info-card">
+<span class="event-info-label">Location</span>
+<strong>Rivers Memorial Hall</strong>
+<span class="event-info-sub">Western New England University</span>
+</div>
+</div>
+
+<a class="event-cal-link" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Golden+Bear+Racing%3A+Sponsor+%26+Alumni+Appreciation+Event&dates=20261010T170000Z/20261010T190000Z&details=Golden+Bear+Racing%2C+WNE%27s+Baja+SAE+team%2C+is+inviting+the+sponsors+and+alumni+who+keep+our+car+on+course+to+an+afternoon+on+campus.&location=Rivers+Memorial+Hall%2C+Western+New+England+University%2C+Springfield%2C+MA&sf=true&output=xml" target="_blank" rel="noopener">+ Add to Google Calendar</a>
+
+<p class="rsvp-step"><span class="num">01</span> RSVP</p>
+<p class="rsvp-note">Fill out the form below to let us know if you can make it.</p>
+
+<form class="rsvp-form" action="https://formspree.io/f/mbgjaljy" method="POST">
+<div class="rsvp-row">
+<div class="rsvp-field">
+<label for="rsvp-name">Full name</label>
+<input type="text" id="rsvp-name" name="Full name" required>
+</div>
+<div class="rsvp-field">
+<label for="rsvp-company">Company / organization <span class="opt">optional</span></label>
+<input type="text" id="rsvp-company" name="Company / organization">
+</div>
+</div>
+
+<div class="rsvp-field">
+<label for="rsvp-email">Email</label>
+<input type="email" id="rsvp-email" name="Email" required>
+</div>
+
+<div class="rsvp-field">
+<label>Will you be attending?</label>
+<div class="rsvp-toggle-row">
+<label class="rsvp-toggle"><input type="radio" name="Attending" value="Yes, I'll be there" required> Yes, I&rsquo;ll be there</label>
+<label class="rsvp-toggle"><input type="radio" name="Attending" value="Can't make it"> Can&rsquo;t make it</label>
+</div>
+</div>
+
+<div class="rsvp-field">
+<label for="rsvp-dietary">Dietary restrictions or allergies <span class="opt">optional</span></label>
+<input type="text" id="rsvp-dietary" name="Dietary restrictions" placeholder="e.g. vegetarian, peanut allergy, none">
+</div>
+
+<div class="rsvp-field">
+<label for="rsvp-comments">Comments or questions <span class="opt">optional</span></label>
+<textarea id="rsvp-comments" name="Comments" rows="4"></textarea>
+</div>
+
+<input type="hidden" name="_subject" value="Sponsor Event RSVP">
+
+<button type="submit" class="btn btn-gold">Send RSVP</button>
+</form>
+<p class="rsvp-status" role="status" hidden></p>
+
+<p class="rsvp-footer-note">Questions about the event? Reach the team at <a href="mailto:ae613633@wne.edu">ae613633@wne.edu</a>.</p>
+
+</div>
+</main>
+
+<script>
+(function () {
+  var form = document.querySelector('.rsvp-form');
+  var status = document.querySelector('.rsvp-status');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    status.hidden = true;
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    }).then(function (response) {
+      if (response.ok) {
+        form.reset();
+        form.hidden = true;
+        status.textContent = 'Thanks — your RSVP is in. We’ll be in touch with any updates.';
+        status.hidden = false;
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send RSVP';
+        status.textContent = 'Something went wrong sending that. Please try again, or email ae613633@wne.edu directly.';
+        status.hidden = false;
+      }
+    }).catch(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send RSVP';
+      status.textContent = 'Something went wrong sending that. Please try again, or email ae613633@wne.edu directly.';
+      status.hidden = false;
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
