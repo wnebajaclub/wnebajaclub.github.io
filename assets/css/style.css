@@ -464,6 +464,9 @@ section { padding: 84px 0; }
   opacity: 0.4;
   z-index: -1;
 }
+/* The diagonal accent line is meant for the plain gradient hero; over a photo
+   it reads as a stray streak cutting across faces, so photo heroes drop it. */
+.page-hero.has-photo::after { display: none; }
 /* Photo-backed page header. The heading is left-aligned, so the scrim is
    weighted to the left and thins out to the right where the photo can breathe. */
 .page-hero.has-photo {
@@ -474,7 +477,7 @@ section { padding: 84px 0; }
      that scales with viewport width keeps the crop sane on ultrawide screens
      without affecting normal desktop sizes, where the content is already
      taller than this floor. */
-  min-height: clamp(420px, 26vw, 620px);
+  min-height: clamp(460px, 40vw, 760px);
 }
 .page-hero .page-hero-bg {
   position: absolute;
