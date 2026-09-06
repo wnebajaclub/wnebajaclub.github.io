@@ -1520,7 +1520,7 @@ section { padding: 84px 0; }
 .year-nav a:hover { color: var(--gold); border-color: var(--line); }
 
 /* ---------- team avatars ---------- */
-.member { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.member { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
 .avatar {
   flex: 0 0 72px;
   width: 72px;
@@ -1552,7 +1552,7 @@ section { padding: 84px 0; }
 }
 .member.sub .avatar {
   color: var(--blue-bright);
-  background: rgba(42, 102, 178, 0.12);
+  background-color: rgba(42, 102, 178, 0.12);
   border-color: var(--line-blue);
 }
 
@@ -1565,6 +1565,10 @@ a.member.has-linkedin {
 a.member.has-linkedin:hover,
 a.member.has-linkedin:focus-visible {
   border-top-color: #0a66c2;
+}
+a.member.sub.has-linkedin:hover,
+a.member.sub.has-linkedin:focus-visible {
+  border-top-color: var(--gold);
 }
 .member .li-tag {
   display: inline-flex;
