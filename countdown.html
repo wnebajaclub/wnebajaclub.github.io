@@ -1,123 +1,211 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#04070d">
-<title>Deadlines — Golden Bear Racing</title>
-<meta name="description" content="Countdown to Golden Bear Racing's next GBR4 build milestone.">
-<link rel="icon" href="assets/img/logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-/* Brand tokens, same values as assets/css/style.css */
-:root{
-  --gold:#FFB612; --blue:#2A66B2; --navy:#0B1A2E; --bg:#04070D;
-  --ink:#F2F5F9; --muted:#8FA0B8; --line:#1C2E48; --late:#FF8A7A;
-}
-*,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 Inter,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;
-  background-image:radial-gradient(ellipse 90% 60% at 50% -10%,rgba(42,102,178,.22),transparent 70%);background-repeat:no-repeat}
-a{color:inherit}
-.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  <script>
+    if (location.hostname === 'wnebajaclub.github.io') {
+      location.replace('https://wneu-bajasae.com' + location.pathname + location.search + location.hash);
+    }
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown — Golden Bear Racing</title>
+  <meta name="description" content="Countdown to Golden Bear Racing's next GBR4 build milestone.">
+  <meta name="theme-color" content="#04070d">
+  <link rel="icon" href="assets/img/favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png?v=2">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+  /* Countdown page only. Everything is prefixed cd- so nothing collides with
+     the shared classes in assets/css/style.css (which already owns .hero). */
+  :root { --late: #ff8a7a; --hdr: 89px; }
 
-/* Header: swap this block for the site's shared header if you prefer */
-.site-head{border-bottom:1px solid var(--line)}
-.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
-.site-head img{height:44px;width:auto;display:block}
-.site-head nav{display:flex;gap:20px;flex-wrap:wrap}
-.site-head nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:15px}
-.site-head nav a:hover,.site-head nav a[aria-current]{color:var(--gold)}
+  /* ---- full-screen countdown ---- */
+  .cd-stage {
+    position: relative;
+    min-height: calc(100vh - var(--hdr));
+    min-height: calc(100svh - var(--hdr));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 0 72px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  /* Background photo: replace assets/img/countdown-background.png to change it.
+     If the file is missing, the site gradient shows through instead. */
+  .cd-bg {
+    position: absolute; inset: 0; z-index: -2;
+    background: url('assets/img/countdown-background.png') center / cover no-repeat;
+  }
+  /* Dark scrim so the numbers stay readable on any photo */
+  .cd-stage::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 50%, rgba(4,7,13,.55), rgba(4,7,13,.82) 100%),
+      linear-gradient(180deg, rgba(4,7,13,.35) 0%, rgba(4,7,13,0) 30%, rgba(4,7,13,0) 70%, rgba(4,7,13,.95) 100%);
+  }
+  .cd-inner { text-align: center; }
+  .cd-inner .eyebrow { justify-content: center; }
+  .cd-clock { color: var(--muted); font-size: .9rem; font-variant-numeric: tabular-nums; margin-top: 10px; }
+  .cd-title {
+    font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+    font-size: clamp(2.2rem, 7vw, 5.5rem); line-height: 1.02; color: var(--gold);
+    margin: 18px auto 0; max-width: 20ch; text-shadow: 0 4px 30px rgba(0,0,0,.5);
+  }
+  .cd-due { color: var(--ink); opacity: .85; font-size: clamp(1rem, 1.6vw, 1.2rem); margin-top: 12px; }
 
-main{padding:36px 0 64px}
-.clocknow{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums;margin:0}
-.hero{padding:18px 0 30px}
-.hero h1{margin:0;font:700 clamp(32px,6vw,56px)/1.05 "Chakra Petch","Arial Narrow",sans-serif;color:var(--gold);max-width:22ch}
-.due{margin:10px 0 0;color:var(--muted);font-size:17px}
-.digits{display:flex;align-items:flex-start;gap:clamp(4px,1.4vw,14px);margin-top:28px;font-family:"Chakra Petch","Arial Narrow",sans-serif;font-variant-numeric:tabular-nums}
-.unit{display:flex;flex-direction:column;align-items:center;background:var(--navy);border:1px solid var(--line);border-radius:10px;padding:clamp(8px,2vw,18px) clamp(8px,2vw,20px) 12px;min-width:0}
-.num{font-weight:600;font-size:clamp(46px,12vw,140px);line-height:.9}
-.lab{font:500 14px/1 Inter,sans-serif;color:var(--muted);margin-top:10px}
-.sep{font-weight:600;font-size:clamp(36px,9vw,110px);line-height:1.1;color:var(--gold);align-self:center}
-.hero.urgent .num{color:var(--gold)}
-.hero.flip{animation:flip .9s cubic-bezier(.2,.8,.2,1)}
-@keyframes flip{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.hero.flip{animation:none}}
+  .cd-digits {
+    display: flex; justify-content: center; align-items: stretch;
+    gap: clamp(6px, 1.6vw, 22px); margin-top: clamp(28px, 5vh, 56px);
+    font-family: var(--font-display); font-variant-numeric: tabular-nums;
+  }
+  .cd-unit {
+    flex: 1 1 0; min-width: 0; max-width: 270px;
+    display: flex; flex-direction: column; align-items: center;
+    background: rgba(11, 26, 46, .72); backdrop-filter: blur(6px);
+    border: 1px solid var(--line);
+    clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+    padding: clamp(12px, 2.4vh, 26px) clamp(12px, 2.4vw, 34px) clamp(10px, 2vh, 20px);
+  }
+  .cd-num { font-weight: 600; font-size: clamp(3.2rem, min(14vw, 22vh), 12rem); line-height: .9; color: var(--ink); }
+  .cd-lab { font-family: var(--font-display); font-weight: 600; font-size: .8rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); margin-top: 12px; }
+  .cd-sep { font-weight: 600; font-size: clamp(2.4rem, min(10vw, 16vh), 9rem); line-height: 1; color: var(--gold); align-self: center; margin-top: -.3em; }
+  .cd-stage.urgent .cd-num { color: var(--gold); }
+  .cd-stage.flip .cd-inner { animation: cdflip .9s cubic-bezier(.2,.8,.2,1); }
+  @keyframes cdflip { 0% { opacity: 0; transform: translateY(18px); } 100% { opacity: 1; transform: none; } }
 
-.gauge{margin-top:28px}
-.track{position:relative;height:10px;background:var(--navy);border:1px solid var(--line);border-radius:6px;overflow:hidden}
-.fill{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,var(--blue),var(--gold));width:0}
-.gauge p{margin:8px 0 0;color:var(--muted);font-size:14px}
+  .cd-gauge { max-width: 760px; margin: clamp(26px, 4vh, 44px) auto 0; }
+  .cd-track { position: relative; height: 10px; background: rgba(11,26,46,.8); border: 1px solid var(--line); overflow: hidden; }
+  .cd-fill { position: absolute; inset: 0 auto 0 0; width: 0; background: linear-gradient(90deg, var(--blue-bright), var(--gold)); }
+  .cd-gauge p { margin-top: 10px; color: var(--muted); font-size: .9rem; }
 
-.gate{margin-top:34px;background:var(--navy);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
-.gate-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
-.gate h2{margin:0;font:700 22px/1.1 "Chakra Petch",sans-serif}
-.gate-sum{margin:0;color:var(--muted);font-size:15px}
-.gate-sum strong{color:var(--ink)}
-.late-n{color:var(--late);font-weight:600}
-.gate-bar{height:6px;background:var(--bg);border-radius:3px;margin:12px 0 6px;overflow:hidden}
-.gate-bar span{display:block;height:100%;background:var(--gold)}
-ul.tasks{list-style:none;margin:0;padding:0;max-height:420px;overflow:auto}
-ul.tasks li{display:grid;grid-template-columns:14px 1fr auto;gap:12px;align-items:baseline;padding:11px 2px;border-bottom:1px solid var(--line)}
-ul.tasks li:last-child{border-bottom:0}
-.dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--blue);align-self:center}
-.t-done .dot{background:var(--gold);border-color:var(--gold)}
-.t-late .dot{border-color:var(--late);background:rgba(255,138,122,.25)}
-.tn{font-weight:500}
-.t-done .tn{color:var(--muted)}
-.tw{color:var(--muted);font-size:13px}
-.ts{font:600 14px/1 "Chakra Petch",sans-serif;white-space:nowrap;color:var(--muted)}
-.t-late .ts{color:var(--late)}
-.src{margin:12px 0 0;color:var(--muted);font-size:13px}
+  .cd-scroll {
+    position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%);
+    font-family: var(--font-display); font-size: .75rem; font-weight: 600; letter-spacing: .28em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .cd-scroll:hover { color: var(--gold); }
 
-.done-all{padding:40px 0}
-.done-all h1{margin:0;font:700 clamp(38px,8vw,68px)/1.05 "Chakra Petch",sans-serif;color:var(--gold)}
-.done-all p{color:var(--muted)}
+  .cd-done h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 8vw, 4.5rem); color: var(--gold); text-transform: uppercase; line-height: 1.05; }
+  .cd-done p { color: var(--muted); margin-top: 12px; }
 
-section.list{margin-top:40px;background:var(--navy);border:1px solid var(--line);border-radius:12px;padding:18px 20px 6px}
-section.list h2{margin:0;padding-bottom:10px;border-bottom:1px solid var(--line);font:700 24px/1 "Chakra Petch",sans-serif;color:var(--gold)}
-ol.run{list-style:none;margin:0;padding:0}
-ol.run li{display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:baseline;padding:14px 8px;border-bottom:1px solid var(--line)}
-ol.run li:last-child{border-bottom:0}
-.idx{font:600 20px/1 "Chakra Petch",sans-serif;color:var(--blue);font-variant-numeric:tabular-nums}
-.nm{font-weight:600;font-size:17px}
-.dt{color:var(--muted);font-size:14px}
-.st{font:600 16px/1 "Chakra Petch",sans-serif;white-space:nowrap;color:var(--muted)}
-li.past .nm{text-decoration:line-through;color:var(--muted)}
-li.now{box-shadow:inset 3px 0 0 var(--gold);background:rgba(255,182,18,.07);border-radius:4px}
-li.now .idx,li.now .st{color:var(--gold)}
+  /* ---- below the fold: checklist + milestone list ---- */
+  .cd-more { padding: 64px 0 84px; }
+  .cd-panel { background: var(--panel); border: 1px solid var(--line-blue); padding: 22px 24px; }
+  .cd-panel + .cd-panel { margin-top: 32px; }
+  .cd-panel h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--gold); line-height: 1.1; }
+  .cd-gate-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .cd-gate-sum { color: var(--muted); font-size: .95rem; }
+  .cd-gate-sum strong { color: var(--ink); }
+  .cd-late-n { color: var(--late); font-weight: 600; }
+  .cd-gate-bar { height: 6px; background: var(--bg); margin: 14px 0 6px; overflow: hidden; }
+  .cd-gate-bar span { display: block; height: 100%; background: var(--gold); }
+  ul.cd-tasks { list-style: none; max-height: 460px; overflow: auto; }
+  ul.cd-tasks li { display: grid; grid-template-columns: 14px 1fr auto; gap: 12px; align-items: baseline; padding: 11px 2px; border-bottom: 1px solid var(--line-blue); }
+  ul.cd-tasks li:last-child { border-bottom: 0; }
+  .cd-dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--blue-bright); align-self: center; }
+  .t-done .cd-dot { background: var(--gold); border-color: var(--gold); }
+  .t-late .cd-dot { border-color: var(--late); background: rgba(255,138,122,.25); }
+  .cd-tn { font-weight: 500; }
+  .t-done .cd-tn { color: var(--muted); }
+  .cd-tw { color: var(--muted); font-size: .82rem; }
+  .cd-ts { font: 600 .88rem/1 var(--font-display); white-space: nowrap; color: var(--muted); }
+  .t-late .cd-ts { color: var(--late); }
+  .cd-src { margin-top: 12px; color: var(--muted); font-size: .82rem; }
 
-@media (max-width:620px){
-  .sep{display:none}
-  .digits{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-  .num{font-size:clamp(34px,11vw,60px)}
-  .lab{font-size:12px}
-  ol.run li{grid-template-columns:30px 1fr} ol.run li .st{grid-column:2}
-  ul.tasks li{grid-template-columns:14px 1fr} ul.tasks li .ts{grid-column:2}
-}
-</style>
+  .cd-panel.cd-list h2 { padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  ol.cd-run { list-style: none; }
+  ol.cd-run li { display: grid; grid-template-columns: 40px 1fr auto; gap: 14px; align-items: baseline; padding: 14px 8px; border-bottom: 1px solid var(--line-blue); }
+  ol.cd-run li:last-child { border-bottom: 0; }
+  .cd-idx { font: 600 1.2rem/1 var(--font-display); color: var(--blue-bright); font-variant-numeric: tabular-nums; }
+  .cd-nm { font-weight: 600; font-size: 1.05rem; }
+  .cd-dt { color: var(--muted); font-size: .88rem; }
+  .cd-st { font: 600 1rem/1 var(--font-display); white-space: nowrap; color: var(--muted); }
+  li.past .cd-nm { text-decoration: line-through; color: var(--muted); }
+  li.now { box-shadow: inset 3px 0 0 var(--gold); background: rgba(255,182,18,.07); }
+  li.now .cd-idx, li.now .cd-st { color: var(--gold); }
+
+  @media (max-width: 620px) {
+    .cd-inner .eyebrow::after { display: none; }
+    .cd-inner .eyebrow { letter-spacing: .2em; }
+    .cd-unit { max-width: none; }
+    .cd-sep { display: none; }
+    .cd-digits { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 420px; margin-left: auto; margin-right: auto; }
+    .cd-num { font-size: clamp(3rem, 18vw, 5rem); }
+    .cd-lab { font-size: .7rem; }
+    ol.cd-run li { grid-template-columns: 30px 1fr; } ol.cd-run li .cd-st { grid-column: 2; }
+    ul.cd-tasks li { grid-template-columns: 14px 1fr; } ul.cd-tasks li .cd-ts { grid-column: 2; }
+  }
+  @media (prefers-reduced-motion: reduce) { .cd-stage.flip .cd-inner { animation: none; } }
+  </style>
 </head>
 <body>
-<header class="site-head">
-  <div class="wrap">
-    <a href="index.html"><img src="assets/img/logo.png" alt="Golden Bear Racing"></a>
-    <nav aria-label="Site">
-      <a href="index.html">Home</a>
-      <a href="index.html#gbr4">GBR4</a>
-      <a href="history.html">Team History</a>
-      <a href="team.html">Meet the Team</a>
-      <a href="sponsors.html">Sponsors</a>
-      <a href="deadlines.html" aria-current="page">Deadlines</a>
-    </nav>
-  </div>
+
+<header class="site-header">
+  <nav class="nav-bar">
+    <a class="brand" href="index.html" aria-label="Golden Bear Racing - home">
+      <img class="brand-mark" src="assets/img/logo.png" alt="Golden Bear Racing" width="1100" height="606">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#gbr4">GBR4</a></li>
+      <li><a href="history.html">Team History</a></li>
+      <li><a href="team.html">Meet the Team</a></li>
+      <li><a href="sponsors.html">Sponsors</a></li>
+      <li><a href="sponsors.html#support" class="nav-cta">Support the Team</a></li>
+    </ul>
+  </nav>
 </header>
-<main class="wrap" id="app"></main>
+
+<main id="app"></main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2>Golden Bear Racing</h2>
+        <p>Western New England University&rsquo;s Baja SAE team. Since 2014, our students have designed, built, tested, and raced off-road vehicles from the ground up.</p>
+        <a class="footer-mail" href="mailto:wnebajaclub@gmail.com">wnebajaclub@gmail.com</a>
+      </div>
+      <div>
+        <h2>Site</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#gbr4">Project GBR4</a></li>
+          <li><a href="history.html">Team History</a></li>
+          <li><a href="team.html">Meet the Team</a></li>
+          <li><a href="sponsors.html">Sponsors</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Follow Us</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/wneu_goldenbearracing?igsh=emprNG42aHRyY2lj" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/share/1DJ4coKc4e/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://youtube.com/@wnegoldenbearracing?si=eg27HeNcwPRUsQEf" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/goldenbearracing-admin?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Golden Bear Racing &middot; Western New England University Baja SAE</span>
+      <span>Springfield, Massachusetts</span>
+    </div>
+  </div>
+</footer>
+
 <script>
 /* ============================================================
    EDIT HERE — the deadline list
    - "when": due date and time with the Eastern offset
      (-04:00 before Nov 1, -05:00 from Nov 1 to mid-March)
+   - "done": true (optional) marks a milestone complete, even
+     before its date. Past dates also count as done.
    - "tasks" (optional): checklist shown while that deadline
      is counting down. Set "done": true when a task is finished.
    ============================================================ */
@@ -140,7 +228,8 @@ const DEADLINES =
   {
     "id": "m3",
     "name": "PDR Cycle Complete",
-    "when": "2026-09-20T23:59:00-04:00"
+    "when": "2026-09-20T23:59:00-04:00",
+    "done": true
   },
   {
     "id": "m4",
@@ -536,8 +625,13 @@ const DEADLINES =
 
 (function(){
 const app = document.getElementById('app');
+const header = document.querySelector('.site-header');
+const setHdr = () => { if (header) document.documentElement.style.setProperty('--hdr', header.offsetHeight + 'px'); };
+setHdr(); window.addEventListener('resize', setHdr);
+
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const pad = n => String(n).padStart(2,'0');
+const isDone = (d, now) => d.done === true || new Date(d.when) <= now;
 const list = DEADLINES.filter(d => !isNaN(new Date(d.when))).sort((a,b) => new Date(a.when) - new Date(b.when));
 const fmt = d => new Date(d).toLocaleString(undefined,{weekday:'short',month:'short',day:'numeric',year:new Date(d).getFullYear()!==new Date().getFullYear()?'numeric':undefined,hour:'numeric',minute:'2-digit'});
 const short = d => new Date(d).toLocaleDateString(undefined,{month:'short',day:'numeric'});
@@ -560,45 +654,53 @@ function gateHTML(cur, now){
   const items = sorted.map(t => {
     const st = stateOf(t);
     const label = st === 'done' ? 'Done' : st === 'late' ? 'Overdue since ' + short(t.due) : 'Due ' + short(t.due);
-    const who = SHOW_TASK_OWNERS && t.who ? `<div class="tw">${esc(t.who)}</div>` : '';
-    return `<li class="t-${st}"><span class="dot" aria-hidden="true"></span><div><div class="tn">${esc(t.name)}</div>${who}</div><span class="ts">${label}</span></li>`;
+    const who = SHOW_TASK_OWNERS && t.who ? `<div class="cd-tw">${esc(t.who)}</div>` : '';
+    return `<li class="t-${st}"><span class="cd-dot" aria-hidden="true"></span><div><div class="cd-tn">${esc(t.name)}</div>${who}</div><span class="cd-ts">${label}</span></li>`;
   }).join('');
-  return `<div class="gate">
-    <div class="gate-head"><h2>What has to happen first</h2>
-      <p class="gate-sum"><strong>${done} of ${tasks.length}</strong> done${late ? `, <span class="late-n">${late} overdue</span>` : ''}</p></div>
-    <div class="gate-bar"><span style="width:${(done/tasks.length*100).toFixed(1)}%"></span></div>
-    <ul class="tasks">${items}</ul>
-    <p class="src">Task status as of ${esc(TASKS_UPDATED)}.</p>
+  return `<div class="cd-panel">
+    <div class="cd-gate-head"><h2>What has to happen first: ${esc(cur.name)}</h2>
+      <p class="cd-gate-sum"><strong>${done} of ${tasks.length}</strong> done${late ? `, <span class="cd-late-n">${late} overdue</span>` : ''}</p></div>
+    <div class="cd-gate-bar"><span style="width:${(done/tasks.length*100).toFixed(1)}%"></span></div>
+    <ul class="cd-tasks">${items}</ul>
+    <p class="cd-src">Task status as of ${esc(TASKS_UPDATED)}.</p>
   </div>`;
 }
 
 let currentId;
 function render(flip){
   const now = Date.now();
-  const idx = list.findIndex(d => new Date(d.when) > now);
+  const idx = list.findIndex(d => !isDone(d, now));
   const cur = idx >= 0 ? list[idx] : null;
   currentId = cur ? cur.id : null;
-  const hero = cur ? `<section class="hero${flip ? ' flip' : ''}" id="hero" aria-live="polite">
-      <h1>${esc(cur.name)}</h1>
-      <p class="due">Due ${esc(fmt(cur.when))}</p>
-      <div class="digits" role="timer" aria-label="Time remaining">
-        <div class="unit"><span class="num" id="n-d">0</span><span class="lab">days</span></div><span class="sep">:</span>
-        <div class="unit"><span class="num" id="n-h">00</span><span class="lab">hours</span></div><span class="sep">:</span>
-        <div class="unit"><span class="num" id="n-m">00</span><span class="lab">min</span></div><span class="sep">:</span>
-        <div class="unit"><span class="num" id="n-s">00</span><span class="lab">sec</span></div>
-      </div>
-      <div class="gauge"><div class="track"><div class="fill" id="fill"></div></div><p id="gauge-text"></p></div>
-      ${gateHTML(cur, now)}
-    </section>`
-    : `<section class="done-all"><h1>Every deadline is behind us.</h1><p>New deadlines for next season are on the way.</p></section>`;
+  const inner = cur ? `<div class="wrap cd-inner">
+        <p class="eyebrow">Next GBR4 milestone</p>
+        <h1 class="cd-title">${esc(cur.name)}</h1>
+        <p class="cd-due">Due ${esc(fmt(cur.when))}</p>
+        <div class="cd-digits" role="timer" aria-label="Time remaining">
+          <div class="cd-unit"><span class="cd-num" id="n-d">0</span><span class="cd-lab">Days</span></div><span class="cd-sep">:</span>
+          <div class="cd-unit"><span class="cd-num" id="n-h">00</span><span class="cd-lab">Hours</span></div><span class="cd-sep">:</span>
+          <div class="cd-unit"><span class="cd-num" id="n-m">00</span><span class="cd-lab">Min</span></div><span class="cd-sep">:</span>
+          <div class="cd-unit"><span class="cd-num" id="n-s">00</span><span class="cd-lab">Sec</span></div>
+        </div>
+        <div class="cd-gauge"><div class="cd-track"><div class="cd-fill" id="fill"></div></div><p id="gauge-text"></p></div>
+        <p class="cd-clock" id="clocknow"></p>
+      </div>`
+    : `<div class="wrap cd-inner cd-done"><h1>Every deadline is behind us.</h1><p>New deadlines for next season are on the way.</p></div>`;
   const rows = list.map((d,i) => {
     const t = new Date(d.when) - now;
-    const cls = t <= 0 ? 'past' : (d.id === currentId ? 'now' : '');
-    const st = t <= 0 ? 'Done' : (d.id === currentId ? 'On the clock' : relative(t));
-    return `<li class="${cls}"><span class="idx">${i+1}</span><div><div class="nm">${esc(d.name)}</div><div class="dt">${esc(fmt(d.when))}</div></div><span class="st">${st}</span></li>`;
+    const cls = isDone(d, now) ? 'past' : (d.id === currentId ? 'now' : '');
+    const st = isDone(d, now) ? 'Done' : (d.id === currentId ? 'On the clock' : relative(t));
+    return `<li class="${cls}"><span class="cd-idx">${i+1}</span><div><div class="cd-nm">${esc(d.name)}</div><div class="cd-dt">${esc(fmt(d.when))}</div></div><span class="cd-st">${st}</span></li>`;
   }).join('');
-  app.innerHTML = `<p class="clocknow" id="clocknow"></p>${hero}
-    <section class="list"><h2>GBR4 build milestones</h2><ol class="run">${rows}</ol></section>`;
+  app.innerHTML = `<section class="cd-stage${flip ? ' flip' : ''}" id="hero" aria-live="polite">
+      <div class="cd-bg" aria-hidden="true"></div>
+      ${inner}
+      <a class="cd-scroll" href="#milestones">&#9660; All milestones</a>
+    </section>
+    <section class="cd-more" id="milestones"><div class="wrap">
+      ${cur ? gateHTML(cur, now) : ''}
+      <div class="cd-panel cd-list"><h2>GBR4 build milestones</h2><ol class="cd-run">${rows}</ol></div>
+    </div></section>`;
   tick();
 }
 
@@ -606,7 +708,7 @@ function tick(){
   const now = Date.now();
   const cn = document.getElementById('clocknow');
   if (cn) cn.textContent = new Date(now).toLocaleString(undefined,{weekday:'long',month:'long',day:'numeric',hour:'numeric',minute:'2-digit',second:'2-digit'});
-  const idx = list.findIndex(d => new Date(d.when) > now);
+  const idx = list.findIndex(d => !isDone(d, now));
   if ((idx >= 0 ? list[idx].id : null) !== currentId) { render(true); return; }
   if (idx < 0) return;
   const end = new Date(list[idx].when).getTime();
@@ -626,5 +728,6 @@ setInterval(tick, 1000);
 document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
 })();
 </script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
