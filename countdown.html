@@ -211,7 +211,18 @@
    ============================================================ */
 const SHOW_TASKS = true;        // false hides the checklist
 const SHOW_TASK_OWNERS = true;  // false hides names on tasks
-const TASKS_UPDATED = "Sep 23, 2026";
+const TASKS_UPDATED = "Sep 23, 2026";   // shown only when Planner isn't synced yet
+
+/* Microsoft Planner sync
+   A Power Automate flow writes tasks.json in this repo from the team's
+   Planner plan ("Vehicle Deadlines"). A bucket named like a milestone
+   below ("Rolling Car" or "Rolling Car - Deadlines") replaces that
+   milestone's "tasks" list; tasks are done when completed in Planner.
+   A task named exactly like the milestone (e.g. "Rolling Car") marks the
+   milestone itself done when it's completed.
+   Until tasks.json has Planner data, the task lists below are used. */
+const PLANNER_FILE = "tasks.json";
+const PLANNER_REFRESH_MIN = 5;   // how often an open page re-checks for updates
 
 const DEADLINES = 
 [
@@ -631,8 +642,63 @@ setHdr(); window.addEventListener('resize', setHdr);
 
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const pad = n => String(n).padStart(2,'0');
-const isDone = (d, now) => d.done === true || new Date(d.when) <= now;
+const isDone = (d, now) => d.done === true || d._plannerDone === true || new Date(d.when) <= now;
 const list = DEADLINES.filter(d => !isNaN(new Date(d.when))).sort((a,b) => new Date(a.when) - new Date(b.when));
+let plannerOn = false, plannerStamp = '';
+const norm = x => String(x || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+// Planner stores a due *date* as midnight UTC, which would show as the day
+// before in Eastern time. Treat it as 11:59 PM local on that calendar day.
+function plannerDue(v){
+  if (!v) return null;
+  const m = /^(\d{4})-(\d{2})-(\d{2})T00:00:00(?:\.0+)?Z$/.exec(v);
+  return m ? new Date(+m[1], +m[2]-1, +m[3], 23, 59).toISOString() : v;
+}
+function assigneeIds(a){
+  if (!a) return [];
+  if (Array.isArray(a)) return a.map(x => typeof x === 'string' ? x : (x.userId || x.id || x.key)).filter(Boolean);
+  if (typeof a === 'object') return Object.keys(a);
+  return String(a).split(/[;,]/).map(x => x.trim()).filter(Boolean);
+}
+function applyPlanner(data){
+  if (!data || data.source !== 'planner' || !Array.isArray(data.tasks) || !Array.isArray(data.buckets)) return false;
+  const people = {};
+  (data.people || []).forEach(u => { if (u && u.id) people[u.id] = u.displayName || u.name || ''; });
+  const byBucket = {};
+  data.tasks.forEach(t => (byBucket[t.bucketId] = byBucket[t.bucketId] || []).push(t));
+  // A bucket belongs to a milestone when its name is the milestone name,
+  // optionally followed by more words: "Rolling Car" or "Rolling Car - Deadlines".
+  const bucketMatches = (b, d) => { const bn = norm(b.name), dn = norm(d.name); return bn === dn || bn.startsWith(dn + ' '); };
+  let matched = 0;
+  list.forEach(d => {
+    if (!(d._htmlTasks)) d._htmlTasks = d.tasks;
+    d._plannerDone = false;
+    const bucket = data.buckets.find(b => bucketMatches(b, d));
+    if (!bucket) { d.tasks = d._htmlTasks; return; }
+    matched++;
+    // A task named exactly like the milestone is the milestone itself:
+    // completing it in Planner marks the milestone done; it isn't listed as a task.
+    const inBucket = byBucket[bucket.id] || [];
+    const self = inBucket.filter(t => norm(t.title) === norm(d.name));
+    if (self.length && self.every(t => Number(t.percentComplete) === 100)) d._plannerDone = true;
+    d.tasks = inBucket.filter(t => norm(t.title) !== norm(d.name)).map(t => ({
+      name: t.title,
+      who: assigneeIds(t.assignments).map(k => people[k]).filter(Boolean).join(', '),
+      due: plannerDue(t.dueDateTime),
+      done: Number(t.percentComplete) === 100
+    }));
+  });
+  data.buckets.forEach(b => { if (!list.some(d => bucketMatches(b, d))) console.warn('Planner bucket has no matching milestone:', b.name); });
+  plannerStamp = data.updated || '';
+  return matched > 0;
+}
+async function loadPlanner(){
+  try {
+    const res = await fetch(PLANNER_FILE + '?t=' + Date.now(), {cache: 'no-store'});
+    if (!res.ok) return;
+    const on = applyPlanner(await res.json());
+    if (on || plannerOn) { plannerOn = on; render(false); }
+  } catch (e) { /* keep the HTML task lists */ }
+}
 const fmt = d => new Date(d).toLocaleString(undefined,{weekday:'short',month:'short',day:'numeric',year:new Date(d).getFullYear()!==new Date().getFullYear()?'numeric':undefined,hour:'numeric',minute:'2-digit'});
 const short = d => new Date(d).toLocaleDateString(undefined,{month:'short',day:'numeric'});
 function relative(ms){
@@ -646,14 +712,14 @@ function relative(ms){
 function gateHTML(cur, now){
   const tasks = SHOW_TASKS && Array.isArray(cur.tasks) ? cur.tasks : [];
   if (!tasks.length) return '';
-  const stateOf = t => t.done ? 'done' : (new Date(t.due) < now ? 'late' : 'open');
+  const stateOf = t => t.done ? 'done' : (t.due && new Date(t.due) < now ? 'late' : 'open');
   const order = {late:0, open:1, done:2};
-  const sorted = tasks.slice().sort((a,b) => order[stateOf(a)] - order[stateOf(b)] || new Date(a.due) - new Date(b.due));
+  const sorted = tasks.slice().sort((a,b) => order[stateOf(a)] - order[stateOf(b)] || (a.due ? new Date(a.due) : Infinity) - (b.due ? new Date(b.due) : Infinity));
   const done = tasks.filter(t => t.done).length;
   const late = tasks.filter(t => stateOf(t) === 'late').length;
   const items = sorted.map(t => {
     const st = stateOf(t);
-    const label = st === 'done' ? 'Done' : st === 'late' ? 'Overdue since ' + short(t.due) : 'Due ' + short(t.due);
+    const label = st === 'done' ? 'Done' : st === 'late' ? 'Overdue since ' + short(t.due) : (t.due ? 'Due ' + short(t.due) : 'No due date');
     const who = SHOW_TASK_OWNERS && t.who ? `<div class="cd-tw">${esc(t.who)}</div>` : '';
     return `<li class="t-${st}"><span class="cd-dot" aria-hidden="true"></span><div><div class="cd-tn">${esc(t.name)}</div>${who}</div><span class="cd-ts">${label}</span></li>`;
   }).join('');
@@ -662,7 +728,7 @@ function gateHTML(cur, now){
       <p class="cd-gate-sum"><strong>${done} of ${tasks.length}</strong> done${late ? `, <span class="cd-late-n">${late} overdue</span>` : ''}</p></div>
     <div class="cd-gate-bar"><span style="width:${(done/tasks.length*100).toFixed(1)}%"></span></div>
     <ul class="cd-tasks">${items}</ul>
-    <p class="cd-src">Task status as of ${esc(TASKS_UPDATED)}.</p>
+    <p class="cd-src">${plannerOn ? 'Live from Microsoft Planner' + (plannerStamp ? ' · synced ' + esc(new Date(plannerStamp).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})) : '') : 'Task status as of ' + esc(TASKS_UPDATED)}.</p>
   </div>`;
 }
 
@@ -716,14 +782,30 @@ function tick(){
   const set = (id,v) => { const el = document.getElementById(id); if (el && el.textContent !== v) el.textContent = v; };
   set('n-d', String(Math.floor(s/86400))); set('n-h', pad(Math.floor(s%86400/3600))); set('n-m', pad(Math.floor(s%3600/60))); set('n-s', pad(s%60));
   document.getElementById('hero').classList.toggle('urgent', left < 86400000);
-  const prev = idx > 0 ? list[idx-1] : null;
-  const start = prev ? new Date(prev.when).getTime() : end - 30*86400000;
-  const frac = Math.min(1, Math.max(0, (now - start) / (end - start)));
+  const cur = list[idx];
+  const tasks = SHOW_TASKS && Array.isArray(cur.tasks) ? cur.tasks : [];
+  let frac, text;
+  if (tasks.length) {
+    // Bar = how much of this milestone's work is checked off
+    const done = tasks.filter(t => t.done).length;
+    frac = done / tasks.length;
+    text = done === tasks.length
+      ? `All ${tasks.length} tasks done for ${cur.name}`
+      : `${cur.name}: ${done} of ${tasks.length} tasks done`;
+  } else {
+    // No task list: bar = time used between the last milestone and this one
+    const prev = idx > 0 ? list[idx-1] : null;
+    const start = prev ? new Date(prev.when).getTime() : end - 30*86400000;
+    frac = Math.min(1, Math.max(0, (now - start) / (end - start)));
+    text = `${Math.floor(frac*100)}% of the time until ${cur.name} has passed`;
+  }
   document.getElementById('fill').style.width = (frac*100).toFixed(2) + '%';
-  document.getElementById('gauge-text').textContent = prev ? `${Math.floor(frac*100)}% of the way from ${prev.name}` : `${Math.floor(frac*100)}% through the final 30 days`;
+  document.getElementById('gauge-text').textContent = text;
 }
 
 render(false);
+loadPlanner();
+setInterval(loadPlanner, PLANNER_REFRESH_MIN * 60000);
 setInterval(tick, 1000);
 document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
 })();
