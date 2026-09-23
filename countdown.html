@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#04070d">
+<title>Deadlines — Golden Bear Racing</title>
+<meta name="description" content="Countdown to Golden Bear Racing's next GBR4 build milestone.">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Brand tokens, same values as assets/css/style.css */
+:root{
+  --gold:#FFB612; --blue:#2A66B2; --navy:#0B1A2E; --bg:#04070D;
+  --ink:#F2F5F9; --muted:#8FA0B8; --line:#1C2E48; --late:#FF8A7A;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 Inter,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(ellipse 90% 60% at 50% -10%,rgba(42,102,178,.22),transparent 70%);background-repeat:no-repeat}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+/* Header: swap this block for the site's shared header if you prefer */
+.site-head{border-bottom:1px solid var(--line)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+.site-head img{height:44px;width:auto;display:block}
+.site-head nav{display:flex;gap:20px;flex-wrap:wrap}
+.site-head nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:15px}
+.site-head nav a:hover,.site-head nav a[aria-current]{color:var(--gold)}
+
+main{padding:36px 0 64px}
+.clocknow{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums;margin:0}
+.hero{padding:18px 0 30px}
+.hero h1{margin:0;font:700 clamp(32px,6vw,56px)/1.05 "Chakra Petch","Arial Narrow",sans-serif;color:var(--gold);max-width:22ch}
+.due{margin:10px 0 0;color:var(--muted);font-size:17px}
+.digits{display:flex;align-items:flex-start;gap:clamp(4px,1.4vw,14px);margin-top:28px;font-family:"Chakra Petch","Arial Narrow",sans-serif;font-variant-numeric:tabular-nums}
+.unit{display:flex;flex-direction:column;align-items:center;background:var(--navy);border:1px solid var(--line);border-radius:10px;padding:clamp(8px,2vw,18px) clamp(8px,2vw,20px) 12px;min-width:0}
+.num{font-weight:600;font-size:clamp(46px,12vw,140px);line-height:.9}
+.lab{font:500 14px/1 Inter,sans-serif;color:var(--muted);margin-top:10px}
+.sep{font-weight:600;font-size:clamp(36px,9vw,110px);line-height:1.1;color:var(--gold);align-self:center}
+.hero.urgent .num{color:var(--gold)}
+.hero.flip{animation:flip .9s cubic-bezier(.2,.8,.2,1)}
+@keyframes flip{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hero.flip{animation:none}}
+
+.gauge{margin-top:28px}
+.track{position:relative;height:10px;background:var(--navy);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.fill{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,var(--blue),var(--gold));width:0}
+.gauge p{margin:8px 0 0;color:var(--muted);font-size:14px}
+
+.gate{margin-top:34px;background:var(--navy);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.gate-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.gate h2{margin:0;font:700 22px/1.1 "Chakra Petch",sans-serif}
+.gate-sum{margin:0;color:var(--muted);font-size:15px}
+.gate-sum strong{color:var(--ink)}
+.late-n{color:var(--late);font-weight:600}
+.gate-bar{height:6px;background:var(--bg);border-radius:3px;margin:12px 0 6px;overflow:hidden}
+.gate-bar span{display:block;height:100%;background:var(--gold)}
+ul.tasks{list-style:none;margin:0;padding:0;max-height:420px;overflow:auto}
+ul.tasks li{display:grid;grid-template-columns:14px 1fr auto;gap:12px;align-items:baseline;padding:11px 2px;border-bottom:1px solid var(--line)}
+ul.tasks li:last-child{border-bottom:0}
+.dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--blue);align-self:center}
+.t-done .dot{background:var(--gold);border-color:var(--gold)}
+.t-late .dot{border-color:var(--late);background:rgba(255,138,122,.25)}
+.tn{font-weight:500}
+.t-done .tn{color:var(--muted)}
+.tw{color:var(--muted);font-size:13px}
+.ts{font:600 14px/1 "Chakra Petch",sans-serif;white-space:nowrap;color:var(--muted)}
+.t-late .ts{color:var(--late)}
+.src{margin:12px 0 0;color:var(--muted);font-size:13px}
+
+.done-all{padding:40px 0}
+.done-all h1{margin:0;font:700 clamp(38px,8vw,68px)/1.05 "Chakra Petch",sans-serif;color:var(--gold)}
+.done-all p{color:var(--muted)}
+
+section.list{margin-top:40px;background:var(--navy);border:1px solid var(--line);border-radius:12px;padding:18px 20px 6px}
+section.list h2{margin:0;padding-bottom:10px;border-bottom:1px solid var(--line);font:700 24px/1 "Chakra Petch",sans-serif;color:var(--gold)}
+ol.run{list-style:none;margin:0;padding:0}
+ol.run li{display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:baseline;padding:14px 8px;border-bottom:1px solid var(--line)}
+ol.run li:last-child{border-bottom:0}
+.idx{font:600 20px/1 "Chakra Petch",sans-serif;color:var(--blue);font-variant-numeric:tabular-nums}
+.nm{font-weight:600;font-size:17px}
+.dt{color:var(--muted);font-size:14px}
+.st{font:600 16px/1 "Chakra Petch",sans-serif;white-space:nowrap;color:var(--muted)}
+li.past .nm{text-decoration:line-through;color:var(--muted)}
+li.now{box-shadow:inset 3px 0 0 var(--gold);background:rgba(255,182,18,.07);border-radius:4px}
+li.now .idx,li.now .st{color:var(--gold)}
+
+@media (max-width:620px){
+  .sep{display:none}
+  .digits{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .num{font-size:clamp(34px,11vw,60px)}
+  .lab{font-size:12px}
+  ol.run li{grid-template-columns:30px 1fr} ol.run li .st{grid-column:2}
+  ul.tasks li{grid-template-columns:14px 1fr} ul.tasks li .ts{grid-column:2}
+}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a href="index.html"><img src="assets/img/logo.png" alt="Golden Bear Racing"></a>
+    <nav aria-label="Site">
+      <a href="index.html">Home</a>
+      <a href="index.html#gbr4">GBR4</a>
+      <a href="history.html">Team History</a>
+      <a href="team.html">Meet the Team</a>
+      <a href="sponsors.html">Sponsors</a>
+      <a href="deadlines.html" aria-current="page">Deadlines</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap" id="app"></main>
+<script>
+/* ============================================================
+   EDIT HERE — the deadline list
+   - "when": due date and time with the Eastern offset
+     (-04:00 before Nov 1, -05:00 from Nov 1 to mid-March)
+   - "tasks" (optional): checklist shown while that deadline
+     is counting down. Set "done": true when a task is finished.
+   ============================================================ */
+const SHOW_TASKS = true;        // false hides the checklist
+const SHOW_TASK_OWNERS = true;  // false hides names on tasks
+const TASKS_UPDATED = "Sep 23, 2026";
+
+const DEADLINES = 
+[
+  {
+    "id": "m1",
+    "name": "CDR Cycle Complete",
+    "when": "2026-08-03T23:59:00-04:00"
+  },
+  {
+    "id": "m2",
+    "name": "Budget Referendum",
+    "when": "2026-09-04T23:59:00-04:00"
+  },
+  {
+    "id": "m3",
+    "name": "PDR Cycle Complete",
+    "when": "2026-09-20T23:59:00-04:00"
+  },
+  {
+    "id": "m4",
+    "name": "Rolling Car",
+    "when": "2026-09-30T23:59:00-04:00",
+    "tasks": [
+      {
+        "name": "Shock Tubes - Mounted",
+        "who": "Michael Lamb",
+        "due": "2026-09-23T23:59:00-04:00",
+        "done": true
+      },
+      {
+        "name": "Wheel Hubs/Wheel Side Axle - Mount Finalized",
+        "who": "Nicola Dimatteo",
+        "due": "2026-09-12T23:59:00-04:00",
+        "done": true
+      },
+      {
+        "name": "Lowers - Manufactured",
+        "who": "Johnathan Rodgers, Nathaniel Riviere",
+        "due": "2026-09-25T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Rear Arms - Manufactured",
+        "who": "Nathaniel Riviere",
+        "due": "2026-09-06T23:59:00-04:00",
+        "done": true
+      },
+      {
+        "name": "Suspension Hardware - Finalized/Delivered",
+        "who": "Nathaniel Riviere",
+        "due": "2026-09-25T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Radius Links - Finished (Manufactured/Ordered)",
+        "who": "Nathaniel Riviere",
+        "due": "2026-09-06T23:59:00-04:00",
+        "done": true
+      },
+      {
+        "name": "Wheel Hub/Drivetrain Hardware",
+        "who": "Nicola Dimatteo",
+        "due": "2026-09-25T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Wheel Hubs/Wheel Side Axle - Mounted",
+        "who": "Nicola Dimatteo",
+        "due": "2026-09-26T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Differentials - Mounted",
+        "who": "Charles Henriques, Michael Lamb, Nicola Dimatteo, Kaede Wood, Nathaniel Riviere",
+        "due": "2026-09-27T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Front Arms - Mounted",
+        "who": "Michael Lamb, Nathaniel Riviere",
+        "due": "2026-09-27T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Rear Arms - Mounted",
+        "who": "Michael Lamb, Nathaniel Riviere",
+        "due": "2026-09-27T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Knuckles - Mounted",
+        "who": "Nicola Dimatteo, Nathaniel Riviere",
+        "due": "2026-09-27T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Steering - Mounted",
+        "who": "Sebastian Matis",
+        "due": "2026-09-30T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Knuckles - Manufactured/Ordered",
+        "who": "Nicola Dimatteo, Nathaniel Riviere",
+        "due": "2026-09-30T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Springs Purchased",
+        "who": "Ahmed Elbakri, Charles Henriques, Nathaniel Riviere",
+        "due": "2026-08-31T23:59:00-04:00",
+        "done": true
+      }
+    ]
+  },
+  {
+    "id": "m5",
+    "name": "DDR Cycle Complete",
+    "when": "2026-10-16T23:59:00-04:00"
+  },
+  {
+    "id": "m6",
+    "name": "Benchmark Testing Complete",
+    "when": "2026-11-27T23:59:00-05:00"
+  },
+  {
+    "id": "m7",
+    "name": "Engine Startup",
+    "when": "2026-11-30T23:59:00-05:00",
+    "tasks": [
+      {
+        "name": "Fuel System - Purcahsed",
+        "who": "Ahmed Elbakri, Charles Henriques",
+        "due": "2026-08-31T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Brake Light - Purchased",
+        "who": "Ahmed Elbakri, Charles Henriques",
+        "due": "2026-08-31T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Engine - Purchased",
+        "who": "Ahmed Elbakri, Charles Henriques",
+        "due": "2026-09-08T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Differentials- Purchased",
+        "who": "Ahmed Elbakri, Nicola Dimatteo",
+        "due": "2026-08-31T23:59:00-04:00",
+        "done": true
+      },
+      {
+        "name": "CVT - Purchasing",
+        "who": "Ahmed Elbakri, Charles Henriques, Kaede Wood",
+        "due": "2026-09-08T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Steering Box - Finalized",
+        "who": "Sebastian Matis",
+        "due": "2026-09-05T23:59:00-04:00",
+        "done": true
+      },
+      {
+        "name": "Drive Shaft CV Joints - Purchased",
+        "who": "Ahmed Elbakri, Nicola Dimatteo",
+        "due": "2026-08-31T23:59:00-04:00",
+        "done": true
+      },
+      {
+        "name": "Axle - Manufactured/Assembled",
+        "who": "Nicola Dimatteo",
+        "due": "2026-10-11T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Engine Mount (Tubes Only) - Mounted",
+        "who": "Charles Henriques, Michael Lamb, Nicola Dimatteo, Kaede Wood",
+        "due": "2026-10-14T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Engine Mount Plate - Manufactured",
+        "who": "Charles Henriques, Nicola Dimatteo",
+        "due": "2026-10-21T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Engine Plate - Mounted",
+        "who": "Charles Henriques, Michael Lamb, Nicola Dimatteo, Kaede Wood",
+        "due": "2026-10-31T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Chain Drive - Mounted",
+        "who": "Michael Lamb, Nicola Dimatteo",
+        "due": "2026-10-25T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Rear Drive Train - Mounted",
+        "who": "Charles Henriques, Nicola Dimatteo, Kaede Wood",
+        "due": "2026-11-04T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Front Drive Train - Mounted",
+        "who": "Michael Lamb, Nicola Dimatteo",
+        "due": "2026-11-14T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Front Diff Input Shaft - Mounted",
+        "who": "Logan Keenan, Nicola Dimatteo",
+        "due": "2026-10-18T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Driveshaft Joints - Manufactured",
+        "who": "Nicola Dimatteo",
+        "due": "2026-11-11T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Driveshaft - Mounted",
+        "who": "Logan Keenan, Nicola Dimatteo",
+        "due": "2026-11-15T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Fuel Tank - Mounted",
+        "who": "Charles Henriques",
+        "due": "2026-10-24T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "E-Stops - Mounted",
+        "who": "Charles Henriques, Michael Lamb, Logan Keenan",
+        "due": "2026-11-25T23:59:00-05:00",
+        "done": false
+      }
+    ]
+  },
+  {
+    "id": "m8",
+    "name": "First Drive",
+    "when": "2026-12-07T23:59:00-05:00",
+    "tasks": [
+      {
+        "name": "Brake Components - Purchased",
+        "who": "Shadiel Marte Rivera, Ahmed Elbakri",
+        "due": "2026-09-03T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Steering Column - Manufactured",
+        "who": "Sebastian Matis",
+        "due": "2026-11-01T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Steering Column - Mounted",
+        "who": "Sebastian Matis, Michael Lamb",
+        "due": "2026-11-07T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Steering Wheel - Purchased",
+        "who": "Sebastian Matis, Brandon Lang, Logan Keenan",
+        "due": "2026-11-01T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Seat - Finialized",
+        "who": "Logan Keenan",
+        "due": "2026-10-15T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Seat - Ordered",
+        "who": "Logan Keenan",
+        "due": "2026-10-30T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Seat - Mounted",
+        "who": "Michael Lamb, Logan Keenan",
+        "due": "2026-11-09T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Seatbelt - Purcahsed",
+        "who": "Ahmed Elbakri, Logan Keenan",
+        "due": "2026-09-08T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Seat Belt - Mounted",
+        "who": "Michael Lamb, Logan Keenan",
+        "due": "2026-11-18T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Brake Light Circut - Mounted",
+        "who": "Shadiel Marte Rivera, Charles Henriques, Michael Lamb, Logan Keenan",
+        "due": "2026-11-30T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Brakes (Calipers/Rotors)- Mounted",
+        "who": "Shadiel Marte Rivera",
+        "due": "2026-11-16T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Pedals - Manufactured",
+        "who": "Shadiel Marte Rivera",
+        "due": "2026-10-04T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Pedals and Hardstop - Mounted",
+        "who": "Shadiel Marte Rivera, Michael Lamb, Logan Keenan",
+        "due": "2026-11-30T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Fire Wall - Manufactured",
+        "who": "Michael Lamb, Logan Keenan",
+        "due": "2026-11-16T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Fire Wall - Mounted",
+        "who": "Michael Lamb, Logan Keenan",
+        "due": "2026-11-30T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Headrest - Mounted",
+        "who": "Brandon Lang, Logan Keenan",
+        "due": "2026-12-04T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Body Panels - Manufactuerd",
+        "who": "Brandon Lang, Logan Keenan",
+        "due": "2026-11-25T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Body Panels - Mounted",
+        "who": "Brandon Lang, Michael Lamb",
+        "due": "2026-12-07T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Brake Cylinder/Reservoirs - Mounted",
+        "who": "Shadiel Marte Rivera",
+        "due": "2026-12-05T23:59:00-05:00",
+        "done": false
+      }
+    ]
+  },
+  {
+    "id": "m9",
+    "name": "Winter Fest Ready",
+    "when": "2026-12-18T23:59:00-05:00"
+  },
+  {
+    "id": "m10",
+    "name": "Winter Fest",
+    "when": "2027-01-01T09:00:00-05:00"
+  },
+  {
+    "id": "m11",
+    "name": "Post-Winter Fest Teardown",
+    "when": "2027-02-02T23:59:00-05:00"
+  },
+  {
+    "id": "m12",
+    "name": "All Test Data Complete",
+    "when": "2027-03-26T23:59:00-04:00"
+  },
+  {
+    "id": "m13",
+    "name": "Competition Design Freeze",
+    "when": "2027-04-01T23:59:00-04:00"
+  },
+  {
+    "id": "m14",
+    "name": "Competition Spares Complete",
+    "when": "2027-05-14T23:59:00-04:00"
+  },
+  {
+    "id": "m15",
+    "name": "Post-Freeze Reliability",
+    "when": "2027-06-01T23:59:00-04:00"
+  },
+  {
+    "id": "m16",
+    "name": "Baja SAE Competition (Tentative)",
+    "when": "2027-06-05T09:00:00-04:00"
+  }
+];
+/* ================= end of editable section ================= */
+
+(function(){
+const app = document.getElementById('app');
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pad = n => String(n).padStart(2,'0');
+const list = DEADLINES.filter(d => !isNaN(new Date(d.when))).sort((a,b) => new Date(a.when) - new Date(b.when));
+const fmt = d => new Date(d).toLocaleString(undefined,{weekday:'short',month:'short',day:'numeric',year:new Date(d).getFullYear()!==new Date().getFullYear()?'numeric':undefined,hour:'numeric',minute:'2-digit'});
+const short = d => new Date(d).toLocaleDateString(undefined,{month:'short',day:'numeric'});
+function relative(ms){
+  const days = Math.floor(ms/86400000);
+  if (days >= 2) return 'in ' + days + ' days';
+  const hrs = Math.floor(ms/3600000);
+  if (hrs >= 1) return 'in ' + hrs + (hrs === 1 ? ' hour' : ' hours');
+  return 'in ' + Math.max(1, Math.ceil(ms/60000)) + ' min';
+}
+
+function gateHTML(cur, now){
+  const tasks = SHOW_TASKS && Array.isArray(cur.tasks) ? cur.tasks : [];
+  if (!tasks.length) return '';
+  const stateOf = t => t.done ? 'done' : (new Date(t.due) < now ? 'late' : 'open');
+  const order = {late:0, open:1, done:2};
+  const sorted = tasks.slice().sort((a,b) => order[stateOf(a)] - order[stateOf(b)] || new Date(a.due) - new Date(b.due));
+  const done = tasks.filter(t => t.done).length;
+  const late = tasks.filter(t => stateOf(t) === 'late').length;
+  const items = sorted.map(t => {
+    const st = stateOf(t);
+    const label = st === 'done' ? 'Done' : st === 'late' ? 'Overdue since ' + short(t.due) : 'Due ' + short(t.due);
+    const who = SHOW_TASK_OWNERS && t.who ? `<div class="tw">${esc(t.who)}</div>` : '';
+    return `<li class="t-${st}"><span class="dot" aria-hidden="true"></span><div><div class="tn">${esc(t.name)}</div>${who}</div><span class="ts">${label}</span></li>`;
+  }).join('');
+  return `<div class="gate">
+    <div class="gate-head"><h2>What has to happen first</h2>
+      <p class="gate-sum"><strong>${done} of ${tasks.length}</strong> done${late ? `, <span class="late-n">${late} overdue</span>` : ''}</p></div>
+    <div class="gate-bar"><span style="width:${(done/tasks.length*100).toFixed(1)}%"></span></div>
+    <ul class="tasks">${items}</ul>
+    <p class="src">Task status as of ${esc(TASKS_UPDATED)}.</p>
+  </div>`;
+}
+
+let currentId;
+function render(flip){
+  const now = Date.now();
+  const idx = list.findIndex(d => new Date(d.when) > now);
+  const cur = idx >= 0 ? list[idx] : null;
+  currentId = cur ? cur.id : null;
+  const hero = cur ? `<section class="hero${flip ? ' flip' : ''}" id="hero" aria-live="polite">
+      <h1>${esc(cur.name)}</h1>
+      <p class="due">Due ${esc(fmt(cur.when))}</p>
+      <div class="digits" role="timer" aria-label="Time remaining">
+        <div class="unit"><span class="num" id="n-d">0</span><span class="lab">days</span></div><span class="sep">:</span>
+        <div class="unit"><span class="num" id="n-h">00</span><span class="lab">hours</span></div><span class="sep">:</span>
+        <div class="unit"><span class="num" id="n-m">00</span><span class="lab">min</span></div><span class="sep">:</span>
+        <div class="unit"><span class="num" id="n-s">00</span><span class="lab">sec</span></div>
+      </div>
+      <div class="gauge"><div class="track"><div class="fill" id="fill"></div></div><p id="gauge-text"></p></div>
+      ${gateHTML(cur, now)}
+    </section>`
+    : `<section class="done-all"><h1>Every deadline is behind us.</h1><p>New deadlines for next season are on the way.</p></section>`;
+  const rows = list.map((d,i) => {
+    const t = new Date(d.when) - now;
+    const cls = t <= 0 ? 'past' : (d.id === currentId ? 'now' : '');
+    const st = t <= 0 ? 'Done' : (d.id === currentId ? 'On the clock' : relative(t));
+    return `<li class="${cls}"><span class="idx">${i+1}</span><div><div class="nm">${esc(d.name)}</div><div class="dt">${esc(fmt(d.when))}</div></div><span class="st">${st}</span></li>`;
+  }).join('');
+  app.innerHTML = `<p class="clocknow" id="clocknow"></p>${hero}
+    <section class="list"><h2>GBR4 build milestones</h2><ol class="run">${rows}</ol></section>`;
+  tick();
+}
+
+function tick(){
+  const now = Date.now();
+  const cn = document.getElementById('clocknow');
+  if (cn) cn.textContent = new Date(now).toLocaleString(undefined,{weekday:'long',month:'long',day:'numeric',hour:'numeric',minute:'2-digit',second:'2-digit'});
+  const idx = list.findIndex(d => new Date(d.when) > now);
+  if ((idx >= 0 ? list[idx].id : null) !== currentId) { render(true); return; }
+  if (idx < 0) return;
+  const end = new Date(list[idx].when).getTime();
+  const left = end - now, s = Math.floor(left/1000);
+  const set = (id,v) => { const el = document.getElementById(id); if (el && el.textContent !== v) el.textContent = v; };
+  set('n-d', String(Math.floor(s/86400))); set('n-h', pad(Math.floor(s%86400/3600))); set('n-m', pad(Math.floor(s%3600/60))); set('n-s', pad(s%60));
+  document.getElementById('hero').classList.toggle('urgent', left < 86400000);
+  const prev = idx > 0 ? list[idx-1] : null;
+  const start = prev ? new Date(prev.when).getTime() : end - 30*86400000;
+  const frac = Math.min(1, Math.max(0, (now - start) / (end - start)));
+  document.getElementById('fill').style.width = (frac*100).toFixed(2) + '%';
+  document.getElementById('gauge-text').textContent = prev ? `${Math.floor(frac*100)}% of the way from ${prev.name}` : `${Math.floor(frac*100)}% through the final 30 days`;
+}
+
+render(false);
+setInterval(tick, 1000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
+})();
+</script>
+</body>
+</html>
