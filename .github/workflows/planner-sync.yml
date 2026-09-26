@@ -33,19 +33,38 @@ jobs:
       - name: Download Planner data from OneDrive
         run: |
           if [ -z "$TASKS_URL" ]; then echo "::error::Repository secret TASKS_URL is not set."; exit 1; fi
-          # OneDrive "Anyone" links redirect through a page that sets a cookie.
-          # Follow the redirects with a cookie jar, then ask the final address
-          # for the raw file (download=1) with the same cookies.
-          jar=/tmp/cookies.txt
-          final=$(curl -sS -L --retry 3 -c "$jar" -b "$jar" -o /dev/null -w '%{url_effective}' "$TASKS_URL")
-          case "$final" in *\?*) dl="$final&download=1" ;; *) dl="$final?download=1" ;; esac
-          code=$(curl -sS -L --retry 3 -c "$jar" -b "$jar" -o /tmp/planner.json -w '%{http_code} %{content_type}' "$dl")
-          echo "HTTP $code, $(wc -c < /tmp/planner.json) bytes"
-          echo "First bytes:"; head -c 200 /tmp/planner.json | tr -d '\r'; echo
-          if head -c 200 /tmp/planner.json | grep -qi '<html\|<!doctype'; then
-            echo "::error::OneDrive returned a web page, not the file. Check that the TASKS_URL link is an 'Anyone with the link' link and hasn't expired."
+          # OneDrive "Anyone" links can be downloaded a few different ways.
+          # Try each one and keep the first that returns the file, not a web page.
+          jar=/tmp/cookies.txt; out=/tmp/planner.json
+          add_dl() { case "$1" in *\?*) echo "$1&download=1" ;; *) echo "$1?download=1" ;; esac; }
+          fetch() {  # $1 = label, $2 = url
+            rm -f "$out"
+            code=$(curl -sS -L --max-redirs 10 -c "$jar" -b "$jar" -A "Mozilla/5.0 gbr-planner-sync" \
+                   -o "$out" -w '%{http_code} %{content_type}' "$2" 2>/dev/null || echo "000")
+            size=$(wc -c < "$out" 2>/dev/null || echo 0)
+            echo "[$1] HTTP $code, $size bytes"
+            [ "${code%% *}" = "200" ] && [ "$size" -gt 0 ] && ! head -c 400 "$out" | grep -qi '<html\|<!doctype'
+          }
+          # 1) the share link itself with download=1
+          fetch "share link + download=1" "$(add_dl "$TASKS_URL")" && ok=1
+          # 2) the guestaccess.aspx address the share link redirects to, with download=1
+          if [ -z "$ok" ]; then
+            loc=$(curl -sS -o /dev/null -D - -c "$jar" -b "$jar" "$TASKS_URL" | tr -d '\r' | awk 'tolower($1)=="location:"{print $2; exit}')
+            case "$loc" in /*) loc="$(echo "$TASKS_URL" | cut -d/ -f1-3)$loc" ;; esac
+            [ -n "$loc" ] && fetch "guestaccess + download=1" "$(add_dl "$loc")" && ok=1
+          fi
+          # 3) the SharePoint shares API
+          if [ -z "$ok" ]; then
+            enc=$(printf '%s' "$TASKS_URL" | base64 -w0 | tr '+/' '-_' | tr -d '=')
+            host=$(echo "$TASKS_URL" | cut -d/ -f1-3)
+            fetch "shares API" "$host/_api/v2.0/shares/u!$enc/driveItem/content" && ok=1
+          fi
+          if [ -z "$ok" ]; then
+            echo "Last response started with:"; head -c 200 "$out" | tr -d '\r' | sed 's/https:[^" ]*/[url]/g'; echo
+            echo "::error::Could not download the file from OneDrive. Check that TASKS_URL is an 'Anyone with the link' link that hasn't expired."
             exit 1
           fi
+          echo "First bytes:"; head -c 200 "$out" | tr -d '\r'; echo
 
       - name: Update tasks.json if Planner changed
         id: update
