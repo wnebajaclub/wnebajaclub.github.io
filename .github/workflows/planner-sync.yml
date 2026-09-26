@@ -1,0 +1,76 @@
+# Planner -> website sync (see PLANNER-SYNC.md)
+# A Power Automate flow writes the Planner data to a file in OneDrive
+# ("Website Materials (No Touch)/tasks.txt"). This job downloads that file
+# through its "Anyone with the link can view" share link and commits it as
+# tasks.json when the Planner data changed. countdown.html reads tasks.json.
+#
+# The share link is stored as the repository secret TASKS_URL (Settings ->
+# Secrets and variables -> Actions). It expires Sep 26, 2027: make a new
+# "Anyone, can view" link and paste it into that secret.
+
+name: Planner sync
+
+on:
+  schedule:
+    - cron: "7,22,37,52 * * * *"   # every 15 minutes
+  workflow_dispatch:               # "Run workflow" button on the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: planner-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      TASKS_URL: ${{ secrets.TASKS_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download Planner data from OneDrive
+        run: |
+          if [ -z "$TASKS_URL" ]; then echo "::error::Repository secret TASKS_URL is not set."; exit 1; fi
+          curl -fsSL --retry 3 "${TASKS_URL}&download=1" -o /tmp/planner.json
+          echo "Downloaded $(wc -c < /tmp/planner.json) bytes"
+          head -c 300 /tmp/planner.json; echo
+
+      - name: Update tasks.json if Planner changed
+        id: update
+        run: |
+          python3 - <<'EOF'
+          import json, os, datetime
+          try:
+              new = json.load(open('/tmp/planner.json', encoding='utf-8-sig'))
+          except Exception as e:
+              raise SystemExit(f'::error::OneDrive file is not valid JSON ({e}). Is the share link still valid?')
+          if new.get('source') != 'planner':
+              print(f"No Planner data yet (source={new.get('source')!r}). Nothing to commit.")
+              raise SystemExit(0)
+          try:
+              old = json.load(open('tasks.json', encoding='utf-8-sig'))
+          except Exception:
+              old = {}
+          strip = lambda d: {k: v for k, v in d.items() if k != 'updated'}
+          if strip(old) == strip(new):
+              print('Planner data unchanged.')
+              raise SystemExit(0)
+          new['updated'] = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+          with open('tasks.json', 'w', encoding='utf-8') as f:
+              json.dump(new, f, indent=1, ensure_ascii=False)
+              f.write('\n')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write('changed=true\n')
+          print('Planner data changed; committing.')
+          EOF
+
+      - name: Commit
+        if: steps.update.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tasks.json
+          git commit -m "Sync tasks from Planner"
+          git push
