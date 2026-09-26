@@ -1,20 +1,22 @@
 # Planner → Countdown sync
 
-The countdown page (`countdown.html`) shows each milestone's checklist from **Microsoft Planner**.
-A Power Automate flow copies the plan into `tasks.json` in this repo every 10 minutes; the page reads that file.
+The countdown page (`countdown.html`) shows each milestone's checklist from **Microsoft Planner**, using **both** team plans.
+A Power Automate flow copies the plans into `tasks.json` in this repo every 10 minutes; the page reads that file.
 Check a task off in Planner → the website shows it done within ~10–15 minutes.
 
 ```
-Planner plan ──(Power Automate, every 10 min)──> tasks.json in GitHub ──> countdown.html
+Vehicle Deadlines plan ─┐
+                        ├─(Power Automate, every 10 min)──> tasks.json in GitHub ──> countdown.html
+Subsystem plan ─────────┘
 ```
 
 Until the flow has run once, the page uses the task lists written in `countdown.html`.
 
 ---
 
-## 1. Set up the Planner plan
+## 1. How the two plans are read
 
-The team plan is **Vehicle Deadlines**.
+### Plan 1: Vehicle Deadlines (buckets = milestones)
 
 1. It must belong to a Microsoft 365 group or Teams team (not a personal "My plan").
 2. **One bucket per milestone**, starting with the milestone's name from `countdown.html`:
@@ -24,6 +26,28 @@ The team plan is **Vehicle Deadlines**.
    - **Done** = the task is marked complete in Planner.
    - Milestone **dates** still come from `countdown.html` (the `DEADLINES` list).
    - Buckets that don't match a milestone are ignored.
+
+### Plan 2: the subsystem plan (buckets = subsystems)
+
+1. Buckets are subsystems (Suspension, Drivetrain, …). The bucket name is shown next to the task on the site.
+2. Each task is placed under the **first milestone due on or after the task's due date**
+   (a task due Sep 28 lands under Rolling Car, due Sep 30).
+3. To put a task under a different milestone, start its title with the milestone name in brackets:
+   `[Engine Startup] Engine - Purchased`. The brackets are hidden on the site.
+4. Tasks with **no due date** are skipped (listed in the browser console).
+
+Tasks from both plans are merged into one checklist per milestone.
+
+### Completing a milestone (important)
+
+A milestone is **not** finished just because its date passed. If it isn't marked complete by its due date,
+the countdown stays on it, turns red and counts **up** how overdue it is, and the milestone list shows it as
+*Missed*. It stays that way until one of these happens:
+
+- a task named exactly like the milestone (e.g. `Rolling Car`) is completed in **either** plan, or
+- `"done": true` is added to that milestone in `countdown.html`.
+
+Fixed-date events (`"event": true`, e.g. Winter Fest, competition) finish on their own when the date passes.
 
 ## 2. Make a GitHub token (signed in as the account that owns the repo)
 
@@ -41,12 +65,18 @@ Add these actions in order. **Rename each action exactly as shown** (… menu �
 
 | # | Action | Rename to | Settings |
 |---|--------|-----------|----------|
-| 1 | Planner → **List buckets** | `List buckets` | Group Id + Plan Id: pick your plan |
+| 1 | Planner → **List buckets** | `List buckets` | Group Id + Plan Id: **Vehicle Deadlines** |
 | 2 | Planner → **List tasks** | `List tasks` | Same Group Id + Plan Id |
 | 3 | Office 365 Groups → **List group members** | `List group members` | Same group |
 | 4 | Data Operation → **Select** | `Buckets` | From: `body('List_buckets')?['value']` — Map (switch to key/value): `id` → `item()?['id']`, `name` → `item()?['name']` |
 | 5 | Data Operation → **Select** | `Tasks` | From: `body('List_tasks')?['value']` — Map below |
 | 6 | Data Operation → **Select** | `People` | From: `body('List_group_members')?['value']` — Map: `id` → `item()?['id']`, `displayName` → `item()?['displayName']` |
+| 6a | Planner → **List buckets** | `List buckets 2` | Group Id + Plan Id: **the subsystem plan** |
+| 6b | Planner → **List tasks** | `List tasks 2` | Same Group Id + Plan Id as 6a |
+| 6c | Office 365 Groups → **List group members** | `List group members 2` | Group of the subsystem plan (skip if it's the same group as step 3) |
+| 6d | Data Operation → **Select** | `Buckets 2` | From: `body('List_buckets_2')?['value']` — same map as step 4 |
+| 6e | Data Operation → **Select** | `Tasks 2` | From: `body('List_tasks_2')?['value']` — same map as step 5 |
+| 6f | Data Operation → **Select** | `People 2` | From: `body('List_group_members_2')?['value']` — same map as step 6 (skip if you skipped 6c) |
 | 7 | Data Operation → **Compose** | `Data` | Inputs: expression below |
 | 8 | HTTP → **HTTP** | `Get file` | GET, see below |
 | 9 | Control → **Condition** | `Changed` | see below |
@@ -66,9 +96,14 @@ Type every value marked as an expression into the **fx / expression** box, not a
 
 **7 · Data** (expression)
 
+Replace `Subsystems` with the second plan's name if you like (it's only used in console messages). `"mode"` must stay
+`buckets` for Vehicle Deadlines and `subsystems` for the second plan.
+
 ```
-setProperty(setProperty(setProperty(json('{"source":"planner"}'), 'buckets', body('Buckets')), 'people', body('People')), 'tasks', body('Tasks'))
+setProperty(setProperty(json('{"source":"planner"}'), 'plans', createArray(setProperty(setProperty(json('{"name":"Vehicle Deadlines","mode":"buckets"}'), 'buckets', body('Buckets')), 'tasks', body('Tasks')), setProperty(setProperty(json('{"name":"Subsystems","mode":"subsystems"}'), 'buckets', body('Buckets_2')), 'tasks', body('Tasks_2')))), 'people', union(body('People'), body('People_2')))
 ```
+
+If both plans are in the same group (you skipped 6c/6f), change the end to `'people', body('People'))`.
 
 **8 · Get file**
 
@@ -112,6 +147,8 @@ Save → **Test → Manually**. A good run adds a "Sync tasks from Planner" comm
 
 ## Troubleshooting
 
+- **A subsystem task is under the wrong milestone** — check its due date, or force it with `[Milestone Name]` at the start of the title.
+- **Clock is stuck on a red, overdue milestone** — that's intended: complete the milestone's own task in Planner (named exactly like the milestone) or add `"done": true` in `countdown.html`.
 - **Checklist still shows the old HTML list** — a bucket name doesn't match a milestone name. Open the page, press F12 → Console; unmatched buckets are listed there.
 - **No names next to tasks** — people assigned in Planner must be members of the plan's group.
 - **Get file fails with 401/403** — token expired or missing *Contents: Read and write* on this repo.
