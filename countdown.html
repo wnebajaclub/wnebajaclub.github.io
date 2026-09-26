@@ -48,7 +48,9 @@
       radial-gradient(ellipse 70% 60% at 50% 50%, rgba(4,7,13,.55), rgba(4,7,13,.82) 100%),
       linear-gradient(180deg, rgba(4,7,13,.35) 0%, rgba(4,7,13,0) 30%, rgba(4,7,13,0) 70%, rgba(4,7,13,.95) 100%);
   }
-  .cd-inner { text-align: center; }
+  /* Full width so the clock box never resizes as the digits change (.wrap has
+     margin:auto, which otherwise shrink-wraps it inside the flex column) */
+  .cd-inner { text-align: center; width: 100%; }
   .cd-inner .eyebrow { justify-content: center; }
   .cd-clock { color: var(--muted); font-size: .9rem; font-variant-numeric: tabular-nums; margin-top: 10px; }
   .cd-title {
