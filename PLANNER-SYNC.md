@@ -30,13 +30,17 @@ Until the flow has run once, the page uses the task lists written in `countdown.
 ### Plan 2: the subsystem plan (buckets = subsystems)
 
 1. Buckets are subsystems (Suspension, Drivetrain, …). The bucket name is shown next to the task on the site.
-2. Each task is placed under the **first milestone due on or after the task's due date**
-   (a task due Sep 28 lands under Rolling Car, due Sep 30).
+2. Each task is placed under the **first milestone due on or after the task's due date**, skipping
+   milestones that have a Vehicle Deadlines bucket (a task due Sep 28 lands under DDR Cycle Complete,
+   not Rolling Car).
 3. To put a task under a different milestone, start its title with the milestone name in brackets:
-   `[Engine Startup] Engine - Purchased`. The brackets are hidden on the site.
+   `[DDR Cycle Complete] Steering DDR`. The brackets are hidden on the site. Brackets can't point at a
+   Vehicle Deadlines milestone; those tasks are placed by due date instead.
 4. Tasks with **no due date** are skipped (listed in the browser console).
 
-Tasks from both plans are merged into one checklist per milestone.
+The two plans are never mixed: a milestone with a Vehicle Deadlines bucket (Rolling Car, Engine
+Startup, First Drive) lists only that bucket's tasks, and every other milestone lists only subsystem
+tasks. A task in either plan named exactly like a milestone still marks that milestone done.
 
 ### Completing a milestone (important)
 

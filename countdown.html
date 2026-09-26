@@ -264,11 +264,14 @@ const TASKS_UPDATED = "Sep 23, 2026";   // shown only when Planner isn't synced 
    plans. Each plan is read one of two ways:
    - "buckets" plan (Vehicle Deadlines): a bucket named like a milestone
      ("Rolling Car" or "Rolling Car - Deadlines") holds that milestone's tasks.
-   - "subsystems" plan: buckets are subsystems. Each task goes to the first
-     milestone due on or after the task's due date. To force a task onto a
-     milestone, start its title with the milestone in brackets:
-     "[Engine Startup] Engine - Purchased". Tasks with no due date are skipped.
-   Tasks from both plans are merged. Tasks are done when completed in Planner.
+   - "subsystems" plan (Execution Plan): buckets are subsystems. Each task
+     goes to the first milestone due on or after the task's due date. To force
+     a task onto a milestone, start its title with the milestone in brackets:
+     "[DDR Cycle Complete] Steering DDR". Tasks with no due date are skipped.
+   The plans are kept apart: a milestone with a Vehicle Deadlines bucket
+   (Rolling Car, Engine Startup, First Drive) lists only that bucket's tasks,
+   and Execution Plan tasks only go to the other milestones.
+   Tasks are done when completed in Planner.
    A task in either plan named exactly like a milestone (e.g. "Rolling Car")
    marks that milestone done when it's completed.
    Until tasks.json has Planner data, the task lists below are used. */
@@ -736,6 +739,12 @@ function applyPlanner(data){
   const nameMatches = (name, d) => { const n = norm(name), dn = norm(d.name); return n === dn || n.startsWith(dn + ' '); };
   const found = new Map(list.map(d => [d, []]));   // milestone -> Planner tasks
   const selfTasks = new Map(list.map(d => [d, []]));
+  // Milestones owned by a "buckets" plan: they list only that plan's tasks.
+  const bucketOwned = new Set();
+  plans.forEach(plan => {
+    if ((plan.mode || 'buckets') !== 'buckets') return;
+    plan.buckets.forEach(b => list.forEach(d => { if (nameMatches(b.name, d)) bucketOwned.add(d); }));
+  });
   const addTo = (d, t, extra) => {
     if (norm(t.title) === norm(d.name)) { selfTasks.get(d).push(t); return; }
     found.get(d).push(Object.assign({
@@ -764,13 +773,16 @@ function applyPlanner(data){
           d = list.find(d => norm(d.name) === norm(tag[1]));
           if (d) title = t.title.slice(tag[0].length);
           else console.warn(`[${plan.name}] no milestone named`, tag[1], 'for task', t.title);
+          if (d && bucketOwned.has(d)) { console.warn(`[${plan.name}] ${d.name} lists only its Vehicle Deadlines tasks; placing by due date instead:`, t.title); d = null; }
         }
+        // A task named exactly like a milestone only marks it done (addTo
+        // files it as a "self" task), so it may target any milestone.
         const self = list.find(d => norm(d.name) === norm(t.title));
         if (!d && self) d = self;
         if (!d) {
           const due = plannerDue(t.dueDateTime);
           if (!due) { console.warn(`[${plan.name}] skipped (no due date):`, t.title); return; }
-          d = list.find(d => new Date(d.when) >= new Date(due));
+          d = list.find(d => !bucketOwned.has(d) && new Date(d.when) >= new Date(due));
           if (!d) { console.warn(`[${plan.name}] skipped (due after the last milestone):`, t.title); return; }
         }
         addTo(d, Object.assign({}, t, { title }), { sub: bucketName[t.bucketId] || '' });
