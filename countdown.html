@@ -21,6 +21,936 @@
   <style>
   /* Countdown page only. Everything is prefixed cd- so nothing collides with
      the shared classes in assets/css/style.css (which already owns .hero). */
+  :root { --late: #ff4d4d; --late-soft: #ff8a8a; --late-bg: rgba(255,45,45,.14); --hdr: 89px; }
+
+  /* ---- full-screen countdown ---- */
+  .cd-stage {
+    position: relative;
+    min-height: calc(100vh - var(--hdr));
+    min-height: calc(100svh - var(--hdr));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 0 72px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  /* Background photo: replace assets/img/countdown-background.png to change it.
+     If the file is missing, the site gradient shows through instead. */
+  .cd-bg {
+    position: absolute; inset: 0; z-index: -2;
+    background: url('assets/img/countdown-background.png') center / cover no-repeat;
+  }
+  /* Dark scrim so the numbers stay readable on any photo */
+  .cd-stage::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 50%, rgba(4,7,13,.55), rgba(4,7,13,.82) 100%),
+      linear-gradient(180deg, rgba(4,7,13,.35) 0%, rgba(4,7,13,0) 30%, rgba(4,7,13,0) 70%, rgba(4,7,13,.95) 100%);
+  }
+  .cd-inner { text-align: center; }
+  .cd-inner .eyebrow { justify-content: center; }
+  .cd-clock { color: var(--muted); font-size: .9rem; font-variant-numeric: tabular-nums; margin-top: 10px; }
+  .cd-title {
+    font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+    font-size: clamp(2.2rem, 7vw, 5.5rem); line-height: 1.02; color: var(--gold);
+    margin: 18px auto 0; max-width: 20ch; text-shadow: 0 4px 30px rgba(0,0,0,.5);
+  }
+  .cd-due { color: var(--ink); opacity: .85; font-size: clamp(1rem, 1.6vw, 1.2rem); margin-top: 12px; }
+
+  /* One solid panel behind the whole countdown (units + separators) */
+.cd-digits {
+    display: flex; justify-content: center; align-items: stretch;
+    gap: clamp(6px, 1.6vw, 22px); margin: clamp(28px, 5vh, 56px) auto 0; max-width: 1100px;
+    font-family: var(--font-display); font-variant-numeric: tabular-nums;
+    background: rgba(11, 26, 46, .72); backdrop-filter: blur(6px);
+    border: 1px solid var(--line);
+    clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+    padding: clamp(6px, 1.2vh, 14px) clamp(8px, 1.6vw, 24px);
+}
+.cd-unit {
+    flex: 1 1 0; min-width: 0;
+    display: flex; flex-direction: column; align-items: center;
+    padding: clamp(12px, 2.4vh, 26px) clamp(6px, 1.4vw, 20px) clamp(10px, 2vh, 20px);
+}
+.cd-num { font-weight: 600; font-size: clamp(3.2rem, min(14vw, 22vh), 12rem); line-height: .9; color: var(--ink); }
+  .cd-lab { font-family: var(--font-display); font-weight: 600; font-size: .8rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); margin-top: 12px; }
+  .cd-sep { font-weight: 600; font-size: clamp(2.4rem, min(10vw, 16vh), 9rem); line-height: 1; color: var(--gold); align-self: center; margin-top: -.3em; }
+  .cd-stage.urgent .cd-num { color: var(--gold); }
+
+  /* ---- missed deadline: clock counts UP in red until the milestone is completed ---- */
+  .cd-stage.overdue .cd-bg { filter: saturate(.6) brightness(.8); }
+  .cd-stage.overdue::after {
+    content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background: radial-gradient(ellipse 80% 70% at 50% 55%, rgba(170,0,0,.28), rgba(90,0,0,.10) 60%, transparent 100%);
+  }
+  .cd-stage.overdue .eyebrow { color: var(--late); }
+  .cd-stage.overdue .eyebrow::before { color: var(--late); }
+  .cd-stage.overdue .cd-title { color: #fff; }
+  .cd-stage.overdue .cd-due { color: var(--late-soft); opacity: 1; }
+  .cd-stage.overdue .cd-digits {
+    background: rgba(95, 8, 12, .80);
+    border-color: var(--late);
+    box-shadow: 0 0 0 1px rgba(255,77,77,.35), 0 0 60px rgba(255,40,40,.35);
+    animation: cdpulse 2s ease-in-out infinite;
+  }
+  .cd-stage.overdue .cd-num { color: #ffdcdc; }
+  .cd-stage.overdue .cd-sep, .cd-stage.overdue .cd-lab { color: var(--late-soft); }
+  .cd-stage.overdue .cd-fill { background: linear-gradient(90deg, #b3121b, var(--late)); }
+  .cd-stage.overdue .cd-track { border-color: rgba(255,77,77,.5); }
+  .cd-od-badge {
+    display: none; margin: clamp(18px, 3vh, 30px) auto 0; width: max-content; max-width: 100%;
+    font: 700 .95rem/1 var(--font-display); letter-spacing: .3em; text-transform: uppercase;
+    color: #fff; background: #c8141e; padding: 9px 16px 9px calc(16px + .3em);
+  }
+  .cd-stage.overdue .cd-od-badge { display: block; }
+  .cd-stage.overdue .cd-digits { margin-top: 12px; }
+  .cd-next { margin-top: 14px; color: var(--muted); font-size: .95rem; }
+  .cd-next strong { color: var(--ink); }
+  @keyframes cdpulse { 0%,100% { box-shadow: 0 0 0 1px rgba(255,77,77,.35), 0 0 40px rgba(255,40,40,.25); } 50% { box-shadow: 0 0 0 1px rgba(255,77,77,.7), 0 0 80px rgba(255,40,40,.5); } }
+  .cd-stage.flip .cd-inner { animation: cdflip .9s cubic-bezier(.2,.8,.2,1); }
+  @keyframes cdflip { 0% { opacity: 0; transform: translateY(18px); } 100% { opacity: 1; transform: none; } }
+
+  .cd-gauge { max-width: 760px; margin: clamp(26px, 4vh, 44px) auto 0; }
+  .cd-track { position: relative; height: 10px; background: rgba(11,26,46,.8); border: 1px solid var(--line); overflow: hidden; }
+  .cd-fill { position: absolute; inset: 0 auto 0 0; width: 0; background: linear-gradient(90deg, var(--blue-bright), var(--gold)); }
+  .cd-gauge p { margin-top: 10px; color: var(--muted); font-size: .9rem; }
+
+  .cd-scroll {
+    position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%);
+    font-family: var(--font-display); font-size: .75rem; font-weight: 600; letter-spacing: .28em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .cd-scroll:hover { color: var(--gold); }
+
+  .cd-done h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 8vw, 4.5rem); color: var(--gold); text-transform: uppercase; line-height: 1.05; }
+  .cd-done p { color: var(--muted); margin-top: 12px; }
+
+  /* ---- below the fold: checklist + milestone list ---- */
+  .cd-more { padding: 64px 0 84px; }
+  .cd-panel { background: var(--panel); border: 1px solid var(--line-blue); padding: 22px 24px; }
+  .cd-panel + .cd-panel { margin-top: 32px; }
+  .cd-panel h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--gold); line-height: 1.1; }
+  .cd-gate-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .cd-gate-sum { color: var(--muted); font-size: .95rem; }
+  .cd-gate-sum strong { color: var(--ink); }
+  .cd-late-n { color: var(--late); font-weight: 600; }
+  .cd-gate-bar { height: 6px; background: var(--bg); margin: 14px 0 6px; overflow: hidden; }
+  .cd-gate-bar span { display: block; height: 100%; background: var(--gold); }
+  ul.cd-tasks { list-style: none; max-height: 460px; overflow: auto; }
+  ul.cd-tasks li { display: grid; grid-template-columns: 14px 1fr auto; gap: 12px; align-items: baseline; padding: 11px 2px; border-bottom: 1px solid var(--line-blue); }
+  ul.cd-tasks li:last-child { border-bottom: 0; }
+  .cd-dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--blue-bright); align-self: center; }
+  .t-done .cd-dot { background: var(--gold); border-color: var(--gold); }
+  ul.cd-tasks li.t-late { background: var(--late-bg); box-shadow: inset 3px 0 0 var(--late); padding-left: 10px; padding-right: 8px; border-bottom-color: rgba(255,77,77,.3); }
+  .t-late .cd-dot { border-color: var(--late); background: var(--late); }
+  .t-late .cd-tn { color: #ffd6d6; }
+  .t-late .cd-tw { color: var(--late-soft); }
+  .cd-tn { font-weight: 500; }
+  .t-done .cd-tn { color: var(--muted); }
+  .cd-tw { color: var(--muted); font-size: .82rem; }
+  .cd-ts { font: 600 .88rem/1 var(--font-display); white-space: nowrap; color: var(--muted); }
+  .t-late .cd-ts { color: var(--late); }
+  .cd-src { margin-top: 12px; color: var(--muted); font-size: .82rem; }
+
+  .cd-panel.cd-list h2 { padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  ol.cd-run { list-style: none; }
+  ol.cd-run li { display: grid; grid-template-columns: 40px 1fr auto; gap: 14px; align-items: baseline; padding: 14px 8px; border-bottom: 1px solid var(--line-blue); }
+  ol.cd-run li:last-child { border-bottom: 0; }
+  .cd-idx { font: 600 1.2rem/1 var(--font-display); color: var(--blue-bright); font-variant-numeric: tabular-nums; }
+  .cd-nm { font-weight: 600; font-size: 1.05rem; }
+  .cd-dt { color: var(--muted); font-size: .88rem; }
+  .cd-st { font: 600 1rem/1 var(--font-display); white-space: nowrap; color: var(--muted); }
+  li.past .cd-nm { text-decoration: line-through; color: var(--muted); }
+  li.now { box-shadow: inset 3px 0 0 var(--gold); background: rgba(255,182,18,.07); }
+  li.now .cd-idx, li.now .cd-st { color: var(--gold); }
+  ol.cd-run li.missed { background: var(--late-bg); box-shadow: inset 3px 0 0 var(--late); border-bottom-color: rgba(255,77,77,.3); }
+  li.missed .cd-idx, li.missed .cd-st { color: var(--late); }
+  li.missed .cd-nm { color: #ffd6d6; }
+  li.missed .cd-dt { color: var(--late-soft); }
+  .cd-sub { color: var(--blue-bright); }
+
+  @media (max-width: 620px) {
+    .cd-inner .eyebrow::after { display: none; }
+    .cd-inner .eyebrow { letter-spacing: .2em; }
+    .cd-unit { max-width: none; }
+    .cd-sep { display: none; }
+    .cd-digits { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 420px; margin-left: auto; margin-right: auto; }
+    .cd-num { font-size: clamp(3rem, 18vw, 5rem); }
+    .cd-lab { font-size: .7rem; }
+    ol.cd-run li { grid-template-columns: 30px 1fr; } ol.cd-run li .cd-st { grid-column: 2; }
+    ul.cd-tasks li { grid-template-columns: 14px 1fr; } ul.cd-tasks li .cd-ts { grid-column: 2; }
+  }
+  @media (prefers-reduced-motion: reduce) { .cd-stage.flip .cd-inner, .cd-stage.overdue .cd-digits { animation: none; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav-bar">
+    <a class="brand" href="index.html" aria-label="Golden Bear Racing - home">
+      <img class="brand-mark" src="assets/img/logo.png" alt="Golden Bear Racing" width="1100" height="606">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#gbr4">GBR4</a></li>
+      <li><a href="history.html">Team History</a></li>
+      <li><a href="team.html">Meet the Team</a></li>
+      <li><a href="sponsors.html">Sponsors</a></li>
+      <li><a href="sponsors.html#support" class="nav-cta">Support the Team</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="app"></main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2>Golden Bear Racing</h2>
+        <p>Western New England University&rsquo;s Baja SAE team. Since 2014, our students have designed, built, tested, and raced off-road vehicles from the ground up.</p>
+        <a class="footer-mail" href="mailto:wnebajaclub@gmail.com">wnebajaclub@gmail.com</a>
+      </div>
+      <div>
+        <h2>Site</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#gbr4">Project GBR4</a></li>
+          <li><a href="history.html">Team History</a></li>
+          <li><a href="team.html">Meet the Team</a></li>
+          <li><a href="sponsors.html">Sponsors</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Follow Us</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/wneu_goldenbearracing?igsh=emprNG42aHRyY2lj" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/share/1DJ4coKc4e/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://youtube.com/@wnegoldenbearracing?si=eg27HeNcwPRUsQEf" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/goldenbearracing-admin?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Golden Bear Racing &middot; Western New England University Baja SAE</span>
+      <span>Springfield, Massachusetts</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   EDIT HERE — the deadline list
+   - "when": due date and time with the Eastern offset
+     (-04:00 before Nov 1, -05:00 from Nov 1 to mid-March)
+   - "done": true (optional) marks a milestone complete.
+     A milestone is NOT done just because its date passed: if it
+     isn't completed by then, the clock stays on it, turns red and
+     counts up how overdue it is. Complete it with "done": true here
+     or by completing its Planner task (see below).
+   - "event": true (optional) for fixed-date events (Winter Fest,
+     competition): these finish on their own when the date passes.
+   - "tasks" (optional): checklist shown while that deadline
+     is counting down. Set "done": true when a task is finished.
+   ============================================================ */
+const SHOW_TASKS = true;        // false hides the checklist
+const SHOW_TASK_OWNERS = true;  // false hides names on tasks
+const TASKS_UPDATED = "Sep 23, 2026";   // shown only when Planner isn't synced yet
+
+/* Microsoft Planner sync (see PLANNER-SYNC.md)
+   A Power Automate flow writes tasks.json in this repo from BOTH Planner
+   plans. Each plan is read one of two ways:
+   - "buckets" plan (Vehicle Deadlines): a bucket named like a milestone
+     ("Rolling Car" or "Rolling Car - Deadlines") holds that milestone's tasks.
+   - "subsystems" plan: buckets are subsystems. Each task goes to the first
+     milestone due on or after the task's due date. To force a task onto a
+     milestone, start its title with the milestone in brackets:
+     "[Engine Startup] Engine - Purchased". Tasks with no due date are skipped.
+   Tasks from both plans are merged. Tasks are done when completed in Planner.
+   A task in either plan named exactly like a milestone (e.g. "Rolling Car")
+   marks that milestone done when it's completed.
+   Until tasks.json has Planner data, the task lists below are used. */
+const PLANNER_FILE = "tasks.json";
+const PLANNER_REFRESH_MIN = 5;   // how often an open page re-checks for updates
+
+const DEADLINES = 
+[
+  {
+    "id": "m1",
+    "name": "CDR Cycle Complete",
+    "when": "2026-08-03T23:59:00-04:00",
+    "done": true
+  },
+  {
+    "id": "m2",
+    "name": "Budget Referendum",
+    "when": "2026-09-04T23:59:00-04:00",
+    "done": true
+  },
+  {
+    "id": "m3",
+    "name": "PDR Cycle Complete",
+    "when": "2026-09-20T23:59:00-04:00",
+    "done": true
+  },
+  {
+    "id": "m4",
+    "name": "Rolling Car",
+    "when": "2026-09-30T23:59:00-04:00",
+    "tasks": [
+      {
+        "name": "Shock Tubes - Mounted",
+        "who": "Michael Lamb",
+        "due": "2026-09-23T23:59:00-04:00",
+        "done": true
+      },
+      {
+        "name": "Wheel Hubs/Wheel Side Axle - Mount Finalized",
+        "who": "Nicola Dimatteo",
+        "due": "2026-09-12T23:59:00-04:00",
+        "done": true
+      },
+      {
+        "name": "Lowers - Manufactured",
+        "who": "Johnathan Rodgers, Nathaniel Riviere",
+        "due": "2026-09-25T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Rear Arms - Manufactured",
+        "who": "Nathaniel Riviere",
+        "due": "2026-09-06T23:59:00-04:00",
+        "done": true
+      },
+      {
+        "name": "Suspension Hardware - Finalized/Delivered",
+        "who": "Nathaniel Riviere",
+        "due": "2026-09-25T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Radius Links - Finished (Manufactured/Ordered)",
+        "who": "Nathaniel Riviere",
+        "due": "2026-09-06T23:59:00-04:00",
+        "done": true
+      },
+      {
+        "name": "Wheel Hub/Drivetrain Hardware",
+        "who": "Nicola Dimatteo",
+        "due": "2026-09-25T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Wheel Hubs/Wheel Side Axle - Mounted",
+        "who": "Nicola Dimatteo",
+        "due": "2026-09-26T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Differentials - Mounted",
+        "who": "Charles Henriques, Michael Lamb, Nicola Dimatteo, Kaede Wood, Nathaniel Riviere",
+        "due": "2026-09-27T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Front Arms - Mounted",
+        "who": "Michael Lamb, Nathaniel Riviere",
+        "due": "2026-09-27T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Rear Arms - Mounted",
+        "who": "Michael Lamb, Nathaniel Riviere",
+        "due": "2026-09-27T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Knuckles - Mounted",
+        "who": "Nicola Dimatteo, Nathaniel Riviere",
+        "due": "2026-09-27T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Steering - Mounted",
+        "who": "Sebastian Matis",
+        "due": "2026-09-30T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Knuckles - Manufactured/Ordered",
+        "who": "Nicola Dimatteo, Nathaniel Riviere",
+        "due": "2026-09-30T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Springs Purchased",
+        "who": "Ahmed Elbakri, Charles Henriques, Nathaniel Riviere",
+        "due": "2026-08-31T23:59:00-04:00",
+        "done": true
+      }
+    ]
+  },
+  {
+    "id": "m5",
+    "name": "DDR Cycle Complete",
+    "when": "2026-10-16T23:59:00-04:00"
+  },
+  {
+    "id": "m6",
+    "name": "Benchmark Testing Complete",
+    "when": "2026-11-27T23:59:00-05:00"
+  },
+  {
+    "id": "m7",
+    "name": "Engine Startup",
+    "when": "2026-11-30T23:59:00-05:00",
+    "tasks": [
+      {
+        "name": "Fuel System - Purcahsed",
+        "who": "Ahmed Elbakri, Charles Henriques",
+        "due": "2026-08-31T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Brake Light - Purchased",
+        "who": "Ahmed Elbakri, Charles Henriques",
+        "due": "2026-08-31T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Engine - Purchased",
+        "who": "Ahmed Elbakri, Charles Henriques",
+        "due": "2026-09-08T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Differentials- Purchased",
+        "who": "Ahmed Elbakri, Nicola Dimatteo",
+        "due": "2026-08-31T23:59:00-04:00",
+        "done": true
+      },
+      {
+        "name": "CVT - Purchasing",
+        "who": "Ahmed Elbakri, Charles Henriques, Kaede Wood",
+        "due": "2026-09-08T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Steering Box - Finalized",
+        "who": "Sebastian Matis",
+        "due": "2026-09-05T23:59:00-04:00",
+        "done": true
+      },
+      {
+        "name": "Drive Shaft CV Joints - Purchased",
+        "who": "Ahmed Elbakri, Nicola Dimatteo",
+        "due": "2026-08-31T23:59:00-04:00",
+        "done": true
+      },
+      {
+        "name": "Axle - Manufactured/Assembled",
+        "who": "Nicola Dimatteo",
+        "due": "2026-10-11T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Engine Mount (Tubes Only) - Mounted",
+        "who": "Charles Henriques, Michael Lamb, Nicola Dimatteo, Kaede Wood",
+        "due": "2026-10-14T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Engine Mount Plate - Manufactured",
+        "who": "Charles Henriques, Nicola Dimatteo",
+        "due": "2026-10-21T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Engine Plate - Mounted",
+        "who": "Charles Henriques, Michael Lamb, Nicola Dimatteo, Kaede Wood",
+        "due": "2026-10-31T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Chain Drive - Mounted",
+        "who": "Michael Lamb, Nicola Dimatteo",
+        "due": "2026-10-25T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Rear Drive Train - Mounted",
+        "who": "Charles Henriques, Nicola Dimatteo, Kaede Wood",
+        "due": "2026-11-04T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Front Drive Train - Mounted",
+        "who": "Michael Lamb, Nicola Dimatteo",
+        "due": "2026-11-14T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Front Diff Input Shaft - Mounted",
+        "who": "Logan Keenan, Nicola Dimatteo",
+        "due": "2026-10-18T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Driveshaft Joints - Manufactured",
+        "who": "Nicola Dimatteo",
+        "due": "2026-11-11T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Driveshaft - Mounted",
+        "who": "Logan Keenan, Nicola Dimatteo",
+        "due": "2026-11-15T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Fuel Tank - Mounted",
+        "who": "Charles Henriques",
+        "due": "2026-10-24T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "E-Stops - Mounted",
+        "who": "Charles Henriques, Michael Lamb, Logan Keenan",
+        "due": "2026-11-25T23:59:00-05:00",
+        "done": false
+      }
+    ]
+  },
+  {
+    "id": "m8",
+    "name": "First Drive",
+    "when": "2026-12-07T23:59:00-05:00",
+    "tasks": [
+      {
+        "name": "Brake Components - Purchased",
+        "who": "Shadiel Marte Rivera, Ahmed Elbakri",
+        "due": "2026-09-03T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Steering Column - Manufactured",
+        "who": "Sebastian Matis",
+        "due": "2026-11-01T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Steering Column - Mounted",
+        "who": "Sebastian Matis, Michael Lamb",
+        "due": "2026-11-07T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Steering Wheel - Purchased",
+        "who": "Sebastian Matis, Brandon Lang, Logan Keenan",
+        "due": "2026-11-01T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Seat - Finialized",
+        "who": "Logan Keenan",
+        "due": "2026-10-15T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Seat - Ordered",
+        "who": "Logan Keenan",
+        "due": "2026-10-30T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Seat - Mounted",
+        "who": "Michael Lamb, Logan Keenan",
+        "due": "2026-11-09T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Seatbelt - Purcahsed",
+        "who": "Ahmed Elbakri, Logan Keenan",
+        "due": "2026-09-08T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Seat Belt - Mounted",
+        "who": "Michael Lamb, Logan Keenan",
+        "due": "2026-11-18T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Brake Light Circut - Mounted",
+        "who": "Shadiel Marte Rivera, Charles Henriques, Michael Lamb, Logan Keenan",
+        "due": "2026-11-30T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Brakes (Calipers/Rotors)- Mounted",
+        "who": "Shadiel Marte Rivera",
+        "due": "2026-11-16T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Pedals - Manufactured",
+        "who": "Shadiel Marte Rivera",
+        "due": "2026-10-04T23:59:00-04:00",
+        "done": false
+      },
+      {
+        "name": "Pedals and Hardstop - Mounted",
+        "who": "Shadiel Marte Rivera, Michael Lamb, Logan Keenan",
+        "due": "2026-11-30T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Fire Wall - Manufactured",
+        "who": "Michael Lamb, Logan Keenan",
+        "due": "2026-11-16T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Fire Wall - Mounted",
+        "who": "Michael Lamb, Logan Keenan",
+        "due": "2026-11-30T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Headrest - Mounted",
+        "who": "Brandon Lang, Logan Keenan",
+        "due": "2026-12-04T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Body Panels - Manufactuerd",
+        "who": "Brandon Lang, Logan Keenan",
+        "due": "2026-11-25T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Body Panels - Mounted",
+        "who": "Brandon Lang, Michael Lamb",
+        "due": "2026-12-07T23:59:00-05:00",
+        "done": false
+      },
+      {
+        "name": "Brake Cylinder/Reservoirs - Mounted",
+        "who": "Shadiel Marte Rivera",
+        "due": "2026-12-05T23:59:00-05:00",
+        "done": false
+      }
+    ]
+  },
+  {
+    "id": "m9",
+    "name": "Winter Fest Ready",
+    "when": "2026-12-18T23:59:00-05:00"
+  },
+  {
+    "id": "m10",
+    "name": "Winter Fest",
+    "when": "2027-01-01T09:00:00-05:00",
+    "event": true
+  },
+  {
+    "id": "m11",
+    "name": "Post-Winter Fest Teardown",
+    "when": "2027-02-02T23:59:00-05:00"
+  },
+  {
+    "id": "m12",
+    "name": "All Test Data Complete",
+    "when": "2027-03-26T23:59:00-04:00"
+  },
+  {
+    "id": "m13",
+    "name": "Competition Design Freeze",
+    "when": "2027-04-01T23:59:00-04:00"
+  },
+  {
+    "id": "m14",
+    "name": "Competition Spares Complete",
+    "when": "2027-05-14T23:59:00-04:00"
+  },
+  {
+    "id": "m15",
+    "name": "Post-Freeze Reliability",
+    "when": "2027-06-01T23:59:00-04:00"
+  },
+  {
+    "id": "m16",
+    "name": "Baja SAE Competition (Tentative)",
+    "when": "2027-06-05T09:00:00-04:00",
+    "event": true
+  }
+];
+/* ================= end of editable section ================= */
+
+(function(){
+const app = document.getElementById('app');
+const header = document.querySelector('.site-header');
+const setHdr = () => { if (header) document.documentElement.style.setProperty('--hdr', header.offsetHeight + 'px'); };
+setHdr(); window.addEventListener('resize', setHdr);
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pad = n => String(n).padStart(2,'0');
+// A milestone is done only when marked done (here or in Planner). Fixed-date
+// events are the exception: they're over once their date passes.
+const isDone = (d, now) => d.done === true || d._plannerDone === true || (d.event === true && new Date(d.when) <= now);
+const isMissed = (d, now) => !isDone(d, now) && new Date(d.when) <= now;
+const list = DEADLINES.filter(d => !isNaN(new Date(d.when))).sort((a,b) => new Date(a.when) - new Date(b.when));
+list.forEach(d => { d._htmlTasks = d.tasks; });
+let plannerOn = false, plannerStamp = '';
+const norm = x => String(x || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+// Planner stores a due *date* as midnight UTC, which would show as the day
+// before in Eastern time. Treat it as 11:59 PM local on that calendar day.
+function plannerDue(v){
+  if (!v) return null;
+  const m = /^(\d{4})-(\d{2})-(\d{2})T00:00:00(?:\.0+)?Z$/.exec(v);
+  return m ? new Date(+m[1], +m[2]-1, +m[3], 23, 59).toISOString() : v;
+}
+function assigneeIds(a){
+  if (!a) return [];
+  if (Array.isArray(a)) return a.map(x => typeof x === 'string' ? x : (x.userId || x.id || x.key)).filter(Boolean);
+  if (typeof a === 'object') return Object.keys(a);
+  return String(a).split(/[;,]/).map(x => x.trim()).filter(Boolean);
+}
+// tasks.json is either the old single-plan shape {buckets, tasks, people}
+// or the two-plan shape {plans: [{name, mode, buckets, tasks}], people}.
+function plansOf(data){
+  if (Array.isArray(data.plans)) return data.plans.filter(p => p && Array.isArray(p.tasks) && Array.isArray(p.buckets));
+  if (Array.isArray(data.tasks) && Array.isArray(data.buckets)) return [{ name: 'Planner', mode: 'buckets', buckets: data.buckets, tasks: data.tasks }];
+  return [];
+}
+function applyPlanner(data){
+  if (!data || data.source !== 'planner') return false;
+  const plans = plansOf(data);
+  if (!plans.length) return false;
+  const people = {};
+  (data.people || []).forEach(u => { if (u && u.id) people[u.id] = u.displayName || u.name || ''; });
+  // A bucket belongs to a milestone when its name is the milestone name,
+  // optionally followed by more words: "Rolling Car" or "Rolling Car - Deadlines".
+  const nameMatches = (name, d) => { const n = norm(name), dn = norm(d.name); return n === dn || n.startsWith(dn + ' '); };
+  const found = new Map(list.map(d => [d, []]));   // milestone -> Planner tasks
+  const selfTasks = new Map(list.map(d => [d, []]));
+  const addTo = (d, t, extra) => {
+    if (norm(t.title) === norm(d.name)) { selfTasks.get(d).push(t); return; }
+    found.get(d).push(Object.assign({
+      name: t.title,
+      who: assigneeIds(t.assignments).map(k => people[k]).filter(Boolean).join(', '),
+      due: plannerDue(t.dueDateTime),
+      done: Number(t.percentComplete) === 100
+    }, extra || {}));
+  };
+  plans.forEach(plan => {
+    const bucketName = {};
+    plan.buckets.forEach(b => { bucketName[b.id] = b.name; });
+    if ((plan.mode || 'buckets') === 'buckets') {
+      plan.buckets.forEach(b => { if (!list.some(d => nameMatches(b.name, d))) console.warn(`[${plan.name}] bucket has no matching milestone:`, b.name); });
+      plan.tasks.forEach(t => {
+        const d = list.find(d => nameMatches(bucketName[t.bucketId], d));
+        if (d) addTo(d, t);
+      });
+    } else {
+      // Subsystem plan: "[Milestone] title" forces the milestone, otherwise
+      // the task belongs to the first milestone due on or after it.
+      plan.tasks.forEach(t => {
+        const tag = /^\s*\[([^\]]+)\]\s*/.exec(t.title || '');
+        let d = null, title = t.title;
+        if (tag) {
+          d = list.find(d => norm(d.name) === norm(tag[1]));
+          if (d) title = t.title.slice(tag[0].length);
+          else console.warn(`[${plan.name}] no milestone named`, tag[1], 'for task', t.title);
+        }
+        const self = list.find(d => norm(d.name) === norm(t.title));
+        if (!d && self) d = self;
+        if (!d) {
+          const due = plannerDue(t.dueDateTime);
+          if (!due) { console.warn(`[${plan.name}] skipped (no due date):`, t.title); return; }
+          d = list.find(d => new Date(d.when) >= new Date(due));
+          if (!d) { console.warn(`[${plan.name}] skipped (due after the last milestone):`, t.title); return; }
+        }
+        addTo(d, Object.assign({}, t, { title }), { sub: bucketName[t.bucketId] || '' });
+      });
+    }
+  });
+  let matched = 0;
+  list.forEach(d => {
+    const tasks = found.get(d), self = selfTasks.get(d);
+    d._plannerDone = self.length > 0 && self.every(t => Number(t.percentComplete) === 100);
+    if (tasks.length || self.length) matched++;
+    d.tasks = tasks.length ? tasks : d._htmlTasks;
+  });
+  plannerStamp = data.updated || '';
+  return matched > 0;
+}
+async function loadPlanner(){
+  try {
+    const res = await fetch(PLANNER_FILE + '?t=' + Date.now(), {cache: 'no-store'});
+    if (!res.ok) return;
+    const on = applyPlanner(await res.json());
+    if (on || plannerOn) { plannerOn = on; render(false); }
+  } catch (e) { /* keep the HTML task lists */ }
+}
+const fmt = d => new Date(d).toLocaleString(undefined,{weekday:'short',month:'short',day:'numeric',year:new Date(d).getFullYear()!==new Date().getFullYear()?'numeric':undefined,hour:'numeric',minute:'2-digit'});
+const short = d => new Date(d).toLocaleDateString(undefined,{month:'short',day:'numeric'});
+function relative(ms){
+  const days = Math.floor(ms/86400000);
+  if (days >= 2) return 'in ' + days + ' days';
+  const hrs = Math.floor(ms/3600000);
+  if (hrs >= 1) return 'in ' + hrs + (hrs === 1 ? ' hour' : ' hours');
+  return 'in ' + Math.max(1, Math.ceil(ms/60000)) + ' min';
+}
+function overdueBy(ms){
+  const days = Math.floor(ms/86400000);
+  if (days >= 1) return days + (days === 1 ? ' day' : ' days') + ' overdue';
+  const hrs = Math.floor(ms/3600000);
+  if (hrs >= 1) return hrs + (hrs === 1 ? ' hour' : ' hours') + ' overdue';
+  return Math.max(1, Math.floor(ms/60000)) + ' min overdue';
+}
+
+function gateHTML(cur, now){
+  const tasks = SHOW_TASKS && Array.isArray(cur.tasks) ? cur.tasks : [];
+  if (!tasks.length) return '';
+  const stateOf = t => t.done ? 'done' : (t.due && new Date(t.due) < now ? 'late' : 'open');
+  const order = {late:0, open:1, done:2};
+  const sorted = tasks.slice().sort((a,b) => order[stateOf(a)] - order[stateOf(b)] || (a.due ? new Date(a.due) : Infinity) - (b.due ? new Date(b.due) : Infinity));
+  const done = tasks.filter(t => t.done).length;
+  const late = tasks.filter(t => stateOf(t) === 'late').length;
+  const items = sorted.map(t => {
+    const st = stateOf(t);
+    const label = st === 'done' ? 'Done' : st === 'late' ? 'Overdue since ' + short(t.due) : (t.due ? 'Due ' + short(t.due) : 'No due date');
+    const bits = [t.sub ? `<span class="cd-sub">${esc(t.sub)}</span>` : '', SHOW_TASK_OWNERS && t.who ? esc(t.who) : ''].filter(Boolean);
+    const who = bits.length ? `<div class="cd-tw">${bits.join(' · ')}</div>` : '';
+    return `<li class="t-${st}"><span class="cd-dot" aria-hidden="true"></span><div><div class="cd-tn">${esc(t.name)}</div>${who}</div><span class="cd-ts">${label}</span></li>`;
+  }).join('');
+  return `<div class="cd-panel">
+    <div class="cd-gate-head"><h2>What has to happen first: ${esc(cur.name)}</h2>
+      <p class="cd-gate-sum"><strong>${done} of ${tasks.length}</strong> done${late ? `, <span class="cd-late-n">${late} overdue</span>` : ''}</p></div>
+    <div class="cd-gate-bar"><span style="width:${(done/tasks.length*100).toFixed(1)}%"></span></div>
+    <ul class="cd-tasks">${items}</ul>
+    <p class="cd-src">${plannerOn ? 'Live from Microsoft Planner' + (plannerStamp ? ' · synced ' + esc(new Date(plannerStamp).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})) : '') : 'Task status as of ' + esc(TASKS_UPDATED)}.</p>
+  </div>`;
+}
+
+let currentId, currentOverdue;
+function render(flip){
+  const now = Date.now();
+  const idx = list.findIndex(d => !isDone(d, now));
+  const cur = idx >= 0 ? list[idx] : null;
+  const od = cur ? isMissed(cur, now) : false;
+  currentId = cur ? cur.id : null;
+  currentOverdue = od;
+  const next = cur ? list.slice(idx + 1).find(d => !isDone(d, now)) : null;
+  const nextLine = od && next ? `<p class="cd-next">Next up: <strong>${esc(next.name)}</strong> · ${new Date(next.when) > now ? relative(new Date(next.when) - now) : overdueBy(now - new Date(next.when))}</p>` : '';
+  const inner = cur ? `<div class="wrap cd-inner">
+        <p class="eyebrow">${od ? 'Missed GBR4 milestone' : 'Next GBR4 milestone'}</p>
+        <h1 class="cd-title">${esc(cur.name)}</h1>
+        <p class="cd-due">${od ? 'Was due' : 'Due'} ${esc(fmt(cur.when))}</p>
+        <p class="cd-od-badge">Overdue by</p>
+        <div class="cd-digits" role="timer" aria-label="${od ? 'Time overdue' : 'Time remaining'}">
+          <div class="cd-unit"><span class="cd-num" id="n-d">0</span><span class="cd-lab">Days</span></div><span class="cd-sep">:</span>
+          <div class="cd-unit"><span class="cd-num" id="n-h">00</span><span class="cd-lab">Hours</span></div><span class="cd-sep">:</span>
+          <div class="cd-unit"><span class="cd-num" id="n-m">00</span><span class="cd-lab">Min</span></div><span class="cd-sep">:</span>
+          <div class="cd-unit"><span class="cd-num" id="n-s">00</span><span class="cd-lab">Sec</span></div>
+        </div>
+        <div class="cd-gauge"><div class="cd-track"><div class="cd-fill" id="fill"></div></div><p id="gauge-text"></p></div>
+        ${nextLine}
+        <p class="cd-clock" id="clocknow"></p>
+      </div>`
+    : `<div class="wrap cd-inner cd-done"><h1>Every deadline is behind us.</h1><p>New deadlines for next season are on the way.</p></div>`;
+  const rows = list.map((d,i) => {
+    const t = new Date(d.when) - now;
+    const done = isDone(d, now), missed = isMissed(d, now), isCur = d.id === currentId;
+    const cls = done ? 'past' : [missed ? 'missed' : '', isCur ? 'now' : ''].join(' ').trim();
+    const st = done ? 'Done' : missed ? 'Missed · ' + overdueBy(-t) : (isCur ? 'On the clock' : relative(t));
+    return `<li class="${cls}"><span class="cd-idx">${i+1}</span><div><div class="cd-nm">${esc(d.name)}</div><div class="cd-dt">${esc(fmt(d.when))}</div></div><span class="cd-st">${st}</span></li>`;
+  }).join('');
+  app.innerHTML = `<section class="cd-stage${flip ? ' flip' : ''}${od ? ' overdue' : ''}" id="hero" aria-live="polite">
+      <div class="cd-bg" aria-hidden="true"></div>
+      ${inner}
+      <a class="cd-scroll" href="#milestones">&#9660; All milestones</a>
+    </section>
+    <section class="cd-more" id="milestones"><div class="wrap">
+      ${cur ? gateHTML(cur, now) : ''}
+      <div class="cd-panel cd-list"><h2>GBR4 build milestones</h2><ol class="cd-run">${rows}</ol></div>
+    </div></section>`;
+  tick();
+}
+
+function tick(){
+  const now = Date.now();
+  const cn = document.getElementById('clocknow');
+  if (cn) cn.textContent = new Date(now).toLocaleString(undefined,{weekday:'long',month:'long',day:'numeric',hour:'numeric',minute:'2-digit',second:'2-digit'});
+  const idx = list.findIndex(d => !isDone(d, now));
+  // Re-draw when the milestone changes or the current one just went overdue
+  if ((idx >= 0 ? list[idx].id : null) !== currentId || (idx >= 0 && isMissed(list[idx], now) !== currentOverdue)) { render(true); return; }
+  if (idx < 0) return;
+  const end = new Date(list[idx].when).getTime();
+  const left = end - now, s = Math.floor(Math.abs(left)/1000);   // counts up once overdue
+  const set = (id,v) => { const el = document.getElementById(id); if (el && el.textContent !== v) el.textContent = v; };
+  set('n-d', String(Math.floor(s/86400))); set('n-h', pad(Math.floor(s%86400/3600))); set('n-m', pad(Math.floor(s%3600/60))); set('n-s', pad(s%60));
+  document.getElementById('hero').classList.toggle('urgent', left > 0 && left < 86400000);
+  const cur = list[idx];
+  const tasks = SHOW_TASKS && Array.isArray(cur.tasks) ? cur.tasks : [];
+  let frac, text;
+  if (tasks.length) {
+    // Bar = how much of this milestone's work is checked off
+    const done = tasks.filter(t => t.done).length;
+    frac = done / tasks.length;
+    text = done === tasks.length
+      ? `All ${tasks.length} tasks done for ${cur.name}`
+      : `${cur.name}: ${done} of ${tasks.length} tasks done` + (left < 0 ? ` · ${tasks.length - done} still open` : '');
+  } else if (left < 0) {
+    frac = 1;
+    text = `${cur.name} is past due and not marked complete`;
+  } else {
+    // No task list: bar = time used between the last milestone and this one
+    const prev = idx > 0 ? list[idx-1] : null;
+    const start = prev ? new Date(prev.when).getTime() : end - 30*86400000;
+    frac = Math.min(1, Math.max(0, (now - start) / (end - start)));
+    text = `${Math.floor(frac*100)}% of the time until ${cur.name} has passed`;
+  }
+  document.getElementById('fill').style.width = (frac*100).toFixed(2) + '%';
+  document.getElementById('gauge-text').textContent = text;
+}
+
+render(false);
+loadPlanner();
+setInterval(loadPlanner, PLANNER_REFRESH_MIN * 60000);
+setInterval(tick, 1000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
+})();
+</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    if (location.hostname === 'wnebajaclub.github.io') {
+      location.replace('https://wneu-bajasae.com' + location.pathname + location.search + location.hash);
+    }
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deadline Countdown</title>
+  <meta name="description" content="Countdown to Golden Bear Racing's next GBR4 build milestone.">
+  <meta name="theme-color" content="#04070d">
+  <link rel="icon" href="assets/img/favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png?v=2">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+  /* Countdown page only. Everything is prefixed cd- so nothing collides with
+     the shared classes in assets/css/style.css (which already owns .hero). */
   :root { --late: #ff8a7a; --hdr: 89px; }
 
   /* ---- full-screen countdown ---- */
