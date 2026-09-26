@@ -105,6 +105,38 @@
   }
   .cd-stage.overdue .cd-od-badge { display: block; }
   .cd-stage.overdue .cd-digits { margin-top: 12px; }
+  /* Overdue tasks, pulled up under the clock so they're visible full screen */
+  .cd-late {
+    max-width: 1100px; margin: clamp(14px, 2.4vh, 24px) auto 0; text-align: left;
+    background: rgba(60, 6, 10, .78); backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,77,77,.55); box-shadow: inset 4px 0 0 var(--late);
+    padding: clamp(10px, 1.6vh, 16px) clamp(14px, 2vw, 22px);
+  }
+  .cd-late-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .cd-late-head h2 { font: 700 clamp(.85rem, 1.1vw, 1rem)/1.1 var(--font-display); letter-spacing: .22em; text-transform: uppercase; color: var(--late); }
+  .cd-late-head a { font-size: .85rem; color: var(--late-soft); }
+  .cd-late-head a:hover { color: #fff; }
+  ul.cd-late-list { list-style: none; margin-top: 6px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); column-gap: 28px; }
+  ul.cd-late-list li { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: baseline; padding: 7px 0; border-bottom: 1px solid rgba(255,77,77,.22); }
+  ul.cd-late-list li:last-child { border-bottom: 0; }
+  @media (min-width: 621px) { ul.cd-late-list li:nth-last-child(2):nth-child(odd) { border-bottom: 0; } }
+  .cd-late-list .ln { color: #ffe3e3; font-weight: 600; font-size: clamp(.92rem, 1.15vw, 1.05rem); }
+  .cd-late-list .lw { grid-column: 1; color: var(--late-soft); font-size: .8rem; opacity: .9; }
+  .cd-late-list .ls { grid-row: 1 / span 2; grid-column: 2; align-self: center; font: 600 .85rem/1 var(--font-display); color: var(--late); white-space: nowrap; }
+  .cd-stage.has-late .cd-gauge { margin-top: clamp(14px, 2.4vh, 26px); }
+  .cd-stage.has-late .cd-digits { margin-top: clamp(18px, 3vh, 40px); }
+  .cd-stage.overdue.has-late .cd-digits { margin-top: 12px; }
+  .cd-stage.has-late .cd-num { font-size: clamp(3.2rem, min(12vw, 17vh), 10rem); }
+  .cd-stage.has-late .cd-title { font-size: clamp(2rem, 6vw, 4.5rem); }
+  /* Short screens (laptops): shrink the clock and drop the progress bar so the
+     overdue list still fits without scrolling. Progress is in the list below. */
+  @media (max-height: 860px) and (min-width: 621px) {
+    .cd-stage.has-late { padding-top: 28px; }
+    .cd-stage.has-late .cd-num { font-size: clamp(3rem, min(11vw, 14vh), 8rem); }
+    .cd-stage.has-late .cd-title { font-size: clamp(1.8rem, 5vw, 3.6rem); margin-top: 10px; }
+    .cd-stage.has-late .cd-gauge { display: none; }
+    .cd-stage.has-late .cd-od-badge { margin-top: 12px; }
+  }
   .cd-next { margin-top: 14px; color: var(--muted); font-size: .95rem; }
   .cd-next strong { color: var(--ink); }
   @keyframes cdpulse { 0%,100% { box-shadow: 0 0 0 1px rgba(255,77,77,.35), 0 0 40px rgba(255,40,40,.25); } 50% { box-shadow: 0 0 0 1px rgba(255,77,77,.7), 0 0 80px rgba(255,40,40,.5); } }
@@ -180,6 +212,7 @@
     .cd-lab { font-size: .7rem; }
     ol.cd-run li { grid-template-columns: 30px 1fr; } ol.cd-run li .cd-st { grid-column: 2; }
     ul.cd-tasks li { grid-template-columns: 14px 1fr; } ul.cd-tasks li .cd-ts { grid-column: 2; }
+    ul.cd-late-list { grid-template-columns: 1fr; }
   }
   @media (prefers-reduced-motion: reduce) { .cd-stage.flip .cd-inner, .cd-stage.overdue .cd-digits { animation: none; } }
   </style>
@@ -848,6 +881,27 @@ function gateHTML(cur, now){
   </div>`;
 }
 
+// Overdue tasks for the current milestone, shown right under the clock so
+// they're on screen in full-screen view. The full list stays below the fold.
+// How many fit under the clock before "+N more": fewer on short/narrow screens.
+const lateOnClock = () => innerWidth <= 620 ? 2 : innerHeight >= 1000 ? 6 : 4;
+function lateHTML(cur, now){
+  const tasks = SHOW_TASKS && Array.isArray(cur.tasks) ? cur.tasks : [];
+  const late = tasks.filter(t => !t.done && t.due && new Date(t.due) < now)
+    .sort((a,b) => new Date(a.due) - new Date(b.due));
+  if (!late.length) return '';
+  const shown = late.slice(0, lateOnClock());
+  const items = shown.map(t => {
+    const bits = [t.sub ? esc(t.sub) : '', SHOW_TASK_OWNERS && t.who ? esc(t.who) : ''].filter(Boolean);
+    return `<li><span class="ln">${esc(t.name)}</span><span class="ls">${overdueBy(now - new Date(t.due))}</span>${bits.length ? `<span class="lw">${bits.join(' · ')}</span>` : ''}</li>`;
+  }).join('');
+  const more = late.length - shown.length;
+  return `<div class="cd-late" role="region" aria-label="Overdue tasks">
+    <div class="cd-late-head"><h2>&#9888; ${late.length} ${late.length === 1 ? 'task' : 'tasks'} overdue</h2>${more > 0 ? `<a href="#milestones">+${more} more &darr;</a>` : ''}</div>
+    <ul class="cd-late-list">${items}</ul>
+  </div>`;
+}
+
 let currentId, currentOverdue;
 function render(flip){
   const now = Date.now();
@@ -858,6 +912,7 @@ function render(flip){
   currentOverdue = od;
   const next = cur ? list.slice(idx + 1).find(d => !isDone(d, now)) : null;
   const nextLine = od && next ? `<p class="cd-next">Next up: <strong>${esc(next.name)}</strong> · ${new Date(next.when) > now ? relative(new Date(next.when) - now) : overdueBy(now - new Date(next.when))}</p>` : '';
+  const lateBlock = cur ? lateHTML(cur, now) : '';
   const inner = cur ? `<div class="wrap cd-inner">
         <p class="eyebrow">${od ? 'Missed GBR4 milestone' : 'Next GBR4 milestone'}</p>
         <h1 class="cd-title">${esc(cur.name)}</h1>
@@ -869,6 +924,7 @@ function render(flip){
           <div class="cd-unit"><span class="cd-num" id="n-m">00</span><span class="cd-lab">Min</span></div><span class="cd-sep">:</span>
           <div class="cd-unit"><span class="cd-num" id="n-s">00</span><span class="cd-lab">Sec</span></div>
         </div>
+        ${lateBlock}
         <div class="cd-gauge"><div class="cd-track"><div class="cd-fill" id="fill"></div></div><p id="gauge-text"></p></div>
         ${nextLine}
         <p class="cd-clock" id="clocknow"></p>
@@ -881,7 +937,7 @@ function render(flip){
     const st = done ? 'Done' : missed ? 'Missed · ' + overdueBy(-t) : (isCur ? 'On the clock' : relative(t));
     return `<li class="${cls}"><span class="cd-idx">${i+1}</span><div><div class="cd-nm">${esc(d.name)}</div><div class="cd-dt">${esc(fmt(d.when))}</div></div><span class="cd-st">${st}</span></li>`;
   }).join('');
-  app.innerHTML = `<section class="cd-stage${flip ? ' flip' : ''}${od ? ' overdue' : ''}" id="hero" aria-live="polite">
+  app.innerHTML = `<section class="cd-stage${flip ? ' flip' : ''}${od ? ' overdue' : ''}${lateBlock ? ' has-late' : ''}" id="hero" aria-live="polite">
       <div class="cd-bg" aria-hidden="true"></div>
       ${inner}
       <a class="cd-scroll" href="#milestones">&#9660; All milestones</a>
@@ -934,6 +990,8 @@ render(false);
 loadPlanner();
 setInterval(loadPlanner, PLANNER_REFRESH_MIN * 60000);
 setInterval(tick, 1000);
+let lateFit = lateOnClock();
+window.addEventListener('resize', () => { const n = lateOnClock(); if (n !== lateFit) { lateFit = n; render(false); } });
 document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
 })();
 </script>
