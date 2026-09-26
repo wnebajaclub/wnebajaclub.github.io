@@ -33,9 +33,19 @@ jobs:
       - name: Download Planner data from OneDrive
         run: |
           if [ -z "$TASKS_URL" ]; then echo "::error::Repository secret TASKS_URL is not set."; exit 1; fi
-          curl -fsSL --retry 3 "${TASKS_URL}&download=1" -o /tmp/planner.json
-          echo "Downloaded $(wc -c < /tmp/planner.json) bytes"
-          head -c 300 /tmp/planner.json; echo
+          # OneDrive "Anyone" links redirect through a page that sets a cookie.
+          # Follow the redirects with a cookie jar, then ask the final address
+          # for the raw file (download=1) with the same cookies.
+          jar=/tmp/cookies.txt
+          final=$(curl -sS -L --retry 3 -c "$jar" -b "$jar" -o /dev/null -w '%{url_effective}' "$TASKS_URL")
+          case "$final" in *\?*) dl="$final&download=1" ;; *) dl="$final?download=1" ;; esac
+          code=$(curl -sS -L --retry 3 -c "$jar" -b "$jar" -o /tmp/planner.json -w '%{http_code} %{content_type}' "$dl")
+          echo "HTTP $code, $(wc -c < /tmp/planner.json) bytes"
+          echo "First bytes:"; head -c 200 /tmp/planner.json | tr -d '\r'; echo
+          if head -c 200 /tmp/planner.json | grep -qi '<html\|<!doctype'; then
+            echo "::error::OneDrive returned a web page, not the file. Check that the TASKS_URL link is an 'Anyone with the link' link and hasn't expired."
+            exit 1
+          fi
 
       - name: Update tasks.json if Planner changed
         id: update
