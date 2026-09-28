@@ -1,0 +1,111 @@
+# TEST COPY B of planner-sync.yml — GitHub runs scheduled workflows late or
+# skips them, so this copy fires at different minutes to get more chances.
+# It is identical to planner-sync.yml except for the name and schedule. If you
+# change the sync, change every copy (planner-sync.yml, -b.yml, -c.yml), or
+# delete the copies if the test didn't help.
+#
+# Planner -> website sync (see PLANNER-SYNC.md)
+# A Power Automate flow writes the Planner data to a file in OneDrive
+# ("Website Materials (No Touch)/tasks.txt"). This job downloads that file
+# through its "Anyone with the link can view" share link and commits it as
+# tasks.json when the Planner data changed. countdown.html reads tasks.json.
+#
+# The share link is stored as the repository secret TASKS_URL (Settings ->
+# Secrets and variables -> Actions). It expires Sep 26, 2027: make a new
+# "Anyone, can view" link and paste it into that secret.
+
+name: Planner sync (B)
+
+on:
+  schedule:
+    - cron: "2,17,32,47 * * * *"   # every 15 minutes, offset from the other copies
+  workflow_dispatch:               # "Run workflow" button on the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: planner-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      TASKS_URL: ${{ secrets.TASKS_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download Planner data from OneDrive
+        run: |
+          if [ -z "$TASKS_URL" ]; then echo "::error::Repository secret TASKS_URL is not set."; exit 1; fi
+          # OneDrive "Anyone" links can be downloaded a few different ways.
+          # Try each one and keep the first that returns the file, not a web page.
+          jar=/tmp/cookies.txt; out=/tmp/planner.json
+          add_dl() { case "$1" in *\?*) echo "$1&download=1" ;; *) echo "$1?download=1" ;; esac; }
+          fetch() {  # $1 = label, $2 = url
+            rm -f "$out"
+            code=$(curl -sS -L --max-redirs 10 -c "$jar" -b "$jar" -A "Mozilla/5.0 gbr-planner-sync" \
+                   -o "$out" -w '%{http_code} %{content_type}' "$2" 2>/dev/null || echo "000")
+            size=$(wc -c < "$out" 2>/dev/null || echo 0)
+            echo "[$1] HTTP $code, $size bytes"
+            [ "${code%% *}" = "200" ] && [ "$size" -gt 0 ] && ! head -c 400 "$out" | grep -qi '<html\|<!doctype'
+          }
+          # 1) the share link itself with download=1
+          fetch "share link + download=1" "$(add_dl "$TASKS_URL")" && ok=1
+          # 2) the guestaccess.aspx address the share link redirects to, with download=1
+          if [ -z "$ok" ]; then
+            loc=$(curl -sS -o /dev/null -D - -c "$jar" -b "$jar" "$TASKS_URL" | tr -d '\r' | awk 'tolower($1)=="location:"{print $2; exit}')
+            case "$loc" in /*) loc="$(echo "$TASKS_URL" | cut -d/ -f1-3)$loc" ;; esac
+            [ -n "$loc" ] && fetch "guestaccess + download=1" "$(add_dl "$loc")" && ok=1
+          fi
+          # 3) the SharePoint shares API
+          if [ -z "$ok" ]; then
+            enc=$(printf '%s' "$TASKS_URL" | base64 -w0 | tr '+/' '-_' | tr -d '=')
+            host=$(echo "$TASKS_URL" | cut -d/ -f1-3)
+            fetch "shares API" "$host/_api/v2.0/shares/u!$enc/driveItem/content" && ok=1
+          fi
+          if [ -z "$ok" ]; then
+            echo "Last response started with:"; head -c 200 "$out" | tr -d '\r' | sed 's/https:[^" ]*/[url]/g'; echo
+            echo "::error::Could not download the file from OneDrive. Check that TASKS_URL is an 'Anyone with the link' link that hasn't expired."
+            exit 1
+          fi
+          echo "First bytes:"; head -c 200 "$out" | tr -d '\r'; echo
+
+      - name: Update tasks.json if Planner changed
+        id: update
+        run: |
+          python3 - <<'EOF'
+          import json, os, datetime
+          try:
+              new = json.load(open('/tmp/planner.json', encoding='utf-8-sig'))
+          except Exception as e:
+              raise SystemExit(f'::error::OneDrive file is not valid JSON ({e}). Is the share link still valid?')
+          if new.get('source') != 'planner':
+              print(f"No Planner data yet (source={new.get('source')!r}). Nothing to commit.")
+              raise SystemExit(0)
+          try:
+              old = json.load(open('tasks.json', encoding='utf-8-sig'))
+          except Exception:
+              old = {}
+          strip = lambda d: {k: v for k, v in d.items() if k != 'updated'}
+          if strip(old) == strip(new):
+              print('Planner data unchanged.')
+              raise SystemExit(0)
+          new['updated'] = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+          with open('tasks.json', 'w', encoding='utf-8') as f:
+              json.dump(new, f, indent=1, ensure_ascii=False)
+              f.write('\n')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write('changed=true\n')
+          print('Planner data changed; committing.')
+          EOF
+
+      - name: Commit
+        if: steps.update.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tasks.json
+          git commit -m "Sync tasks from Planner"
+          git push
