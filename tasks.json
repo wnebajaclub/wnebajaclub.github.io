@@ -2349,106 +2349,6 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
-     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
-     "title": "Rear Arms - Mounted",
-     "orderHint": "858414172*",
-     "assigneePriority": "",
-     "percentComplete": 0,
-     "createdDateTime": "2026-08-15T18:57:43.1548448Z",
-     "dueDateTime": "2026-09-28T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "noPreview",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "kr7luu2GY0yjFmURoFkhEGQAA0Wx",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {
-      "category1": true,
-      "category3": true,
-      "category5": true
-     },
-     "assignments": {
-      "5a4c5d31-5362-4d17-ac71-466045a298b3": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T18:57:43.1547924Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "401cf000-dab8-4bd0-9837-dca724289b76": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T18:57:43.1547966Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "5a4c5d31-5362-4d17-ac71-466045a298b3",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T18:57:43.1547924Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "401cf000-dab8-4bd0-9837-dca724289b76",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T18:57:43.1547966Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
      "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
@@ -2547,7 +2447,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAaCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAcCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Front Arms - Mounted",
@@ -2647,7 +2547,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBSCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBXCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Differentials - Mounted",
@@ -4239,6 +4139,105 @@
      ]
     },
     {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBSCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
+     "title": "Lowers - Manufactured",
+     "orderHint": "8584147872421038371P1",
+     "assigneePriority": "",
+     "percentComplete": 50,
+     "createdDateTime": "2026-08-15T18:48:23.4241861Z",
+     "dueDateTime": "2026-09-25T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "58AheCC17kWeM69FBSWumWQAKl2u",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category3": true,
+      "category7": true
+     },
+     "assignments": {
+      "401cf000-dab8-4bd0-9837-dca724289b76": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T18:48:23.4241392Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "0df09325-74b4-42d3-bfa1-3ae34c6a49dc": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-22T22:47:03.4642656Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "aaf95fb1-1c58-4e42-bfbd-e11754350f14"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "401cf000-dab8-4bd0-9837-dca724289b76",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T18:48:23.4241392Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "0df09325-74b4-42d3-bfa1-3ae34c6a49dc",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-22T22:47:03.4642656Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "aaf95fb1-1c58-4e42-bfbd-e11754350f14"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
      "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBYCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
@@ -4536,23 +4535,23 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBRCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAeCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
-     "title": "Lowers - Manufactured",
-     "orderHint": "8584147872421038371P1",
+     "title": "Rear Arms - Mounted",
+     "orderHint": "858414172*",
      "assigneePriority": "",
      "percentComplete": 100,
-     "createdDateTime": "2026-08-15T18:48:23.4241861Z",
-     "dueDateTime": "2026-09-25T10:00:00Z",
+     "createdDateTime": "2026-08-15T18:57:43.1548448Z",
+     "dueDateTime": "2026-09-28T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
-     "completedDateTime": "2026-09-28T13:11:05.3424604Z",
+     "completedDateTime": "2026-09-29T03:23:38.7389362Z",
      "referenceCount": 0,
      "checklistItemCount": 0,
      "activeChecklistItemCount": 0,
      "priority": 5,
-     "id": "58AheCC17kWeM69FBSWumWQAKl2u",
+     "id": "kr7luu2GY0yjFmURoFkhEGQAA0Wx",
      "createdBy": {
       "user": {
        "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
@@ -4565,21 +4564,22 @@
      "completedBy": {
       "user": {
        "displayName": null,
-       "id": "401cf000-dab8-4bd0-9837-dca724289b76"
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
       },
       "application": {
        "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+       "id": "66375f6b-983f-4c2c-9701-d680650f588f"
       }
      },
      "appliedCategories": {
+      "category1": true,
       "category3": true,
-      "category7": true
+      "category5": true
      },
      "assignments": {
-      "401cf000-dab8-4bd0-9837-dca724289b76": {
+      "5a4c5d31-5362-4d17-ac71-466045a298b3": {
        "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T18:48:23.4241392Z",
+       "assignedDateTime": "2026-08-15T18:57:43.1547924Z",
        "orderHint": "\"",
        "assignedBy": {
         "user": {
@@ -4592,14 +4592,14 @@
         }
        }
       },
-      "0df09325-74b4-42d3-bfa1-3ae34c6a49dc": {
+      "401cf000-dab8-4bd0-9837-dca724289b76": {
        "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-22T22:47:03.4642656Z",
+       "assignedDateTime": "2026-08-15T18:57:43.1547966Z",
        "orderHint": "\"",
        "assignedBy": {
         "user": {
          "displayName": null,
-         "id": "aaf95fb1-1c58-4e42-bfbd-e11754350f14"
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
         },
         "application": {
          "displayName": null,
@@ -4610,10 +4610,10 @@
      },
      "_assignments": [
       {
-       "userId": "401cf000-dab8-4bd0-9837-dca724289b76",
+       "userId": "5a4c5d31-5362-4d17-ac71-466045a298b3",
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T18:48:23.4241392Z",
+        "assignedDateTime": "2026-08-15T18:57:43.1547924Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -4627,14 +4627,14 @@
        }
       },
       {
-       "userId": "0df09325-74b4-42d3-bfa1-3ae34c6a49dc",
+       "userId": "401cf000-dab8-4bd0-9837-dca724289b76",
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-22T22:47:03.4642656Z",
+        "assignedDateTime": "2026-08-15T18:57:43.1547966Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
-          "id": "aaf95fb1-1c58-4e42-bfbd-e11754350f14"
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
          },
          "application": {
           "displayName": null,
@@ -4646,7 +4646,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBSCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBTCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Wheel Hubs/Wheel Side Axle - Mounted",
@@ -7163,7 +7163,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "ByqiFNoCYk2YRuocZQ0znmQAKnUX",
      "title": "Rolling Car",
@@ -8783,7 +8783,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "15oL6xmrtEqepnIgH8FIDmQANPkX",
      "title": "Purchasing",
@@ -11167,5 +11167,5 @@
    "displayName": "Eli Sarasin"
   }
  ],
- "updated": "2026-09-28T18:53:09Z"
+ "updated": "2026-09-29T06:54:08Z"
 }
