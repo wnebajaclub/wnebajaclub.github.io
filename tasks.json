@@ -591,7 +591,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Fire Wall - Mounted",
@@ -599,7 +599,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T22:27:25.8876722Z",
-     "dueDateTime": "2026-11-30T10:00:00Z",
+     "dueDateTime": "2026-12-07T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -691,7 +691,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAXCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Fire Wall - Manufactured",
@@ -699,7 +699,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T22:26:39.9420228Z",
-     "dueDateTime": "2026-11-16T10:00:00Z",
+     "dueDateTime": "2026-11-30T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -923,7 +923,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAcCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Pedals - Manufactured",
@@ -931,7 +931,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T22:17:09.3479174Z",
-     "dueDateTime": "2026-10-04T10:00:00Z",
+     "dueDateTime": "2026-11-02T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -1057,15 +1057,15 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAYCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
-     "title": "Brake Light Circut - Mounted",
+     "title": "Brake Light Circuit - Mounted",
      "orderHint": "8584141701657462700P*",
      "assigneePriority": "8584141701056445949",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T22:12:59.8330054Z",
-     "dueDateTime": "2026-11-30T10:00:00Z",
+     "dueDateTime": "2026-12-14T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -1453,7 +1453,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAcCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Seatbelt - Purcahsed",
@@ -1461,7 +1461,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T21:53:39.3567816Z",
-     "dueDateTime": "2026-10-19T10:00:00Z",
+     "dueDateTime": "2026-11-02T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -1552,7 +1552,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Seat - Mounted",
@@ -1560,7 +1560,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T21:52:11.5049768Z",
-     "dueDateTime": "2026-11-09T10:00:00Z",
+     "dueDateTime": "2026-11-20T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -1652,7 +1652,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Seat - Ordered",
@@ -1660,7 +1660,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T21:51:08.1576703Z",
-     "dueDateTime": "2026-10-30T10:00:00Z",
+     "dueDateTime": "2026-11-06T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -1719,7 +1719,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Seat  - Finialized",
@@ -1727,7 +1727,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T21:50:10.3434115Z",
-     "dueDateTime": "2026-10-15T10:00:00Z",
+     "dueDateTime": "2026-10-30T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2084,7 +2084,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAZCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Steering - Mounted",
@@ -2092,7 +2092,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T21:44:30.7717792Z",
-     "dueDateTime": "2026-09-30T10:00:00Z",
+     "dueDateTime": "2026-10-21T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2746,7 +2746,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Fuel Tank - Mounted",
@@ -2754,7 +2754,7 @@
      "assigneePriority": "8584146828640091520",
      "percentComplete": 0,
      "createdDateTime": "2026-08-16T23:47:01.4684437Z",
-     "dueDateTime": "2026-10-24T10:00:00Z",
+     "dueDateTime": "2026-11-02T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2980,7 +2980,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAYCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAaCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Front Diff Input Shaft - Mounted",
@@ -2988,7 +2988,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T20:19:55.9247113Z",
-     "dueDateTime": "2026-10-18T10:00:00Z",
+     "dueDateTime": "2026-10-19T10:00:00Z",
      "hasDescription": false,
      "previewType": "checklist",
      "referenceCount": 0,
@@ -3312,7 +3312,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAXCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAYCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Chain Drive - Mounted",
@@ -3320,7 +3320,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T19:55:54.2131585Z",
-     "dueDateTime": "2026-10-25T10:00:00Z",
+     "dueDateTime": "2026-10-26T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -3677,7 +3677,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAYCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Engine Mount (Tubes Only) - Mounted",
@@ -3685,7 +3685,7 @@
      "assigneePriority": "8584147833941650898",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T19:51:31.3125043Z",
-     "dueDateTime": "2026-10-14T10:00:00Z",
+     "dueDateTime": "2026-10-16T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -3842,7 +3842,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Axle - Manufactured/Assembled",
@@ -3850,7 +3850,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T19:49:46.3379274Z",
-     "dueDateTime": "2026-10-11T10:00:00Z",
+     "dueDateTime": "2026-10-16T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -3909,7 +3909,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBRCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBUCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "CVT - Purchasing",
@@ -3917,7 +3917,7 @@
      "assigneePriority": "8584147846953588447",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T19:29:50.1187495Z",
-     "dueDateTime": "2026-09-08T10:00:00Z",
+     "dueDateTime": "2026-10-09T10:00:00Z",
      "hasDescription": false,
      "previewType": "checklist",
      "referenceCount": 0,
@@ -4040,7 +4040,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAdCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAeCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Engine - Purchased",
@@ -4048,7 +4048,7 @@
      "assigneePriority": "8584147850918802544",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T19:23:13.5973385Z",
-     "dueDateTime": "2026-09-08T10:00:00Z",
+     "dueDateTime": "2026-10-30T10:00:00Z",
      "hasDescription": false,
      "previewType": "checklist",
      "referenceCount": 0,
@@ -4124,6 +4124,74 @@
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
         "assignedDateTime": "2026-08-15T19:23:13.5972832Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAcCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
+     "title": "Suspension Hardware - Finalized/Delivered",
+     "orderHint": "8584147861778536218PK",
+     "assigneePriority": "",
+     "percentComplete": 0,
+     "createdDateTime": "2026-08-15T19:06:07.6606957Z",
+     "dueDateTime": "2026-09-25T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "2W6gIcUr2kaA-Gp8Q8pmWWQAJfuL",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category3": true,
+      "category6": true,
+      "category7": true
+     },
+     "assignments": {
+      "401cf000-dab8-4bd0-9837-dca724289b76": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T19:06:07.6606445Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "401cf000-dab8-4bd0-9837-dca724289b76",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T19:06:07.6606445Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -4238,7 +4306,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBYCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBZCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Brake Components - Purchased",
@@ -4246,7 +4314,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T22:17:54.5680266Z",
-     "dueDateTime": "2026-10-19T10:00:00Z",
+     "dueDateTime": "2026-10-26T10:00:00Z",
      "hasDescription": false,
      "previewType": "checklist",
      "referenceCount": 0,
@@ -4337,7 +4405,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAcCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Brake Light - Purchased",
@@ -4345,7 +4413,7 @@
      "assigneePriority": "8584147842816672266",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T19:36:43.8103691Z",
-     "dueDateTime": "2026-10-19T10:00:00Z",
+     "dueDateTime": "2026-10-30T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -4436,7 +4504,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAfCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBQCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Fuel System - Purcahsed",
@@ -4444,7 +4512,7 @@
      "assigneePriority": "8584147849418578920",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T19:25:43.6197026Z",
-     "dueDateTime": "2026-08-31T10:00:00Z",
+     "dueDateTime": "2026-10-30T10:00:00Z",
      "hasDescription": false,
      "previewType": "checklist",
      "referenceCount": 0,
@@ -4520,6 +4588,85 @@
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
         "assignedDateTime": "2026-08-15T19:25:43.6196455Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAeCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
+     "title": "Radius Links - Finished (Manufactured/Ordered)",
+     "orderHint": "8584147858949581665P5",
+     "assigneePriority": "",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-15T19:10:50.5722309Z",
+     "dueDateTime": "2026-09-06T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "checklist",
+     "completedDateTime": "2026-10-05T18:32:49.3305959Z",
+     "referenceCount": 0,
+     "checklistItemCount": 1,
+     "activeChecklistItemCount": 1,
+     "priority": 5,
+     "id": "bNXS3Iqfbk65QTRM5YJBkmQALCp5",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "aaf95fb1-1c58-4e42-bfbd-e11754350f14"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category3": true,
+      "category6": true,
+      "category7": true
+     },
+     "assignments": {
+      "401cf000-dab8-4bd0-9837-dca724289b76": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T19:10:50.572181Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "401cf000-dab8-4bd0-9837-dca724289b76",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T19:10:50.572181Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -4802,85 +4949,6 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
-     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
-     "title": "Suspension Hardware - Finalized/Delivered",
-     "orderHint": "8584147861778536218PK",
-     "assigneePriority": "",
-     "percentComplete": 100,
-     "createdDateTime": "2026-08-15T19:06:07.6606957Z",
-     "dueDateTime": "2026-09-25T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "noPreview",
-     "completedDateTime": "2026-09-26T13:49:01.251922Z",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "2W6gIcUr2kaA-Gp8Q8pmWWQAJfuL",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "completedBy": {
-      "user": {
-       "displayName": null,
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {
-      "category3": true,
-      "category6": true,
-      "category7": true
-     },
-     "assignments": {
-      "401cf000-dab8-4bd0-9837-dca724289b76": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T19:06:07.6606445Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "401cf000-dab8-4bd0-9837-dca724289b76",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T19:06:07.6606445Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
      "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAZCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
@@ -5100,85 +5168,6 @@
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
         "assignedDateTime": "2026-08-15T18:55:30.6266996Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAcCc=\"",
-     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
-     "title": "Radius Links - Finished (Manufactured/Ordered)",
-     "orderHint": "8584147858949581665P5",
-     "assigneePriority": "",
-     "percentComplete": 100,
-     "createdDateTime": "2026-08-15T19:10:50.5722309Z",
-     "dueDateTime": "2026-09-06T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "checklist",
-     "completedDateTime": "2026-09-09T15:47:09.3975075Z",
-     "referenceCount": 0,
-     "checklistItemCount": 1,
-     "activeChecklistItemCount": 1,
-     "priority": 5,
-     "id": "bNXS3Iqfbk65QTRM5YJBkmQALCp5",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "completedBy": {
-      "user": {
-       "displayName": null,
-       "id": "aaf95fb1-1c58-4e42-bfbd-e11754350f14"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {
-      "category3": true,
-      "category6": true,
-      "category7": true
-     },
-     "assignments": {
-      "401cf000-dab8-4bd0-9837-dca724289b76": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T19:10:50.572181Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "401cf000-dab8-4bd0-9837-dca724289b76",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T19:10:50.572181Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -11178,5 +11167,5 @@
    "displayName": "Eli Sarasin"
   }
  ],
- "updated": "2026-10-05T18:35:53Z"
+ "updated": "2026-10-05T21:38:17Z"
 }
