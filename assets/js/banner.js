@@ -9,8 +9,9 @@
 //   MESSAGE  the line of text in the banner.
 //   BUTTON   the button label.
 //
-// To take it down for good: delete the <script src="assets/js/banner.js"> line
-// from each page (or just let ENDS pass).
+// Visitors can't close the banner; it stays up on every visit until ENDS passes.
+// To take it down early: delete the <script src="assets/js/banner.js"> line
+// from each page.
 const BANNER = {
   URL: "https://alumni.wne.edu/s/1919/cf20/interior.aspx?sid=1919&gid=2&pgid=2139",
   ENDS: "2026-10-22",
@@ -27,12 +28,6 @@ const BANNER = {
    if (!isNaN(end) && new Date() > end) return;
  }
 
- // Remember a dismissal per campaign link, so a new campaign shows again.
- const key = "gbr-banner-closed:" + BANNER.URL;
-  try {
-    if (localStorage.getItem(key)) return;
-  } catch (e) { /* storage blocked — just show the banner */ }
-
  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
  // Inserted where this script tag sits (just above the header), synchronously,
@@ -44,13 +39,6 @@ const BANNER = {
    '<p class="promo-text">' + esc(BANNER.MESSAGE) + "</p>" +
    '<a class="promo-btn" href="' + esc(BANNER.URL) + '" target="_blank" rel="noopener">' + esc(BANNER.BUTTON) + "</a>" +
    "</div>" +
-   '<button class="promo-close" type="button" aria-label="Dismiss banner">&times;</button>' +
    "</aside>"
    );
-
- const banner = document.currentScript.previousElementSibling;
-  banner.querySelector(".promo-close").addEventListener("click", () => {
-    banner.remove();
-    try { localStorage.setItem(key, "1"); } catch (e) {}
-  });
 })();
