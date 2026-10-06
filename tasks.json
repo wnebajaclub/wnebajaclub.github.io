@@ -6893,7 +6893,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBZCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBaCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "ByqiFNoCYk2YRuocZQ0znmQAKnUX",
      "title": "DDR's Scheduled",
@@ -6906,7 +6906,7 @@
      "previewType": "checklist",
      "referenceCount": 0,
      "checklistItemCount": 6,
-     "activeChecklistItemCount": 4,
+     "activeChecklistItemCount": 3,
      "priority": 3,
      "id": "ScYGiTpHnkKtomadiAhZxmQACCqh",
      "createdBy": {
@@ -11156,5 +11156,5 @@
    "displayName": "Eli Sarasin"
   }
  ],
- "updated": "2026-10-06T00:19:58Z"
+ "updated": "2026-10-06T01:54:38Z"
 }
