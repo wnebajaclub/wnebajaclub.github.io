@@ -29,7 +29,139 @@
    ],
    "tasks": [
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAYCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
+     "title": "Lowers - Mounted",
+     "orderHint": "8584103083611555904PO",
+     "assigneePriority": "",
+     "percentComplete": 0,
+     "createdDateTime": "2026-10-06T14:56:24.3979325Z",
+     "dueDateTime": "2026-11-04T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "U1KgcQ293kWfs-Jwn5wQu2QABXpb",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category1": true,
+      "category3": true,
+      "category5": true
+     },
+     "assignments": {
+      "5a4c5d31-5362-4d17-ac71-466045a298b3": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-10-06T14:56:24.3978645Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "401cf000-dab8-4bd0-9837-dca724289b76": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-10-06T14:56:24.3978632Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "0df09325-74b4-42d3-bfa1-3ae34c6a49dc": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-10-06T14:56:24.3978586Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "5a4c5d31-5362-4d17-ac71-466045a298b3",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-10-06T14:56:24.3978645Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "401cf000-dab8-4bd0-9837-dca724289b76",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-10-06T14:56:24.3978632Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "0df09325-74b4-42d3-bfa1-3ae34c6a49dc",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-10-06T14:56:24.3978586Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAZCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Rolling Car",
@@ -37,7 +169,7 @@
      "assigneePriority": "8584147875243407829",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T18:42:41.1368137Z",
-     "dueDateTime": "2026-09-30T10:00:00Z",
+     "dueDateTime": "2026-11-13T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -127,9 +259,9 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAfCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBQCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
+     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Knuckles - Manufactured/Ordered",
      "orderHint": "858413:",
      "assigneePriority": "",
@@ -1222,9 +1354,9 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
+     "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "E-Stops - Mounted",
      "orderHint": "8584141703528371470P6",
      "assigneePriority": "8584141702927030235",
@@ -2250,7 +2382,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBQCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBRCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Resin Knuckles - Mounted",
@@ -2258,7 +2390,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T18:44:32.2235608Z",
-     "dueDateTime": "2026-09-30T10:00:00Z",
+     "dueDateTime": "2026-11-09T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2349,7 +2481,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Engine Startup",
@@ -2357,7 +2489,7 @@
      "assigneePriority": "8584141729410620523",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T21:25:44.4155457Z",
-     "dueDateTime": "2026-11-30T10:00:00Z",
+     "dueDateTime": "2026-11-02T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2447,15 +2579,15 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAcCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBQCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
-     "title": "Front Arms - Mounted",
+     "title": "Uppers - Mounted",
      "orderHint": "8584141731",
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T18:53:16.3053348Z",
-     "dueDateTime": "2026-09-28T10:00:00Z",
+     "dueDateTime": "2026-11-09T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2507,6 +2639,21 @@
          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
         }
        }
+      },
+      "0df09325-74b4-42d3-bfa1-3ae34c6a49dc": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-10-06T14:55:32.3947184Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
       }
      },
      "_assignments": [
@@ -2543,11 +2690,28 @@
          }
         }
        }
+      },
+      {
+       "userId": "0df09325-74b4-42d3-bfa1-3ae34c6a49dc",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-10-06T14:55:32.3947184Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
       }
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBXCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBYCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Differentials - Mounted",
@@ -2556,7 +2720,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-09-28T10:00:00Z",
      "createdDateTime": "2026-08-15T19:43:37.7935876Z",
-     "dueDateTime": "2026-09-28T10:00:00Z",
+     "dueDateTime": "2026-10-09T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2746,7 +2910,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAXCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Fuel Tank - Mounted",
@@ -2754,7 +2918,7 @@
      "assigneePriority": "8584146828640091520",
      "percentComplete": 0,
      "createdDateTime": "2026-08-16T23:47:01.4684437Z",
-     "dueDateTime": "2026-11-02T10:00:00Z",
+     "dueDateTime": "2026-10-28T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2813,7 +2977,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Driveshaft - Mounted",
@@ -2821,7 +2985,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T20:34:46.5037223Z",
-     "dueDateTime": "2026-11-15T10:00:00Z",
+     "dueDateTime": "2026-10-27T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2913,7 +3077,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Driveshaft Joints - Manufactured",
@@ -2921,7 +3085,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T20:33:58.2363489Z",
-     "dueDateTime": "2026-11-11T10:00:00Z",
+     "dueDateTime": "2026-10-16T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2980,7 +3144,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAaCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Front Diff Input Shaft - Mounted",
@@ -2988,7 +3152,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T20:19:55.9247113Z",
-     "dueDateTime": "2026-10-19T10:00:00Z",
+     "dueDateTime": "2026-10-14T10:00:00Z",
      "hasDescription": false,
      "previewType": "checklist",
      "referenceCount": 0,
@@ -3080,7 +3244,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAXCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Front Drive Train - Mounted",
@@ -3088,7 +3252,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T20:04:24.5518112Z",
-     "dueDateTime": "2026-11-14T10:00:00Z",
+     "dueDateTime": "2026-10-16T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -3179,7 +3343,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAZCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Rear Drive Train - Mounted",
@@ -3187,7 +3351,7 @@
      "assigneePriority": "8584147826903703758",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T20:03:15.1072209Z",
-     "dueDateTime": "2026-11-04T10:00:00Z",
+     "dueDateTime": "2026-10-28T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -4139,7 +4303,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAcCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAdCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Suspension Hardware - Finalized/Delivered",
@@ -4147,7 +4311,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T19:06:07.6606957Z",
-     "dueDateTime": "2026-09-25T10:00:00Z",
+     "dueDateTime": "2026-10-30T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -4207,7 +4371,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBSCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBUCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Lowers - Manufactured",
@@ -4215,7 +4379,7 @@
      "assigneePriority": "",
      "percentComplete": 50,
      "createdDateTime": "2026-08-15T18:48:23.4241861Z",
-     "dueDateTime": "2026-09-25T10:00:00Z",
+     "dueDateTime": "2026-11-02T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -6628,7 +6792,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "ByqiFNoCYk2YRuocZQ0znmQAKnUX",
      "title": "Engine Startup",
@@ -6637,7 +6801,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-11-30T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:36.2058404Z",
-     "dueDateTime": "2026-11-30T00:00:00Z",
+     "dueDateTime": "2026-10-30T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -7152,7 +7316,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAYCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAaCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "ByqiFNoCYk2YRuocZQ0znmQAKnUX",
      "title": "Rolling Car",
@@ -7161,7 +7325,7 @@
      "percentComplete": 50,
      "startDateTime": "2026-09-30T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:32.8481878Z",
-     "dueDateTime": "2026-09-30T00:00:00Z",
+     "dueDateTime": "2026-11-13T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -11156,5 +11320,5 @@
    "displayName": "Eli Sarasin"
   }
  ],
- "updated": "2026-10-06T08:39:30Z"
+ "updated": "2026-10-06T15:28:04Z"
 }
