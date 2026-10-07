@@ -6792,7 +6792,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "ByqiFNoCYk2YRuocZQ0znmQAKnUX",
      "title": "Engine Startup",
@@ -6801,7 +6801,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-11-30T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:36.2058404Z",
-     "dueDateTime": "2026-10-30T10:00:00Z",
+     "dueDateTime": "2026-11-02T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -11104,10 +11104,6 @@
    "displayName": "Elizabeth Jones"
   },
   {
-   "id": "c97ee1d3-753a-4081-83a3-5ae499fc222f",
-   "displayName": "Ezra White"
-  },
-  {
    "id": "cb4b4604-23a9-42bf-b42b-cfab027fd65a",
    "displayName": "Jack Williamson"
   },
@@ -11134,10 +11130,6 @@
   {
    "id": "6f9a2bd5-8fd9-4cbc-917f-fbadb44c74ba",
    "displayName": "Logan Keenan"
-  },
-  {
-   "id": "237ad11b-8e88-484b-8f0c-86c11246f451",
-   "displayName": "Jakob Beck"
   },
   {
    "id": "bb4f82af-239a-49ba-a186-e081dba9235b",
@@ -11170,10 +11162,6 @@
   {
    "id": "1afd3551-4f96-4b38-b8e8-58bcd36a6343",
    "displayName": "Matthew Dennis"
-  },
-  {
-   "id": "43632be7-66bd-4574-a30a-d8b9be6e09ed",
-   "displayName": "Zachary Chern"
   },
   {
    "id": "ce04f8c2-66aa-4540-a601-3e091f829aa6",
@@ -11318,7 +11306,19 @@
   {
    "id": "1181429a-b02a-466a-a197-49b5a5913388",
    "displayName": "Evan Kadingo"
+  },
+  {
+   "id": "9656b3ee-637b-456d-9d48-b1ddceb1d766",
+   "displayName": "Eli Sarasin"
+  },
+  {
+   "id": "4e133d2d-ba7f-4c4f-9dd0-b28bb7c8a811",
+   "displayName": "Andy Wroblewski"
+  },
+  {
+   "id": "5ce6b4af-06a7-4e1a-8530-4e64a3bf2a5d",
+   "displayName": "Ashlee Verdin"
   }
  ],
- "updated": "2026-10-06T19:08:18Z"
+ "updated": "2026-10-07T16:40:53Z"
 }
