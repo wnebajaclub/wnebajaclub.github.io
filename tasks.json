@@ -5857,7 +5857,7 @@
    ],
    "tasks": [
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBVCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBWCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "giOGNTnQtUK2S3TfGk3lVWQAHDlR",
      "title": "PDR Redo",
@@ -5865,7 +5865,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-09-25T21:25:19.8391781Z",
-     "dueDateTime": "2026-09-30T10:00:00Z",
+     "dueDateTime": "2026-10-16T10:00:00Z",
      "hasDescription": false,
      "previewType": "checklist",
      "referenceCount": 0,
@@ -6009,7 +6009,7 @@
      "_assignments": []
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBARCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "kIp71mwyvUWitNtWnk9R7GQAB3tT",
      "title": "Practice Resin Infusion",
@@ -6017,7 +6017,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-16T14:57:16.819558Z",
-     "dueDateTime": "2026-09-21T10:00:00Z",
+     "dueDateTime": "2026-11-12T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -6039,37 +6039,7 @@
      "_assignments": []
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
-     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
-     "bucketId": "kIp71mwyvUWitNtWnk9R7GQAB3tT",
-     "title": "Order materials",
-     "orderHint": "8584147147434218502PM",
-     "assigneePriority": "",
-     "percentComplete": 0,
-     "createdDateTime": "2026-08-16T14:56:42.0960759Z",
-     "dueDateTime": "2026-09-08T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "noPreview",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "Aa1Xy1LNHUqPL_b0bMg-K2QALGFv",
-     "createdBy": {
-      "user": {
-       "id": "7a9a179a-3a80-4551-a66a-7066b94e6724"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {},
-     "assignments": {},
-     "_assignments": []
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "kIp71mwyvUWitNtWnk9R7GQAB3tT",
      "title": "Composites DDR",
@@ -6077,7 +6047,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-16T14:55:03.0287524Z",
-     "dueDateTime": "2026-09-07T10:00:00Z",
+     "dueDateTime": "2026-11-30T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -7512,7 +7482,7 @@
      "_assignments": []
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "k4Bl5Jlm_Em8WPxb9PqGn2QAEa_7",
      "title": "DDR",
@@ -7521,7 +7491,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-10-12T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:30.169694Z",
-     "dueDateTime": "2026-10-12T00:00:00Z",
+     "dueDateTime": "2026-10-16T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -7545,7 +7515,7 @@
      "_assignments": []
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "k4Bl5Jlm_Em8WPxb9PqGn2QAEa_7",
      "title": "PDR -> DDR Development",
@@ -7554,7 +7524,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-09-07T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:29.8761686Z",
-     "dueDateTime": "2026-10-12T00:00:00Z",
+     "dueDateTime": "2026-10-16T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -7573,39 +7543,6 @@
      },
      "appliedCategories": {
       "category5": true
-     },
-     "assignments": {},
-     "_assignments": []
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
-     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
-     "bucketId": "k4Bl5Jlm_Em8WPxb9PqGn2QAEa_7",
-     "title": "Purchasing",
-     "orderHint": "8584175402763898826",
-     "assigneePriority": "",
-     "percentComplete": 0,
-     "startDateTime": "2026-09-14T00:00:00Z",
-     "createdDateTime": "2026-07-14T22:03:29.0877117Z",
-     "dueDateTime": "2026-09-30T00:00:00Z",
-     "hasDescription": false,
-     "previewType": "automatic",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "NmsR5-2oHkiB_MNikOpRWGQAD59O",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "24b2c2bc-4e48-4b69-9c88-33f4cd04c867"
-      }
-     },
-     "appliedCategories": {
-      "category1": true
      },
      "assignments": {},
      "_assignments": []
@@ -7710,7 +7647,7 @@
      "_assignments": []
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "vmOp7T74k02XSXXhkTWJImQAPKmY",
      "title": "DDR",
@@ -7719,7 +7656,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-10-12T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:25.0962109Z",
-     "dueDateTime": "2026-10-12T00:00:00Z",
+     "dueDateTime": "2026-10-16T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -7743,7 +7680,7 @@
      "_assignments": []
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBYCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBZCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "vmOp7T74k02XSXXhkTWJImQAPKmY",
      "title": "PDR -> DDR Development",
@@ -7752,7 +7689,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-09-07T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:24.8032008Z",
-     "dueDateTime": "2026-10-12T00:00:00Z",
+     "dueDateTime": "2026-10-16T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -7908,7 +7845,7 @@
      "_assignments": []
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "giOGNTnQtUK2S3TfGk3lVWQAHDlR",
      "title": "DDR",
@@ -7917,7 +7854,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-10-12T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:22.1836957Z",
-     "dueDateTime": "2026-10-12T00:00:00Z",
+     "dueDateTime": "2026-10-30T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -7941,7 +7878,7 @@
      "_assignments": []
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "giOGNTnQtUK2S3TfGk3lVWQAHDlR",
      "title": "PDR -> DDR Development",
@@ -7950,7 +7887,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-09-07T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:21.85198Z",
-     "dueDateTime": "2026-10-12T00:00:00Z",
+     "dueDateTime": "2026-10-30T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -7974,7 +7911,7 @@
      "_assignments": []
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "giOGNTnQtUK2S3TfGk3lVWQAHDlR",
      "title": "Purchasing",
@@ -7983,7 +7920,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-09-14T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:21.3436193Z",
-     "dueDateTime": "2026-09-30T00:00:00Z",
+     "dueDateTime": "2026-10-30T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -8106,7 +8043,7 @@
      "_assignments": []
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "axDK4J3-jkqC0FQtNbOR02QAFdQR",
      "title": "DDR",
@@ -8115,7 +8052,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-10-12T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:17.6264418Z",
-     "dueDateTime": "2026-10-12T00:00:00Z",
+     "dueDateTime": "2026-10-16T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -8167,39 +8104,6 @@
      },
      "appliedCategories": {
       "category5": true
-     },
-     "assignments": {},
-     "_assignments": []
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
-     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
-     "bucketId": "axDK4J3-jkqC0FQtNbOR02QAFdQR",
-     "title": "Purchasing",
-     "orderHint": "8584175402886408762",
-     "assigneePriority": "",
-     "percentComplete": 0,
-     "startDateTime": "2026-09-14T00:00:00Z",
-     "createdDateTime": "2026-07-14T22:03:16.8367151Z",
-     "dueDateTime": "2026-09-30T00:00:00Z",
-     "hasDescription": false,
-     "previewType": "automatic",
-     "referenceCount": 0,
-     "checklistItemCount": 3,
-     "activeChecklistItemCount": 3,
-     "priority": 5,
-     "id": "RhNXEXVsTUqHmWjFOMM3qWQAMRo5",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "24b2c2bc-4e48-4b69-9c88-33f4cd04c867"
-      }
-     },
-     "appliedCategories": {
-      "category1": true
      },
      "assignments": {},
      "_assignments": []
@@ -8304,7 +8208,7 @@
      "_assignments": []
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "AnIjo8ikPUy8zf0F-N_DamQADqKP",
      "title": "DDR",
@@ -8313,7 +8217,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-10-05T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:13.5079818Z",
-     "dueDateTime": "2026-10-10T00:00:00Z",
+     "dueDateTime": "2026-10-16T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -8337,7 +8241,7 @@
      "_assignments": []
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "AnIjo8ikPUy8zf0F-N_DamQADqKP",
      "title": "PDR -> DDR Development",
@@ -8346,7 +8250,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-08-31T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:13.1821204Z",
-     "dueDateTime": "2026-10-05T00:00:00Z",
+     "dueDateTime": "2026-10-15T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -8365,39 +8269,6 @@
      },
      "appliedCategories": {
       "category5": true
-     },
-     "assignments": {},
-     "_assignments": []
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
-     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
-     "bucketId": "AnIjo8ikPUy8zf0F-N_DamQADqKP",
-     "title": "Purchasing",
-     "orderHint": "8584175402931880880",
-     "assigneePriority": "",
-     "percentComplete": 0,
-     "startDateTime": "2026-09-14T00:00:00Z",
-     "createdDateTime": "2026-07-14T22:03:12.2895052Z",
-     "dueDateTime": "2026-09-30T00:00:00Z",
-     "hasDescription": false,
-     "previewType": "automatic",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "bM-BIcx-qkuOYvlsT-44Y2QAAdvA",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "24b2c2bc-4e48-4b69-9c88-33f4cd04c867"
-      }
-     },
-     "appliedCategories": {
-      "category1": true
      },
      "assignments": {},
      "_assignments": []
@@ -8502,7 +8373,7 @@
      "_assignments": []
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "jj3HHa4suEiLT9wn06KWs2QAHQ-r",
      "title": "DDR",
@@ -8511,7 +8382,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-10-05T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:08.7263636Z",
-     "dueDateTime": "2026-10-10T00:00:00Z",
+     "dueDateTime": "2026-10-16T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -8535,7 +8406,7 @@
      "_assignments": []
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "jj3HHa4suEiLT9wn06KWs2QAHQ-r",
      "title": "PDR -> DDR Development",
@@ -8544,7 +8415,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-08-31T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:08.2906561Z",
-     "dueDateTime": "2026-10-05T00:00:00Z",
+     "dueDateTime": "2026-10-15T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -8563,39 +8434,6 @@
      },
      "appliedCategories": {
       "category5": true
-     },
-     "assignments": {},
-     "_assignments": []
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
-     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
-     "bucketId": "jj3HHa4suEiLT9wn06KWs2QAHQ-r",
-     "title": "Purchasing",
-     "orderHint": "8584175402975785678",
-     "assigneePriority": "",
-     "percentComplete": 0,
-     "startDateTime": "2026-09-14T00:00:00Z",
-     "createdDateTime": "2026-07-14T22:03:07.899024Z",
-     "dueDateTime": "2026-09-30T00:00:00Z",
-     "hasDescription": false,
-     "previewType": "automatic",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "zYA6oziioUu_3VQDrLsh0mQAHiSG",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "24b2c2bc-4e48-4b69-9c88-33f4cd04c867"
-      }
-     },
-     "appliedCategories": {
-      "category1": true
      },
      "assignments": {},
      "_assignments": []
@@ -8802,7 +8640,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "15oL6xmrtEqepnIgH8FIDmQANPkX",
      "title": "DDR",
@@ -8811,7 +8649,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-10-05T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:04.7959067Z",
-     "dueDateTime": "2026-10-10T00:00:00Z",
+     "dueDateTime": "2026-10-16T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -8869,7 +8707,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "15oL6xmrtEqepnIgH8FIDmQANPkX",
      "title": "PDR -> DDR Development",
@@ -8878,7 +8716,7 @@
      "percentComplete": 0,
      "startDateTime": "2026-08-31T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:04.4615243Z",
-     "dueDateTime": "2026-10-05T00:00:00Z",
+     "dueDateTime": "2026-10-15T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
@@ -8936,18 +8774,236 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
+     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
+     "bucketId": "kIp71mwyvUWitNtWnk9R7GQAB3tT",
+     "title": "Order materials",
+     "orderHint": "8584147147434218502PM",
+     "assigneePriority": "",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-16T14:56:42.0960759Z",
+     "dueDateTime": "2026-09-08T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "completedDateTime": "2026-10-08T12:08:09.3908079Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "Aa1Xy1LNHUqPL_b0bMg-K2QALGFv",
+     "createdBy": {
+      "user": {
+       "id": "7a9a179a-3a80-4551-a66a-7066b94e6724"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {},
+     "assignments": {},
+     "_assignments": []
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
+     "bucketId": "k4Bl5Jlm_Em8WPxb9PqGn2QAEa_7",
+     "title": "Purchasing",
+     "orderHint": "8584175402763898826",
+     "assigneePriority": "",
+     "percentComplete": 100,
+     "startDateTime": "2026-09-14T00:00:00Z",
+     "createdDateTime": "2026-07-14T22:03:29.0877117Z",
+     "dueDateTime": "2026-09-30T00:00:00Z",
+     "hasDescription": false,
+     "previewType": "automatic",
+     "completedDateTime": "2026-10-08T12:07:32.5323515Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "NmsR5-2oHkiB_MNikOpRWGQAD59O",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "24b2c2bc-4e48-4b69-9c88-33f4cd04c867"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category1": true
+     },
+     "assignments": {},
+     "_assignments": []
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
+     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
+     "bucketId": "axDK4J3-jkqC0FQtNbOR02QAFdQR",
+     "title": "Purchasing",
+     "orderHint": "8584175402886408762",
+     "assigneePriority": "",
+     "percentComplete": 100,
+     "startDateTime": "2026-09-14T00:00:00Z",
+     "createdDateTime": "2026-07-14T22:03:16.8367151Z",
+     "dueDateTime": "2026-09-30T00:00:00Z",
+     "hasDescription": false,
+     "previewType": "automatic",
+     "completedDateTime": "2026-10-08T12:07:16.4773731Z",
+     "referenceCount": 0,
+     "checklistItemCount": 3,
+     "activeChecklistItemCount": 3,
+     "priority": 5,
+     "id": "RhNXEXVsTUqHmWjFOMM3qWQAMRo5",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "24b2c2bc-4e48-4b69-9c88-33f4cd04c867"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category1": true
+     },
+     "assignments": {},
+     "_assignments": []
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
+     "bucketId": "AnIjo8ikPUy8zf0F-N_DamQADqKP",
+     "title": "Purchasing",
+     "orderHint": "8584175402931880880",
+     "assigneePriority": "",
+     "percentComplete": 100,
+     "startDateTime": "2026-09-14T00:00:00Z",
+     "createdDateTime": "2026-07-14T22:03:12.2895052Z",
+     "dueDateTime": "2026-09-30T00:00:00Z",
+     "hasDescription": false,
+     "previewType": "automatic",
+     "completedDateTime": "2026-10-08T12:07:05.527844Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "bM-BIcx-qkuOYvlsT-44Y2QAAdvA",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "24b2c2bc-4e48-4b69-9c88-33f4cd04c867"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category1": true
+     },
+     "assignments": {},
+     "_assignments": []
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
+     "bucketId": "jj3HHa4suEiLT9wn06KWs2QAHQ-r",
+     "title": "Purchasing",
+     "orderHint": "8584175402975785678",
+     "assigneePriority": "",
+     "percentComplete": 100,
+     "startDateTime": "2026-09-14T00:00:00Z",
+     "createdDateTime": "2026-07-14T22:03:07.899024Z",
+     "dueDateTime": "2026-09-30T00:00:00Z",
+     "hasDescription": false,
+     "previewType": "automatic",
+     "completedDateTime": "2026-10-08T12:07:03.0416934Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "zYA6oziioUu_3VQDrLsh0mQAHiSG",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "24b2c2bc-4e48-4b69-9c88-33f4cd04c867"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category1": true
+     },
+     "assignments": {},
+     "_assignments": []
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "15oL6xmrtEqepnIgH8FIDmQANPkX",
      "title": "Purchasing",
      "orderHint": "8584175403013818183",
      "assigneePriority": "",
-     "percentComplete": 0,
+     "percentComplete": 100,
      "startDateTime": "2026-09-14T00:00:00Z",
      "createdDateTime": "2026-07-14T22:03:04.0957781Z",
      "dueDateTime": "2026-09-30T00:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
+     "completedDateTime": "2026-10-08T12:06:59.7323145Z",
      "referenceCount": 0,
      "checklistItemCount": 0,
      "activeChecklistItemCount": 0,
@@ -8960,6 +9016,16 @@
       "application": {
        "displayName": null,
        "id": "24b2c2bc-4e48-4b69-9c88-33f4cd04c867"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
       }
      },
      "appliedCategories": {
@@ -11320,5 +11386,5 @@
    "displayName": "Ashlee Verdin"
   }
  ],
- "updated": "2026-10-07T16:40:53Z"
+ "updated": "2026-10-08T13:43:36Z"
 }
