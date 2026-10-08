@@ -24,7 +24,9 @@ Until the flow has run once, the page uses the task lists written in `countdown.
 3. Optional: a task named exactly like the milestone (e.g. `Rolling Car`) is the milestone itself. Completing it marks the milestone done on the site; it isn't shown in the checklist.
 4. Add the tasks to the buckets, assign people, set due dates.
    - **Done** = the task is marked complete in Planner.
-   - Milestone **dates** still come from `countdown.html` (the `DEADLINES` list).
+   - Milestone **dates** come from Planner: a task named exactly like a milestone (e.g. `Rolling Car`
+     in the Execution Plan's Systems bucket) sets that milestone's date. If both plans have one, the
+     Execution Plan's date wins. Milestones with no such task use the date in `countdown.html` (`DEADLINES`).
    - Buckets that don't match a milestone are ignored.
 
 ### Plan 2: the subsystem plan (buckets = subsystems)
