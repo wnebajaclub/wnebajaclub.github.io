@@ -740,7 +740,7 @@ const pad = n => String(n).padStart(2,'0');
 const isDone = (d, now) => d.done === true || d._plannerDone === true || (d.event === true && new Date(d.when) <= now);
 const isMissed = (d, now) => !isDone(d, now) && lateAt(d.when) <= now;
 const list = DEADLINES.filter(d => !isNaN(new Date(d.when))).sort((a,b) => new Date(a.when) - new Date(b.when));
-list.forEach(d => { d._htmlTasks = d.tasks; });
+list.forEach(d => { d._htmlTasks = d.tasks; d._htmlWhen = d.when; });
 let plannerOn = false, plannerStamp = '';
 const norm = x => String(x || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 // Planner due dates are calendar dates, but it stores them with a time
@@ -776,6 +776,25 @@ function applyPlanner(data){
   if (!data || data.source !== 'planner') return false;
   const plans = plansOf(data);
   if (!plans.length) return false;
+  // Milestone dates come from Planner: a task named exactly like a milestone
+  // (e.g. "Rolling Car" in the Systems bucket) sets that milestone's date.
+  // The Execution Plan (subsystem plan) wins; Vehicle Deadlines only fills in
+  // milestones the Execution Plan doesn't have. Milestones with no such task
+  // keep the date written in DEADLINES. Only the day changes: the time of day
+  // from DEADLINES is kept (11:59 PM deadlines, 9 AM events).
+  list.forEach(d => { d.when = d._htmlWhen; });
+  const dated = new Set();
+  [...plans].sort((a, b) => ((a.mode || 'buckets') === 'buckets') - ((b.mode || 'buckets') === 'buckets')).forEach(plan => {
+    plan.tasks.forEach(t => {
+      const m = /^(\d{4})-(\d{2})-(\d{2})T/.exec(t.dueDateTime || '');
+      const d = m && list.find(d => norm(d.name) === norm(t.title));
+      if (!d || dated.has(d)) return;
+      dated.add(d);
+      const base = new Date(d._htmlWhen);
+      d.when = new Date(+m[1], +m[2]-1, +m[3], base.getHours(), base.getMinutes()).toISOString();
+    });
+  });
+  list.sort((a, b) => new Date(a.when) - new Date(b.when));
   const people = {};
   (data.people || []).forEach(u => { if (u && u.id) people[u.id] = u.displayName || u.name || ''; });
   // A bucket belongs to a milestone when its name is the milestone name,
