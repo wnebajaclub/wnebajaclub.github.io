@@ -1701,6 +1701,7 @@ a.member.has-linkedin:focus-visible .li-tag {
   background:
     radial-gradient(700px 320px at 78% 60%, rgba(255, 182, 18, 0.10), transparent 70%),
     linear-gradient(180deg, rgba(10, 20, 36, 0.92), rgba(4, 7, 13, 0.6));
+  border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 .cf[hidden] { display: none; }
@@ -1764,10 +1765,11 @@ a.member.has-linkedin:focus-visible .li-tag {
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--gold);
   margin-top: 4px;
 }
-.cf-done .cf-cap { color: var(--gold); }
 
 /* drawing: base layer = uncolored sketch, paint layer = full color (clipped) */
 .cf-ground { stroke: rgba(157, 176, 200, 0.25); stroke-width: 2; stroke-dasharray: 2 8; stroke-linecap: round; }
