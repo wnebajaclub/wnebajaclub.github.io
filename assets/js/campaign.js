@@ -32,6 +32,22 @@
   let shown = 0; // fraction currently painted (0..1)
   let anim = null;
 
+  // Start the fill once the car scrolls into view (it sits below the hero).
+  let inView = false, pending = null;
+  const fig = section.querySelector(".cf-car");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        inView = true;
+        io.disconnect();
+        if (pending != null) animateTo(pending);
+      }
+    }, { threshold: 0.35 });
+    io.observe(fig);
+  } else {
+    inView = true;
+  }
+
   function setFill(f) {
     shown = f;
     const x = W * f;
@@ -83,12 +99,13 @@
 
     section.classList.toggle("cf-done", frac >= 1);
     section.querySelector(".cf-cap").textContent =
-      frac >= 1 ? "Goal reached \u2014 thank you!" : "The car fills in as donations come in.";
+      frac >= 1 ? "Goal reached \u2014 thank you!" : "Help fill up the car!";
     $("figure").setAttribute(
       "aria-label",
       "Progress drawing: a Baja car colored in to " + pct + "% of the " + money(goal) + " fundraising goal"
     );
-    animateTo(frac);
+    if (inView) animateTo(frac);
+    else pending = frac;
   }
 
   // Values already in the HTML are the fallback if campaign.json can't load.
