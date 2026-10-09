@@ -7,8 +7,8 @@
 //                  "url" is the donation page, "ends" is the last day the
 //                  section shows ("YYYY-MM-DD"); edit those two by hand if needed.
 //
-// The car drawing is colored in left to right to the same percent as the
-// amount raised. When the campaign is over, delete the #crowdfunding section
+// The race track fills left to right toward a checkered finish line at the
+// same percent as the amount raised. When the campaign is over, delete the #crowdfunding section
 // and this script's <script> tag from index.html, campaign.json, and the
 // workflow file.
 (function () {
@@ -21,20 +21,14 @@
 
   const endOf = (ymd) => (ymd ? new Date(ymd + "T23:59:59") : null);
 
-  // Copy the uncolored drawing into the clipped "paint" layer.
-  const art = document.getElementById("cf-art");
-  const paint = $("paint");
-  const clip = document.getElementById("cf-clip-rect");
-  const edge = document.getElementById("cf-edge");
-  const W = 640;
-  for (const n of art.childNodes) paint.appendChild(n.cloneNode(true));
+  const track = section.querySelector(".cf-track");
 
   let shown = 0; // fraction currently painted (0..1)
   let anim = null;
 
-  // Start the fill once the car scrolls into view (it sits below the hero).
+  // Start the fill once the track scrolls into view (it sits below the hero).
   let inView = false, pending = null;
-  const fig = section.querySelector(".cf-car");
+  const fig = section.querySelector(".cf-race");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver((entries) => {
       if (entries.some((e) => e.isIntersecting)) {
@@ -50,10 +44,7 @@
 
   function setFill(f) {
     shown = f;
-    const x = W * f;
-    clip.setAttribute("width", x.toFixed(1));
-    edge.setAttribute("x", (x - 1.5).toFixed(1));
-    edge.style.opacity = f > 0.005 && f < 0.995 ? 1 : 0;
+    track.style.setProperty("--p", f.toFixed(4));
   }
 
   function animateTo(target) {
@@ -79,6 +70,11 @@
     $("raised").textContent = money(raised);
     $("goal").textContent = money(goal);
     $("pct").textContent = pct;
+    $("pctLbl").textContent = frac >= 1 ? "of our goal" : "of the way there";
+    $("m25").textContent = money(goal * 0.25);
+    $("m50").textContent = money(goal * 0.5);
+    $("m75").textContent = money(goal * 0.75);
+    $("m100").textContent = money(goal);
 
     if (d.donors != null) {
       $("donors").textContent = Number(d.donors).toLocaleString("en-US");
@@ -99,10 +95,10 @@
 
     section.classList.toggle("cf-done", frac >= 1);
     section.querySelector(".cf-cap").textContent =
-      frac >= 1 ? "Goal reached \u2014 thank you!" : "Help fill up the car!";
+      frac >= 1 ? "We crossed the finish line \u2014 thank you!" : "Help us cross the finish line!";
     $("figure").setAttribute(
       "aria-label",
-      "Progress drawing: a Baja car colored in to " + pct + "% of the " + money(goal) + " fundraising goal"
+      "Progress track: " + pct + "% of the way to the " + money(goal) + " finish line"
     );
     if (inView) animateTo(frac);
     else pending = frac;
