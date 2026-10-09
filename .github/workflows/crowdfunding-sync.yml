@@ -31,15 +31,20 @@ jobs:
         id: update
         run: |
           python3 - <<'EOF'
-          import json, os, re, sys, datetime, urllib.request
+          import json, os, re, sys, datetime, urllib.request, http.cookiejar
 
           data = json.load(open('campaign.json', encoding='utf-8'))
           url = data.get('url')
           if not url:
               raise SystemExit('::error::campaign.json has no "url".')
 
-          req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (gbr-crowdfunding-sync)'})
-          html = urllib.request.urlopen(req, timeout=30).read().decode('utf-8', 'replace')
+          # The WNE site redirects once to set a session cookie, so keep cookies.
+          opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+          req = urllib.request.Request(url, headers={
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36 gbr-crowdfunding-sync',
+              'Accept': 'text/html,application/xhtml+xml',
+          })
+          html = opener.open(req, timeout=30).read().decode('utf-8', 'replace')
 
           # The page's progress widget looks like:
           #   <div class="widgetStat amt-raised"> ... <span class="value">$1,380</span>
