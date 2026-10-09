@@ -1693,3 +1693,127 @@ a.member.has-linkedin:focus-visible .li-tag {
   .promo-text { font-size: 0.85rem; }
 }
 .promo-count { font-weight: 700; white-space: nowrap; }
+
+/* ---------- temporary crowdfunding section (index.html #crowdfunding, assets/js/campaign.js) ---------- */
+.cf {
+  position: relative;
+  padding: 48px 0 40px;
+  background:
+    radial-gradient(700px 320px at 78% 60%, rgba(255, 182, 18, 0.10), transparent 70%),
+    linear-gradient(180deg, rgba(10, 20, 36, 0.92), rgba(4, 7, 13, 0.6));
+  border-bottom: 1px solid var(--line);
+}
+.cf[hidden] { display: none; }
+.cf-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 40px;
+  align-items: center;
+}
+.cf .eyebrow { margin-bottom: 12px; }
+.cf h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.cf h2 .accent { color: var(--gold); }
+.cf-lede { color: var(--muted); margin-top: 12px; max-width: 460px; }
+.cf-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 30px;
+  margin-top: 24px;
+}
+.cf-stat { display: flex; flex-direction: column; }
+.cf-stat[hidden] { display: none; }
+.cf-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.cf-stat-main .cf-num { color: var(--gold); font-size: 2.1rem; }
+.cf-lbl {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cf .btn-row { margin-top: 26px; }
+
+.cf-car { position: relative; margin: 0; }
+.cf-car svg { display: block; width: 100%; height: auto; overflow: visible; }
+.cf-pct {
+  position: absolute;
+  top: 0;
+  right: 4%;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+.cf-pct small { font-size: 0.5em; margin-left: 2px; color: var(--muted); }
+.cf-cap {
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.cf-done .cf-cap { color: var(--gold); }
+
+/* drawing: base layer = uncolored sketch, paint layer = full color (clipped) */
+.cf-ground { stroke: rgba(157, 176, 200, 0.25); stroke-width: 2; stroke-dasharray: 2 8; stroke-linecap: round; }
+.cf-edge { transition: opacity 0.4s; filter: drop-shadow(0 0 6px rgba(255, 182, 18, 0.8)); }
+.cf-layer * { stroke-linecap: round; stroke-linejoin: round; }
+.cf-layer .p-number { font-family: var(--font-display); font-weight: 700; font-size: 17px; letter-spacing: 1px; }
+
+.cf-base * { fill: none; stroke: rgba(157, 176, 200, 0.42); stroke-width: 2; }
+.cf-base .p-frame { stroke-width: 6; stroke: rgba(157, 176, 200, 0.22); }
+.cf-base .p-tread { stroke-dasharray: 6 7; stroke-width: 6; stroke: rgba(157, 176, 200, 0.18); }
+.cf-base .p-number { fill: rgba(157, 176, 200, 0.42); stroke: none; }
+.cf-base .p-fin, .cf-base .p-spoke { stroke-width: 1.5; }
+
+.cf-paint * { stroke: #04070d; stroke-width: 2; }
+.cf-paint .p-tire { fill: #1b2230; stroke: #04070d; }
+.cf-paint .p-tread { fill: none; stroke: #2c3546; stroke-width: 8; stroke-dasharray: 6 7; }
+.cf-paint .p-rim { fill: #c9d3df; }
+.cf-paint .p-hub { fill: #ffb612; }
+.cf-paint .p-spoke { stroke: #6b7a8d; stroke-width: 3; }
+.cf-paint .p-arm { stroke: #9db0c8; stroke-width: 5; }
+.cf-paint .p-shock { stroke: #ffb612; stroke-width: 7; }
+.cf-paint .p-engine { fill: #5d6b7d; }
+.cf-paint .p-fin { stroke: #3a4555; stroke-width: 3; }
+.cf-paint .p-cvt { fill: #3582e3; }
+.cf-paint .p-exhaust { fill: none; stroke: #9db0c8; stroke-width: 5; }
+.cf-paint .p-seat { fill: #222b3a; }
+.cf-paint .p-driver { fill: #13488b; }
+.cf-paint .p-helmet { fill: #ffb612; }
+.cf-paint .p-visor { fill: #04070d; }
+.cf-paint .p-wheel-steer { stroke: #04070d; stroke-width: 5; }
+.cf-paint .p-body { fill: #ffb612; }
+.cf-paint .p-nose { fill: #e09f0c; }
+.cf-paint .p-plate { fill: #eef3fa; }
+.cf-paint .p-number { fill: #13488b; stroke: none; }
+.cf-paint .p-frame { fill: none; stroke: #3582e3; stroke-width: 7; }
+.cf-paint .p-light { fill: #fff6d8; }
+
+@media (max-width: 860px) {
+  .cf { padding: 36px 0 32px; }
+  .cf-grid { grid-template-columns: 1fr; gap: 20px; }
+  .cf-lede { max-width: none; }
+}
+@media (max-width: 600px) {
+  .cf .eyebrow { white-space: nowrap; font-size: 0.8rem; }
+  .cf-stats { gap: 10px 22px; }
+  .cf-num { font-size: 1.35rem; }
+  .cf-stat-main .cf-num { font-size: 1.7rem; }
+  .cf-lbl { font-size: 0.7rem; }
+}
