@@ -4,8 +4,12 @@
 //   campaign.json  goal / raised / donors / days left, refreshed from the WNE
 //                  crowdfunding page every 30 minutes by the "Crowdfunding sync"
 //                  GitHub Action (.github/workflows/crowdfunding-sync.yml).
-//                  "url" is the donation page, "ends" is the last day the
-//                  section shows ("YYYY-MM-DD"); edit those two by hand if needed.
+//                  Edit these three by hand if needed:
+//                  "url"        the donation page
+//                  "ends"       last day of the campaign ("YYYY-MM-DD"); the
+//                               days-left counter counts down to it
+//                  "showUntil"  last day the section stays on the homepage; it
+//                               disappears on its own the day after
 //
 // The race track fills left to right toward a checkered finish line at the
 // same percent as the amount raised. When the campaign is over, delete the #crowdfunding section
@@ -83,8 +87,9 @@
 
     // Days left: count down from the end date so it stays right between syncs.
     const end = endOf(d.ends);
+    const closed = end && new Date() > end;
     let days = end ? Math.max(0, Math.ceil((end - new Date()) / 86400000)) : d.daysLeft;
-    if (days == null) {
+    if (days == null || closed) {
       $("daysWrap").hidden = true;
     } else {
       $("days").textContent = days;
@@ -95,7 +100,9 @@
 
     section.classList.toggle("cf-done", frac >= 1);
     section.querySelector(".cf-cap").textContent =
-      frac >= 1 ? "We crossed the finish line \u2014 thank you!" : "Help us cross the finish line!";
+      frac >= 1 ? "We crossed the finish line \u2014 thank you!"
+      : closed ? "The campaign has closed \u2014 thank you to everyone who gave!"
+      : "Help us cross the finish line!";
     $("figure").setAttribute(
       "aria-label",
       "Progress track: " + pct + "% of the way to the " + money(goal) + " finish line"
@@ -112,17 +119,19 @@
     daysLeft: Number($("days").textContent),
     url: $("link").href,
     ends: section.dataset.ends,
+    showUntil: section.dataset.showUntil,
   };
+  const hideAfter = (d) => endOf(d.showUntil || d.ends);
 
-  const fallbackEnd = endOf(section.dataset.ends);
-  if (fallbackEnd && new Date() > fallbackEnd) return; // campaign over: stay hidden
+  const fallbackHide = hideAfter(fallback);
+  if (fallbackHide && new Date() > fallbackHide) return; // past showUntil: stay hidden
   section.hidden = false;
 
   fetch("campaign.json?t=" + Date.now(), { cache: "no-store" })
     .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
     .then((d) => {
-      const end = endOf(d.ends);
-      if (end && new Date() > end) {
+      const hide = hideAfter(Object.assign({}, fallback, d));
+      if (hide && new Date() > hide) {
         section.hidden = true;
         return;
       }
