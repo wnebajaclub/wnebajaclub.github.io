@@ -1,0 +1,85 @@
+# Crowdfunding -> website sync (temporary, for the GBR4 campaign)
+# Reads the goal / raised / donors / days-left numbers from the WNE crowdfunding
+# page (the URL saved in campaign.json) and commits them to campaign.json when
+# they change. The homepage campaign section (assets/js/campaign.js) reads
+# campaign.json, so the car fills in as donations come in.
+#
+# Nothing to set up: no secrets needed. When the campaign is over, delete this
+# file (and the campaign section in index.html) — see the notes in campaign.js.
+
+name: Crowdfunding sync
+
+on:
+  schedule:
+    - cron: "12,42 * * * *"   # every 30 minutes
+  workflow_dispatch:          # "Run workflow" button on the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crowdfunding-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read the crowdfunding page and update campaign.json
+        id: update
+        run: |
+          python3 - <<'EOF'
+          import json, os, re, sys, datetime, urllib.request
+
+          data = json.load(open('campaign.json', encoding='utf-8'))
+          url = data.get('url')
+          if not url:
+              raise SystemExit('::error::campaign.json has no "url".')
+
+          req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (gbr-crowdfunding-sync)'})
+          html = urllib.request.urlopen(req, timeout=30).read().decode('utf-8', 'replace')
+
+          # The page's progress widget looks like:
+          #   <div class="widgetStat amt-raised"> ... <span class="value">$1,380</span>
+          def stat(cls):
+              m = re.search(r'widgetStat\s+' + cls + r'\b.*?class="value"[^>]*>\s*([^<]*?)\s*<', html, re.S)
+              if not m:
+                  return None
+              digits = re.sub(r'[^\d.]', '', m.group(1))
+              return float(digits) if digits else 0.0
+
+          goal, raised, donors, left = stat('amt-goal'), stat('amt-raised'), stat('donors'), stat('countdown')
+          if goal is None or raised is None:
+              raise SystemExit('::error::Could not find the Goal/Raised numbers on the crowdfunding page. '
+                               'The page layout may have changed.')
+
+          num = lambda x: int(x) if x is not None and x == int(x) else x
+          new = dict(data)
+          new.update(goal=num(goal), raised=num(raised))
+          if donors is not None: new['donors'] = num(donors)
+          if left is not None:   new['daysLeft'] = num(left)
+          print(f"Goal {new['goal']}, raised {new['raised']}, donors {new.get('donors')}, days left {new.get('daysLeft')}")
+
+          strip = lambda d: {k: v for k, v in d.items() if k != 'updated'}
+          if strip(new) == strip(data):
+              print('No change.')
+              raise SystemExit(0)
+          new['updated'] = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+          with open('campaign.json', 'w', encoding='utf-8') as f:
+              json.dump(new, f, indent=1, ensure_ascii=False)
+              f.write('\n')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write('changed=true\n')
+          EOF
+
+      - name: Commit
+        if: steps.update.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add campaign.json
+          git commit -m "Sync crowdfunding totals"
+          # the Planner sync may have pushed in the meantime
+          git pull --rebase && git push
