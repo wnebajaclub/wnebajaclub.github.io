@@ -685,7 +685,13 @@ section { padding: 84px 0; }
 
 .sponsor-grid { display: grid; gap: 18px; }
 .sg-partner { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-.sg-bluebear { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+/* Blue Bear: 3 per row, and a short last row is centred under the one above
+   (5 cards = 3 on top, 2 centred below). Flex rather than grid because grid
+   can't centre a partial row. Drops to 2 then 1 per row on smaller screens. */
+.sponsor-grid.sg-bluebear { display: flex; flex-wrap: wrap; justify-content: center; }
+.sg-bluebear > .sponsor-card { flex: 0 0 calc((100% - 36px) / 3); min-width: 0; }
+@media (max-width: 900px) { .sg-bluebear > .sponsor-card { flex-basis: calc((100% - 18px) / 2); } }
+@media (max-width: 560px) { .sg-bluebear > .sponsor-card { flex-basis: 100%; } }
 .sg-std { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
 .sg-major { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 900px) { .sg-major { grid-template-columns: repeat(2, 1fr); } }
