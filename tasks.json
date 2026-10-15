@@ -8448,7 +8448,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "15oL6xmrtEqepnIgH8FIDmQANPkX",
      "title": "PDR -> DDR Development",
@@ -10415,7 +10415,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBVCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBYCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "axDK4J3-jkqC0FQtNbOR02QAFdQR",
      "title": "CDR",
@@ -10430,7 +10430,7 @@
      "completedDateTime": "2026-08-05T00:39:16.8811668Z",
      "referenceCount": 0,
      "checklistItemCount": 6,
-     "activeChecklistItemCount": 3,
+     "activeChecklistItemCount": 0,
      "priority": 3,
      "id": "GHWFy_gb4kG7GPyCyZSUy2QACitU",
      "createdBy": {
@@ -11397,5 +11397,5 @@
    "displayName": "Ashlee Verdin"
   }
  ],
- "updated": "2026-10-15T05:48:44Z"
+ "updated": "2026-10-15T10:00:02Z"
 }
