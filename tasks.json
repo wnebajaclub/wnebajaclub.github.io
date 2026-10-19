@@ -32,6 +32,73 @@
      "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
+     "title": "Steering - Mount Manufactured",
+     "orderHint": "8584091568487803096P@",
+     "assigneePriority": "",
+     "percentComplete": 0,
+     "startDateTime": "2026-10-30T10:00:00Z",
+     "createdDateTime": "2026-10-19T22:48:16.8517733Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "F2YhdOWx-UCY9JdUHd7V9WQAOfyJ",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category7": true,
+      "category8": true
+     },
+     "assignments": {
+      "8ae870f8-a36e-4b8f-8552-100ed805edaa": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-10-19T22:48:16.8517195Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "8ae870f8-a36e-4b8f-8552-100ed805edaa",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-10-19T22:48:16.8517195Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Lowers - Mounted",
      "orderHint": "8584103083611555904PO",
      "assigneePriority": "",
@@ -1917,10 +1984,10 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
-     "title": "Steering Wheel - Purchased",
+     "title": "Steering Wheel - Manufactured",
      "orderHint": "8584141716344529378P8",
      "assigneePriority": "",
      "percentComplete": 0,
@@ -2149,7 +2216,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Steering Column - Manufactured",
@@ -2157,7 +2224,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T21:46:13.0446383Z",
-     "dueDateTime": "2026-11-01T10:00:00Z",
+     "dueDateTime": "2026-11-09T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2216,15 +2283,15 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAeCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
-     "title": "Steering - Mounted",
+     "title": "Steering - Mount Finalized",
      "orderHint": "8584141718747709086PL",
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T21:44:30.7717792Z",
-     "dueDateTime": "2026-10-21T10:00:00Z",
+     "dueDateTime": "2026-10-23T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2382,7 +2449,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBRCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBSCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Resin Knuckles - Mounted",
@@ -2390,7 +2457,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T18:44:32.2235608Z",
-     "dueDateTime": "2026-11-09T10:00:00Z",
+     "dueDateTime": "2026-11-01T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2878,7 +2945,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAXCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAYCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Driveshaft Joints - Manufactured",
@@ -2886,7 +2953,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T20:33:58.2363489Z",
-     "dueDateTime": "2026-10-16T10:00:00Z",
+     "dueDateTime": "2026-10-21T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2945,7 +3012,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAfCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBRCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Front Diff Input Shaft - Mounted",
@@ -2953,12 +3020,12 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T20:19:55.9247113Z",
-     "dueDateTime": "2026-10-14T10:00:00Z",
+     "dueDateTime": "2026-10-21T10:00:00Z",
      "hasDescription": false,
      "previewType": "checklist",
      "referenceCount": 0,
      "checklistItemCount": 2,
-     "activeChecklistItemCount": 2,
+     "activeChecklistItemCount": 1,
      "priority": 5,
      "id": "b0hQlfmxy060icZT6QVqQmQAJaIN",
      "createdBy": {
@@ -3045,7 +3112,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAcCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Front Drive Train - Mounted",
@@ -3053,7 +3120,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T20:04:24.5518112Z",
-     "dueDateTime": "2026-10-16T10:00:00Z",
+     "dueDateTime": "2026-10-21T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -3642,7 +3709,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBQCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBRCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Engine Mount (Tubes Only) - Mounted",
@@ -3650,7 +3717,7 @@
      "assigneePriority": "8584147833941650898",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T19:51:31.3125043Z",
-     "dueDateTime": "2026-10-16T10:00:00Z",
+     "dueDateTime": "2026-10-21T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -3807,15 +3874,15 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAXCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAcCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
+     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Axle - Manufactured/Assembled",
      "orderHint": "8584147835593214229P+",
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T19:49:46.3379274Z",
-     "dueDateTime": "2026-10-16T10:00:00Z",
+     "dueDateTime": "2026-11-11T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -3859,137 +3926,6 @@
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
         "assignedDateTime": "2026-08-15T19:49:46.3378353Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBbCc=\"",
-     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
-     "title": "CVT - Purchasing",
-     "orderHint": "8584147847554458805P>",
-     "assigneePriority": "8584147846953588447",
-     "percentComplete": 50,
-     "createdDateTime": "2026-08-15T19:29:50.1187495Z",
-     "dueDateTime": "2026-10-09T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "checklist",
-     "referenceCount": 0,
-     "checklistItemCount": 2,
-     "activeChecklistItemCount": 2,
-     "priority": 5,
-     "id": "RWYzKmsmQkeev2-pBudP3GQAPF9N",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {
-      "category4": true,
-      "category6": true
-     },
-     "assignments": {
-      "fc8b709b-11e6-47da-87da-88a92addc3bb": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T19:29:50.1186924Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "b205078e-028f-4523-80ae-ad55f496f08e": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T19:29:50.1186911Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "aaf95fb1-1c58-4e42-bfbd-e11754350f14": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T19:29:50.1186871Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T19:29:50.1186924Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "b205078e-028f-4523-80ae-ad55f496f08e",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T19:29:50.1186911Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "aaf95fb1-1c58-4e42-bfbd-e11754350f14",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T19:29:50.1186871Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -4568,6 +4504,148 @@
      ]
     },
     {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBeCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
+     "title": "CVT - Purchasing",
+     "orderHint": "8584147847554458805P>",
+     "assigneePriority": "8584147846953588447",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-15T19:29:50.1187495Z",
+     "dueDateTime": "2026-10-09T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "checklist",
+     "completedDateTime": "2026-10-19T22:28:38.2311306Z",
+     "referenceCount": 0,
+     "checklistItemCount": 2,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "RWYzKmsmQkeev2-pBudP3GQAPF9N",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category4": true,
+      "category6": true
+     },
+     "assignments": {
+      "fc8b709b-11e6-47da-87da-88a92addc3bb": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T19:29:50.1186924Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "b205078e-028f-4523-80ae-ad55f496f08e": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T19:29:50.1186911Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "aaf95fb1-1c58-4e42-bfbd-e11754350f14": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T19:29:50.1186871Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T19:29:50.1186924Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "b205078e-028f-4523-80ae-ad55f496f08e",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T19:29:50.1186911Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "aaf95fb1-1c58-4e42-bfbd-e11754350f14",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T19:29:50.1186871Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
      "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBCTCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
@@ -4778,7 +4856,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAeCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAfCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Radius Links - Finished (Manufactured/Ordered)",
@@ -4792,7 +4870,7 @@
      "completedDateTime": "2026-10-05T18:32:49.3305959Z",
      "referenceCount": 0,
      "checklistItemCount": 1,
-     "activeChecklistItemCount": 1,
+     "activeChecklistItemCount": 0,
      "priority": 5,
      "id": "bNXS3Iqfbk65QTRM5YJBkmQALCp5",
      "createdBy": {
@@ -11507,5 +11585,5 @@
    "displayName": "Ashlee Verdin"
   }
  ],
- "updated": "2026-10-17T07:26:37Z"
+ "updated": "2026-10-19T23:50:35Z"
 }
