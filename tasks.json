@@ -2945,74 +2945,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAaCc=\"",
-     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
-     "title": "Driveshaft Joints - Manufactured",
-     "orderHint": "8584147809072793420P%",
-     "assigneePriority": "",
-     "percentComplete": 0,
-     "createdDateTime": "2026-08-15T20:33:58.2363489Z",
-     "dueDateTime": "2026-10-21T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "noPreview",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "5xQwXgT5wkK5PyUI_03gL2QAHQbk",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {
-      "category2": true,
-      "category7": true
-     },
-     "assignments": {
-      "363d7698-d531-4160-9cef-c943e77c632a": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T20:33:58.2363034Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T20:33:58.2363034Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBVCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBXCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Front Diff Input Shaft - Mounted",
@@ -4489,6 +4422,84 @@
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
         "assignedDateTime": "2026-08-15T19:25:43.6196455Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
+     "title": "Driveshaft Joints - Manufactured",
+     "orderHint": "8584147809072793420P%",
+     "assigneePriority": "",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-15T20:33:58.2363489Z",
+     "dueDateTime": "2026-10-21T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "completedDateTime": "2026-10-22T12:15:13.0721538Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "5xQwXgT5wkK5PyUI_03gL2QAHQbk",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category2": true,
+      "category7": true
+     },
+     "assignments": {
+      "363d7698-d531-4160-9cef-c943e77c632a": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T20:33:58.2363034Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T20:33:58.2363034Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -11585,5 +11596,5 @@
    "displayName": "Ashlee Verdin"
   }
  ],
- "updated": "2026-10-22T07:28:09Z"
+ "updated": "2026-10-22T13:10:00Z"
 }
