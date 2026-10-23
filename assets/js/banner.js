@@ -14,7 +14,7 @@
 // from each page.
 const BANNER = {
   URL: "https://alumni.wne.edu/s/1919/cf20/interior.aspx?sid=1919&gid=2&pgid=2139",
-  ENDS: "2026-10-22",
+  ENDS: "2026-10-23",
   MESSAGE: "Help GBR4 cross the finish line — support our crowdfunding campaign.",
   BUTTON: "Donate",
 };
