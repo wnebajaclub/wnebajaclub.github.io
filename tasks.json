@@ -8725,7 +8725,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBCSCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBCUCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "ByqiFNoCYk2YRuocZQ0znmQAKnUX",
      "title": "DDR's Scheduled",
@@ -8739,7 +8739,7 @@
      "completedDateTime": "2026-10-12T18:34:53.8454073Z",
      "referenceCount": 0,
      "checklistItemCount": 6,
-     "activeChecklistItemCount": 3,
+     "activeChecklistItemCount": 1,
      "priority": 3,
      "id": "ScYGiTpHnkKtomadiAhZxmQACCqh",
      "createdBy": {
@@ -11607,5 +11607,5 @@
    "displayName": "Ashlee Verdin"
   }
  ],
- "updated": "2026-10-28T07:33:26Z"
+ "updated": "2026-10-28T14:29:11Z"
 }
