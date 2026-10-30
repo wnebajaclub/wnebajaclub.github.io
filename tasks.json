@@ -326,15 +326,15 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBQCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBVCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Knuckles - Manufactured/Ordered",
      "orderHint": "858413:",
-     "assigneePriority": "",
+     "assigneePriority": "8584082244581688117",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T18:43:44.2374954Z",
-     "dueDateTime": "2026-10-31T10:00:00Z",
+     "dueDateTime": "2026-11-02T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -356,14 +356,14 @@
       "category7": true
      },
      "assignments": {
-      "401cf000-dab8-4bd0-9837-dca724289b76": {
+      "363d7698-d531-4160-9cef-c943e77c632a": {
        "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-22T22:46:50.33421Z",
+       "assignedDateTime": "2026-08-15T18:47:36.7547958Z",
        "orderHint": "\"",
        "assignedBy": {
         "user": {
          "displayName": null,
-         "id": "aaf95fb1-1c58-4e42-bfbd-e11754350f14"
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
         },
         "application": {
          "displayName": null,
@@ -371,9 +371,39 @@
         }
        }
       },
-      "363d7698-d531-4160-9cef-c943e77c632a": {
+      "fc8b709b-11e6-47da-87da-88a92addc3bb": {
        "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T18:47:36.7547958Z",
+       "assignedDateTime": "2026-10-30T17:47:07.3087378Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "b205078e-028f-4523-80ae-ad55f496f08e": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-10-30T17:42:17.2894116Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "aaf95fb1-1c58-4e42-bfbd-e11754350f14": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-10-30T17:42:23.840511Z",
        "orderHint": "\"",
        "assignedBy": {
         "user": {
@@ -389,14 +419,14 @@
      },
      "_assignments": [
       {
-       "userId": "401cf000-dab8-4bd0-9837-dca724289b76",
+       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-22T22:46:50.33421Z",
+        "assignedDateTime": "2026-08-15T18:47:36.7547958Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
-          "id": "aaf95fb1-1c58-4e42-bfbd-e11754350f14"
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
          },
          "application": {
           "displayName": null,
@@ -406,10 +436,44 @@
        }
       },
       {
-       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
+       "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T18:47:36.7547958Z",
+        "assignedDateTime": "2026-10-30T17:47:07.3087378Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "b205078e-028f-4523-80ae-ad55f496f08e",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-10-30T17:42:17.2894116Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "aaf95fb1-1c58-4e42-bfbd-e11754350f14",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-10-30T17:42:23.840511Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -2710,7 +2774,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAZCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Fuel Tank - Mounted",
@@ -2718,7 +2782,7 @@
      "assigneePriority": "8584146828640091520",
      "percentComplete": 0,
      "createdDateTime": "2026-08-16T23:47:01.4684437Z",
-     "dueDateTime": "2026-10-28T10:00:00Z",
+     "dueDateTime": "2026-11-15T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2740,6 +2804,21 @@
       "category5": true
      },
      "assignments": {
+      "5a4c5d31-5362-4d17-ac71-466045a298b3": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-10-30T17:39:59.349649Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
       "fc8b709b-11e6-47da-87da-88a92addc3bb": {
        "@odata.type": "#microsoft.graph.plannerAssignment",
        "assignedDateTime": "2026-08-16T23:47:01.4683896Z",
@@ -2757,6 +2836,23 @@
       }
      },
      "_assignments": [
+      {
+       "userId": "5a4c5d31-5362-4d17-ac71-466045a298b3",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-10-30T17:39:59.349649Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
       {
        "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
        "value": {
@@ -2777,306 +2873,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAaCc=\"",
-     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
-     "title": "Driveshaft - Mounted",
-     "orderHint": "8584147808590293128PI",
-     "assigneePriority": "",
-     "percentComplete": 0,
-     "createdDateTime": "2026-08-15T20:34:46.5037223Z",
-     "dueDateTime": "2026-10-27T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "noPreview",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "c7uY2QWlw0e0WcMwgLU9nmQAE9Qr",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {
-      "category2": true,
-      "category5": true,
-      "category10": true
-     },
-     "assignments": {
-      "363d7698-d531-4160-9cef-c943e77c632a": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T20:34:46.503668Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "6f9a2bd5-8fd9-4cbc-917f-fbadb44c74ba": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T20:34:46.5036621Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T20:34:46.503668Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "6f9a2bd5-8fd9-4cbc-917f-fbadb44c74ba",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T20:34:46.5036621Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBXCc=\"",
-     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
-     "title": "Front Diff Input Shaft - Mounted",
-     "orderHint": "8584147817496017694PA",
-     "assigneePriority": "",
-     "percentComplete": 0,
-     "createdDateTime": "2026-08-15T20:19:55.9247113Z",
-     "dueDateTime": "2026-10-21T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "checklist",
-     "referenceCount": 0,
-     "checklistItemCount": 2,
-     "activeChecklistItemCount": 1,
-     "priority": 5,
-     "id": "b0hQlfmxy060icZT6QVqQmQAJaIN",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {
-      "category2": true,
-      "category7": true,
-      "category10": true
-     },
-     "assignments": {
-      "363d7698-d531-4160-9cef-c943e77c632a": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T20:19:55.9246636Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "6f9a2bd5-8fd9-4cbc-917f-fbadb44c74ba": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T20:20:04.5321932Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T20:19:55.9246636Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "6f9a2bd5-8fd9-4cbc-917f-fbadb44c74ba",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T20:20:04.5321932Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
      "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBQCc=\"",
-     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
-     "title": "Front Drive Train - Mounted",
-     "orderHint": "8584147826809765307P;",
-     "assigneePriority": "",
-     "percentComplete": 0,
-     "createdDateTime": "2026-08-15T20:04:24.5518112Z",
-     "dueDateTime": "2026-10-21T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "noPreview",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "JGzBRTrITU2CHQbOTTfecmQAGwRp",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {
-      "category1": true,
-      "category2": true
-     },
-     "assignments": {
-      "5a4c5d31-5362-4d17-ac71-466045a298b3": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T20:04:24.5517518Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "363d7698-d531-4160-9cef-c943e77c632a": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T20:04:24.5517449Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "5a4c5d31-5362-4d17-ac71-466045a298b3",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T20:04:24.5517518Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T20:04:24.5517449Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAfCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Rear Drive Train - Mounted",
@@ -3084,7 +2881,7 @@
      "assigneePriority": "8584147826903703758",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T20:03:15.1072209Z",
-     "dueDateTime": "2026-10-28T10:00:00Z",
+     "dueDateTime": "2026-11-02T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -3209,12 +3006,12 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAcCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAdCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Chain Drive - Mounted",
      "orderHint": "8584147831914044586PN",
-     "assigneePriority": "",
+     "assigneePriority": "8584082248281619777",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T19:55:54.2131585Z",
      "dueDateTime": "2026-10-26T10:00:00Z",
@@ -3269,6 +3066,21 @@
          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
         }
        }
+      },
+      "fc8b709b-11e6-47da-87da-88a92addc3bb": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-10-30T17:40:57.3155726Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
       }
      },
      "_assignments": [
@@ -3305,11 +3117,28 @@
          }
         }
        }
+      },
+      {
+       "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-10-30T17:40:57.3155726Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
       }
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAYCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAaCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Engine Plate - Mounted",
@@ -3317,7 +3146,7 @@
      "assigneePriority": "8584147832687201644",
      "percentComplete": 0,
      "createdDateTime": "2026-08-15T19:53:36.7574285Z",
-     "dueDateTime": "2026-10-31T10:00:00Z",
+     "dueDateTime": "2026-11-02T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -3459,106 +3288,6 @@
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
         "assignedDateTime": "2026-08-15T19:53:36.7573629Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
-     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
-     "title": "Engine Mount Plate - Manufactured",
-     "orderHint": "8584147833991809215PB",
-     "assigneePriority": "8584147833391412471",
-     "percentComplete": 0,
-     "createdDateTime": "2026-08-15T19:52:26.3363472Z",
-     "dueDateTime": "2026-10-21T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "noPreview",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "CFnF7WiMpkudS1YHhSR4eWQAPIEj",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {
-      "category2": true,
-      "category4": true,
-      "category7": true
-     },
-     "assignments": {
-      "363d7698-d531-4160-9cef-c943e77c632a": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T19:52:26.3362913Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "fc8b709b-11e6-47da-87da-88a92addc3bb": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T19:52:26.3362879Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T19:52:26.3362913Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T19:52:26.3362879Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -3791,105 +3520,6 @@
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
         "assignedDateTime": "2026-08-15T19:49:46.3378353Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBQCc=\"",
-     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
-     "title": "Engine - Purchased",
-     "orderHint": "8584147851519394388P1",
-     "assigneePriority": "8584147850918802544",
-     "percentComplete": 0,
-     "createdDateTime": "2026-08-15T19:23:13.5973385Z",
-     "dueDateTime": "2026-10-30T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "checklist",
-     "referenceCount": 0,
-     "checklistItemCount": 2,
-     "activeChecklistItemCount": 2,
-     "priority": 5,
-     "id": "JkyVvLwhb0OfxkULlMFhxmQABxXM",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {
-      "category4": true,
-      "category6": true
-     },
-     "assignments": {
-      "fc8b709b-11e6-47da-87da-88a92addc3bb": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T19:23:13.5972867Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "b205078e-028f-4523-80ae-ad55f496f08e": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T19:23:13.5972832Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T19:23:13.5972867Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "b205078e-028f-4523-80ae-ad55f496f08e",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T19:23:13.5972832Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -4171,17 +3801,461 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAeCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAcCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
+     "title": "Engine Mount Plate - Manufactured",
+     "orderHint": "8584147833991809215PB",
+     "assigneePriority": "8584147833391412471",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-15T19:52:26.3363472Z",
+     "dueDateTime": "2026-10-21T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "completedDateTime": "2026-10-30T17:40:41.4116542Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "CFnF7WiMpkudS1YHhSR4eWQAPIEj",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category2": true,
+      "category4": true,
+      "category7": true
+     },
+     "assignments": {
+      "363d7698-d531-4160-9cef-c943e77c632a": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T19:52:26.3362913Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "fc8b709b-11e6-47da-87da-88a92addc3bb": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T19:52:26.3362879Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T19:52:26.3362913Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T19:52:26.3362879Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBYCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
+     "title": "Front Diff Input Shaft - Mounted",
+     "orderHint": "8584147817496017694PA",
+     "assigneePriority": "",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-15T20:19:55.9247113Z",
+     "dueDateTime": "2026-10-21T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "checklist",
+     "completedDateTime": "2026-10-30T17:40:30.9489373Z",
+     "referenceCount": 0,
+     "checklistItemCount": 2,
+     "activeChecklistItemCount": 1,
+     "priority": 5,
+     "id": "b0hQlfmxy060icZT6QVqQmQAJaIN",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category2": true,
+      "category7": true,
+      "category10": true
+     },
+     "assignments": {
+      "363d7698-d531-4160-9cef-c943e77c632a": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T20:19:55.9246636Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "6f9a2bd5-8fd9-4cbc-917f-fbadb44c74ba": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T20:20:04.5321932Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T20:19:55.9246636Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "6f9a2bd5-8fd9-4cbc-917f-fbadb44c74ba",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T20:20:04.5321932Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
+     "title": "Driveshaft - Mounted",
+     "orderHint": "8584147808590293128PI",
+     "assigneePriority": "",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-15T20:34:46.5037223Z",
+     "dueDateTime": "2026-10-27T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "completedDateTime": "2026-10-30T17:39:17.5134461Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "c7uY2QWlw0e0WcMwgLU9nmQAE9Qr",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category2": true,
+      "category5": true,
+      "category10": true
+     },
+     "assignments": {
+      "363d7698-d531-4160-9cef-c943e77c632a": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T20:34:46.503668Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "6f9a2bd5-8fd9-4cbc-917f-fbadb44c74ba": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T20:34:46.5036621Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T20:34:46.503668Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "6f9a2bd5-8fd9-4cbc-917f-fbadb44c74ba",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T20:34:46.5036621Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBRCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
+     "title": "Front Drive Train - Mounted",
+     "orderHint": "8584147826809765307P;",
+     "assigneePriority": "",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-15T20:04:24.5518112Z",
+     "dueDateTime": "2026-10-21T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "completedDateTime": "2026-10-30T17:39:11.0267177Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "JGzBRTrITU2CHQbOTTfecmQAGwRp",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category1": true,
+      "category2": true
+     },
+     "assignments": {
+      "5a4c5d31-5362-4d17-ac71-466045a298b3": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T20:04:24.5517518Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "363d7698-d531-4160-9cef-c943e77c632a": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T20:04:24.5517449Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "5a4c5d31-5362-4d17-ac71-466045a298b3",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T20:04:24.5517518Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T20:04:24.5517449Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAfCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Brake Light - Purchased",
      "orderHint": "I2",
      "assigneePriority": "8584147842816672266",
-     "percentComplete": 0,
+     "percentComplete": 100,
      "createdDateTime": "2026-08-15T19:36:43.8103691Z",
      "dueDateTime": "2026-10-30T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
+     "completedDateTime": "2026-10-30T17:38:57.0924972Z",
      "referenceCount": 0,
      "checklistItemCount": 0,
      "activeChecklistItemCount": 0,
@@ -4189,6 +4263,16 @@
      "id": "0kv1HIt3akG_AeY2GW7htWQAHLOM",
      "createdBy": {
       "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
        "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
       },
       "application": {
@@ -4270,17 +4354,18 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBSCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBTCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
      "title": "Fuel System - Purcahsed",
      "orderHint": "[4",
      "assigneePriority": "8584147849418578920",
-     "percentComplete": 0,
+     "percentComplete": 100,
      "createdDateTime": "2026-08-15T19:25:43.6197026Z",
      "dueDateTime": "2026-10-30T10:00:00Z",
      "hasDescription": false,
      "previewType": "checklist",
+     "completedDateTime": "2026-10-30T17:38:49.0187289Z",
      "referenceCount": 0,
      "checklistItemCount": 4,
      "activeChecklistItemCount": 3,
@@ -4288,6 +4373,16 @@
      "id": "N5sSDtJEe02Rk2uJ9JYgDmQAMS9r",
      "createdBy": {
       "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
        "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
       },
       "application": {
@@ -4354,6 +4449,116 @@
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
         "assignedDateTime": "2026-08-15T19:25:43.6196455Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBRCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
+     "title": "Engine - Purchased",
+     "orderHint": "8584147851519394388P1",
+     "assigneePriority": "8584147850918802544",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-15T19:23:13.5973385Z",
+     "dueDateTime": "2026-10-30T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "checklist",
+     "completedDateTime": "2026-10-30T17:38:44.6813675Z",
+     "referenceCount": 0,
+     "checklistItemCount": 2,
+     "activeChecklistItemCount": 2,
+     "priority": 5,
+     "id": "JkyVvLwhb0OfxkULlMFhxmQABxXM",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category4": true,
+      "category6": true
+     },
+     "assignments": {
+      "fc8b709b-11e6-47da-87da-88a92addc3bb": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T19:23:13.5972867Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "b205078e-028f-4523-80ae-ad55f496f08e": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T19:23:13.5972832Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T19:23:13.5972867Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "b205078e-028f-4523-80ae-ad55f496f08e",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T19:23:13.5972832Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -11607,5 +11812,5 @@
    "displayName": "Ashlee Verdin"
   }
  ],
- "updated": "2026-10-30T07:42:20Z"
+ "updated": "2026-10-30T19:42:25Z"
 }
