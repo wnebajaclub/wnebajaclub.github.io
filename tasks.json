@@ -29,6 +29,70 @@
    ],
    "tasks": [
     {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
+     "title": "Uppers- Manufactured",
+     "orderHint": "8584079457092972628P@",
+     "assigneePriority": "",
+     "percentComplete": 0,
+     "createdDateTime": "2026-11-02T23:13:56.2769288Z",
+     "dueDateTime": "2026-11-11T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "referenceCount": 0,
+     "checklistItemCount": 2,
+     "activeChecklistItemCount": 2,
+     "priority": 5,
+     "id": "uNrWGYS4UEKSIB_CS83iDGQAErXq",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {},
+     "assignments": {
+      "401cf000-dab8-4bd0-9837-dca724289b76": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-11-02T23:13:56.2768717Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "401cf000-dab8-4bd0-9837-dca724289b76",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-11-02T23:13:56.2768717Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
      "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
@@ -164,7 +228,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Lowers - Mounted",
@@ -172,7 +236,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-10-06T14:56:24.3979325Z",
-     "dueDateTime": "2026-11-04T10:00:00Z",
+     "dueDateTime": "2026-11-11T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -394,15 +458,15 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBaCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBcCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
-     "title": "Knuckles - Manufactured/Ordered",
+     "title": "Knuckles - In Hand",
      "orderHint": "858413:",
      "assigneePriority": "8584082244581688117",
      "percentComplete": 50,
      "createdDateTime": "2026-08-15T18:43:44.2374954Z",
-     "dueDateTime": "2026-11-02T10:00:00Z",
+     "dueDateTime": "2026-12-04T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -1254,7 +1318,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAdCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAfCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Pedals - Manufactured",
@@ -1262,7 +1326,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T22:17:09.3479174Z",
-     "dueDateTime": "2026-11-02T10:00:00Z",
+     "dueDateTime": "2026-11-23T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -1784,7 +1848,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAeCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAfCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Seatbelt - Purcahsed",
@@ -1792,7 +1856,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T21:53:39.3567816Z",
-     "dueDateTime": "2026-11-02T10:00:00Z",
+     "dueDateTime": "2026-11-04T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2050,7 +2114,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAXCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Seat  - Finialized",
@@ -2058,7 +2122,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T21:50:10.3434115Z",
-     "dueDateTime": "2026-10-30T10:00:00Z",
+     "dueDateTime": "2026-11-03T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2116,7 +2180,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAcCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Steering Wheel - Manufactured",
@@ -2124,7 +2188,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T21:48:31.0915289Z",
-     "dueDateTime": "2026-11-01T10:00:00Z",
+     "dueDateTime": "2026-11-03T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2248,7 +2312,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Steering Column - Mounted",
@@ -2256,7 +2320,7 @@
      "assigneePriority": "",
      "percentComplete": 0,
      "createdDateTime": "2026-08-22T21:47:20.8289405Z",
-     "dueDateTime": "2026-11-07T10:00:00Z",
+     "dueDateTime": "2026-11-14T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -3671,7 +3735,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBWCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBZCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Lowers - Manufactured",
@@ -3679,12 +3743,12 @@
      "assigneePriority": "",
      "percentComplete": 50,
      "createdDateTime": "2026-08-15T18:48:23.4241861Z",
-     "dueDateTime": "2026-11-02T10:00:00Z",
+     "dueDateTime": "2026-11-09T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
+     "checklistItemCount": 2,
+     "activeChecklistItemCount": 2,
      "priority": 5,
      "id": "58AheCC17kWeM69FBSWumWQAKl2u",
      "createdBy": {
@@ -11959,5 +12023,5 @@
    "displayName": "Ashlee Verdin"
   }
  ],
- "updated": "2026-11-02T19:44:02Z"
+ "updated": "2026-11-02T23:52:35Z"
 }
