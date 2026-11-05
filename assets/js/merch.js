@@ -69,6 +69,32 @@
     "Under Armour Hustle 6.0 Backpack",
   ]);
 
+  // Color dots under each product name, from the store's color options.
+  // Each color is [name shown on hover, hex]. Two-tone colors use "hexA/hexB".
+  // Names must match the PRODUCTS list exactly.
+  const COLORS = {
+    "Carhartt Midweight Hoodie": [["Black", "#2b2b2b"], ["Carbon Heather", "#403c3b"], ["Heather Grey", "#a4a5a9"]],
+    "Champion Eco Fleece Hoodie": [["Black", "#151515"], ["Light Steel", "#a29da1"], ["Charcoal Heather", "#413f40"], ["Silver Grey", "#dddddd"], ["Stone Gray", "#6d6c68"]],
+    "Champion Eco Fleece Crewneck": [["Black", "#161616"], ["Light Steel", "#a29da1"], ["Charcoal Heather", "#4a4647"], ["Silver Grey", "#d7d7d7"], ["Stone Gray", "#686763"]],
+    "Carhartt Thermal-Lined Duck Jacket": [["Carhartt Brown", "#6a3f12"], ["Black", "#131512"]],
+    "Sport-Tek Competitor 1/4-Zip": [["Black", "#000000"], ["Iron Grey", "#4b4d4c"]],
+    "Port Authority UV Micro-Mesh 1/4-Zip": [["Deep Black", "#1d1d1d"], ["Graphite", "#394144"]],
+    "Sport-Tek RacerMesh Polo": [["Black", "#292929"], ["Graphite", "#434551"], ["Silver", "#a2a5ac"]],
+    "Dickies Long Sleeve Work Shirt": [["Black", "#22211f"], ["Dark Charcoal", "#3f3f47"], ["Graphite Grey", "#8a888d"]],
+    "Dickies Short Sleeve Work Shirt": [["Black", "#353132"], ["Dark Charcoal", "#3b4046"], ["Graphite Grey", "#85807d"]],
+    "Port Authority Northwest Slicker": [["Black", "#262523"], ["Northern Grey", "#857e78"]],
+    "Under Armour Rival Fleece Joggers": [["Black", "#000000"], ["Castlerock Light Heather", "#9a9a9a"], ["Mod Gray Light Heather", "#e6e6e6"]],
+    "Under Armour Rival Fleece Pants": [["Black", "#000000"], ["Castlerock Light Heather", "#9a9a9a"], ["Mod Gray Light Heather", "#e6e6e6"]],
+    "Under Armour Hustle 6.0 Backpack": [["Castlerock Heather", "#7d7c83"], ["Black", "#222428"]],
+    "Carhartt Watch Cap": [["Coal Heather", "#5f5f5f"], ["Heather Grey", "#adaca8"], ["Carhartt Brown", "#955d38"], ["Black", "#202020"]],
+    "Carhartt Mesh Back Cap": [["Black", "#313332"], ["Black / Asphalt Grey", "#252726/#5c5e60"], ["Carhartt Brown", "#98724d"], ["Shadow Grey", "#676767"]],
+    "Richardson Trucker Cap": [["Black", "#121212"], ["Light Grey", "#a8a8a8"], ["Royal / White", "#0e376f/#ffffff"], ["Charcoal", "#555150"]],
+    "Port & Co Core Blend Tee": [["Athletic Heather", "#939393"], ["Jet Black", "#1d1d1d"], ["Ash", "#d8d8d8"], ["Charcoal", "#4b4b4b"]],
+    "Port & Co Long Sleeve Tee": [["Athletic Heather", "#88888a"], ["Ash", "#d8d8d8"], ["Jet Black", "#2d2d2d"], ["Charcoal", "#504e4f"]],
+    "Sport-Tek Competitor Tee": [["Black", "#262626"], ["Grey Concrete", "#8e9188"], ["Iron Grey", "#565656"]],
+    "Sport-Tek Long Sleeve Competitor Tee": [["Black", "#2e2e2e"], ["Grey Concrete", "#95988f"], ["Iron Grey", "#585856"]],
+  };
+
   const now = new Date();
   const start = new Date(section.dataset.start);
   const end = new Date(section.dataset.end);
@@ -105,12 +131,24 @@
       '<span class="merch-img"><img alt="" loading="lazy" decoding="async" width="600" height="600">' +
       (MONOGRAM.has(name) ? '<span class="merch-tag">Monogram available</span>' : '') + '</span>' +
       '<span class="merch-name"></span>' +
+      '<span class="merch-colors"></span>' +
       '<span class="merch-price">' + (from ? "<small>from</small> " : "") + "$" + price + "</span>";
     const im = a.querySelector("img");
     im.src = IMG_BASE + img + ".jpg";
     im.onerror = () => a.classList.add("no-img");
     a.querySelector(".merch-name").textContent = name;
-    a.setAttribute("aria-label", name + ", " + (from ? "from " : "") + "$" + price + (MONOGRAM.has(name) ? ", monogram available" : "") + " — shop the team store");
+    const colors = COLORS[name] || [];
+    const dots = a.querySelector(".merch-colors");
+    if (!colors.length) dots.remove();
+    colors.forEach(([cname, hex]) => {
+      const dot = document.createElement("span");
+      dot.className = "merch-dot";
+      const [c1, c2] = hex.split("/");
+      dot.style.background = c2 ? "linear-gradient(135deg, " + c1 + " 50%, " + c2 + " 50%)" : c1;
+      dot.title = cname;
+      dots.appendChild(dot);
+    });
+    a.setAttribute("aria-label", name + ", " + (from ? "from " : "") + "$" + price + (MONOGRAM.has(name) ? ", monogram available" : "") + (colors.length ? ", " + colors.length + " colors" : "") + " — shop the team store");
     frag.appendChild(a);
   });
   rail.appendChild(frag);
