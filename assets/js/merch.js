@@ -61,6 +61,14 @@
     shirts: 2914801,  // Shirts
   };
 
+  // Items that can be personalized get a "Monogram available" tag on their photo.
+  // Names must match the PRODUCTS list exactly.
+  const MONOGRAM = new Set([
+    "Dickies Long Sleeve Work Shirt",
+    "Dickies Short Sleeve Work Shirt",
+    "Under Armour Hustle 6.0 Backpack",
+  ]);
+
   const now = new Date();
   const start = new Date(section.dataset.start);
   const end = new Date(section.dataset.end);
@@ -94,14 +102,15 @@
     a.target = "_blank";
     a.rel = "noopener";
     a.innerHTML =
-      '<span class="merch-img"><img alt="" loading="lazy" decoding="async" width="600" height="600"></span>' +
+      '<span class="merch-img"><img alt="" loading="lazy" decoding="async" width="600" height="600">' +
+      (MONOGRAM.has(name) ? '<span class="merch-tag">Monogram available</span>' : '') + '</span>' +
       '<span class="merch-name"></span>' +
       '<span class="merch-price">' + (from ? "<small>from</small> " : "") + "$" + price + "</span>";
     const im = a.querySelector("img");
     im.src = IMG_BASE + img + ".jpg";
     im.onerror = () => a.classList.add("no-img");
     a.querySelector(".merch-name").textContent = name;
-    a.setAttribute("aria-label", name + ", " + (from ? "from " : "") + "$" + price + " — shop the team store");
+    a.setAttribute("aria-label", name + ", " + (from ? "from " : "") + "$" + price + (MONOGRAM.has(name) ? ", monogram available" : "") + " — shop the team store");
     frag.appendChild(a);
   });
   rail.appendChild(frag);
