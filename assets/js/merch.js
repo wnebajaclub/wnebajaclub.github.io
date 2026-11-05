@@ -61,9 +61,9 @@
     shirts: 2914801,  // Shirts
   };
 
-  // Items that can be personalized get a "Monogram available" tag on their photo.
+  // Items the store lets you add a name to get a "Name customization" tag on their photo.
   // Names must match the PRODUCTS list exactly.
-  const MONOGRAM = new Set([
+  const CUSTOM_NAME = new Set([
     "Champion Eco Fleece Hoodie",
     "Dickies Long Sleeve Work Shirt",
     "Dickies Short Sleeve Work Shirt",
@@ -134,7 +134,7 @@
     a.rel = "noopener";
     a.innerHTML =
       '<span class="merch-img"><img alt="" loading="lazy" decoding="async" width="600" height="600">' +
-      (MONOGRAM.has(name) ? '<span class="merch-tag">Monogram available</span>' : '') + '</span>' +
+      (CUSTOM_NAME.has(name) ? '<span class="merch-tag">Name customization</span>' : '') + '</span>' +
       '<span class="merch-name"></span>' +
       '<span class="merch-colors"></span>' +
       '<span class="merch-price">' + (from ? "<small>from</small> " : "") + "$" + price + "</span>";
@@ -153,7 +153,7 @@
       dot.title = cname;
       dots.appendChild(dot);
     });
-    a.setAttribute("aria-label", name + ", " + (from ? "from " : "") + "$" + price + (MONOGRAM.has(name) ? ", monogram available" : "") + (colors.length ? ", " + colors.length + " colors" : "") + " — shop the team store");
+    a.setAttribute("aria-label", name + ", " + (from ? "from " : "") + "$" + price + (CUSTOM_NAME.has(name) ? ", name customization available" : "") + (colors.length ? ", " + colors.length + " colors" : "") + " — shop the team store");
     frag.appendChild(a);
   });
   rail.appendChild(frag);
