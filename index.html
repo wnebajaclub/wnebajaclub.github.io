@@ -102,6 +102,50 @@
     </div>
   </div>
 
+  <!-- ============ MERCH STORE (temporary) ============
+       Promotes the Piesco Sporting Goods team store. Shows itself at data-start
+       and hides itself at data-end (both Eastern time). Buttons go to
+       data-store-url; each product card goes to that item in the store. Preview early with ?merch=preview on the URL.
+       Product list and settings: assets/js/merch.js
+       To remove: delete this <section> and the merch.js script tag. -->
+  <section class="merch" id="merch" aria-labelledby="merch-title"
+           data-store-url="https://preview.chipply.com/store.html?eid=682244&amp;action=viewall"
+           data-start="2026-11-05T00:00:00-05:00"
+           data-end="2026-11-12T23:59:00-05:00" hidden>
+    <div class="wrap">
+      <div class="merch-head">
+        <div class="merch-copy">
+          <p class="eyebrow">Team Store &middot; Limited Time</p>
+          <h2 id="merch-title">Rep <span class="accent">Golden Bear Racing</span></h2>
+          <p class="merch-lede">Hoodies, quarter-zips, work shirts, hats and more, made for the team by Piesco Sporting Goods. Orders are only open for one week.</p>
+        </div>
+        <div class="merch-side">
+          <div class="merch-countdown" role="timer" aria-label="Time left to order">
+            <span class="merch-cd-lbl">Store closes in</span>
+            <div class="merch-cd-units">
+              <span><b data-u="d">7</b><small>days</small></span>
+              <span><b data-u="h">00</b><small>hrs</small></span>
+              <span><b data-u="m">00</b><small>min</small></span>
+              <span><b data-u="s">00</b><small>sec</small></span>
+            </div>
+          </div>
+          <a class="btn btn-gold" data-merch-link href="#" target="_blank" rel="noopener">Shop the Store</a>
+        </div>
+      </div>
+
+      <div class="merch-rail-wrap">
+        <button class="merch-arrow merch-prev" type="button" aria-label="Scroll products left">&#8249;</button>
+        <div class="merch-rail" tabindex="0" aria-label="Team store products"></div>
+        <button class="merch-arrow merch-next" type="button" aria-label="Scroll products right">&#8250;</button>
+      </div>
+
+      <p class="merch-foot">
+        <span>Thank you to our merch sponsor <strong>Piesco Sporting Goods</strong></span>
+        <a data-merch-link href="#" target="_blank" rel="noopener">See all 20 items &rarr;</a>
+      </p>
+    </div>
+  </section>
+
   <!-- ============ CROWDFUNDING (temporary) ============
        Numbers come from campaign.json, which the "Crowdfunding sync" GitHub
        Action refreshes from the WNE crowdfunding page every 30 minutes.
@@ -389,5 +433,6 @@
 
 <script src="assets/js/main.js"></script>
 <script src="assets/js/campaign.js"></script>
+<script src="assets/js/merch.js"></script>
 </body>
 </html>
