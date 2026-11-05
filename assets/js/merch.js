@@ -26,7 +26,7 @@
   // Every photo shows the Golden Bear Racing (Baja) design, not Propulsion.
   // Most items come in both designs, so if you swap a photo, check the logo.
   const PRODUCTS = [
-    ["Carhartt Midweight Hoodie", 58, false, "33314026/600/616e8f82-28d2-4020-bea2-6c44f2423e11", "hoods", null],
+    ["Carhartt Midweight Hoodie", 58, false, "33348174/600/93644742-6bf7-494f-94d2-75f89d400077", "hoods", null],
     ["Champion Eco Fleece Hoodie", 40, true, "33023653/600/aa31e1ff-4ed4-42b3-b65b-99e49405a3b5", "hoods", null],
     ["Champion Eco Fleece Crewneck", 32, false, "33348190/600/2065e6d0-21ac-4cb7-856b-2c7568bae902", "hoods", null],
     ["Carhartt Thermal-Lined Duck Jacket", 110, true, "33315814/600/cd376613-55b0-46ee-8366-4d982c7db17d", "jackets", null],
