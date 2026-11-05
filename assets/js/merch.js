@@ -64,9 +64,14 @@
   // Items that can be personalized get a "Monogram available" tag on their photo.
   // Names must match the PRODUCTS list exactly.
   const MONOGRAM = new Set([
+    "Champion Eco Fleece Hoodie",
     "Dickies Long Sleeve Work Shirt",
     "Dickies Short Sleeve Work Shirt",
     "Under Armour Hustle 6.0 Backpack",
+    "Port & Co Core Blend Tee",
+    "Port & Co Long Sleeve Tee",
+    "Sport-Tek Competitor Tee",
+    "Sport-Tek Long Sleeve Competitor Tee",
   ]);
 
   // Color dots under each product name, from the store's color options.
