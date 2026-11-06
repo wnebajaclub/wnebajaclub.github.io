@@ -6,6 +6,13 @@
    "mode": "buckets",
    "buckets": [
     {
+     "@odata.etag": "W/\"JzEtQnVja2V0QEBAQEBAQEBAQEBAQEBARCc=\"",
+     "name": "Competitions Deadlines",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "orderHint": "85840I#",
+     "id": "pFNjNAsRGUKt0wGa2hejWGQAJOU6"
+    },
+    {
      "@odata.etag": "W/\"JzEtQnVja2V0QEBAQEBAQEBAQEBAQEBAWCc=\"",
      "name": "First Drive",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
@@ -28,6 +35,104 @@
     }
    ],
    "tasks": [
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "pFNjNAsRGUKt0wGa2hejWGQAJOU6",
+     "title": "Drawings for Seatbelt Tabs",
+     "orderHint": "8584076074435895235P#",
+     "assigneePriority": "8584076073834433513",
+     "percentComplete": 0,
+     "createdDateTime": "2026-11-06T21:11:42.0342472Z",
+     "dueDateTime": "2027-05-03T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "referenceCount": 0,
+     "checklistItemCount": 2,
+     "activeChecklistItemCount": 2,
+     "priority": 5,
+     "id": "wVt1hFE8LkiB-Nm454820GQADDcE",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category10": true
+     },
+     "assignments": {
+      "fc8b709b-11e6-47da-87da-88a92addc3bb": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-11-06T21:11:42.0341968Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "6f9a2bd5-8fd9-4cbc-917f-fbadb44c74ba": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-11-06T21:11:42.034193Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-11-06T21:11:42.0341968Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "6f9a2bd5-8fd9-4cbc-917f-fbadb44c74ba",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-11-06T21:11:42.034193Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
     {
      "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
@@ -12023,5 +12128,5 @@
    "displayName": "Ashlee Verdin"
   }
  ],
- "updated": "2026-11-06T10:16:16Z"
+ "updated": "2026-11-06T22:23:21Z"
 }
