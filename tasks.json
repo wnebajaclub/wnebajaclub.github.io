@@ -696,7 +696,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBcCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBfCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Knuckles - In Hand",
@@ -704,7 +704,7 @@
      "assigneePriority": "8584082244581688117",
      "percentComplete": 50,
      "createdDateTime": "2026-08-15T18:43:44.2374954Z",
-     "dueDateTime": "2026-12-04T10:00:00Z",
+     "dueDateTime": "2026-11-24T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -726,6 +726,21 @@
       "category7": true
      },
      "assignments": {
+      "a469263a-fa64-4c76-9c10-ed7ec3a2e2aa": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-11-14T17:02:27.1796956Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
       "363d7698-d531-4160-9cef-c943e77c632a": {
        "@odata.type": "#microsoft.graph.plannerAssignment",
        "assignedDateTime": "2026-08-15T18:47:36.7547958Z",
@@ -788,6 +803,23 @@
       }
      },
      "_assignments": [
+      {
+       "userId": "a469263a-fa64-4c76-9c10-ed7ec3a2e2aa",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-11-14T17:02:27.1796956Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
       {
        "userId": "363d7698-d531-4160-9cef-c943e77c632a",
        "value": {
@@ -2716,10 +2748,10 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBcCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBdCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
-     "title": "Resin Knuckles - Mounted",
+     "title": "Resin/Aluminum Knuckles - Mounted",
      "orderHint": "858414171[0",
      "assigneePriority": "",
      "percentComplete": 0,
@@ -12349,5 +12381,5 @@
    "displayName": "Ashlee Verdin"
   }
  ],
- "updated": "2026-11-14T07:33:29Z"
+ "updated": "2026-11-14T19:27:25Z"
 }
