@@ -3145,6 +3145,73 @@
      ]
     },
     {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAeCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
+     "title": "Rear Arms - Manufactured",
+     "orderHint": "8584147868150414138P$",
+     "assigneePriority": "",
+     "percentComplete": 0,
+     "createdDateTime": "2026-08-15T18:55:30.6267515Z",
+     "dueDateTime": "2026-09-06T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "checklist",
+     "referenceCount": 0,
+     "checklistItemCount": 2,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "JQRjfuT0vkiQxitoRhIfiWQAOg7w",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category3": true,
+      "category7": true
+     },
+     "assignments": {
+      "401cf000-dab8-4bd0-9837-dca724289b76": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T18:55:30.6266996Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "401cf000-dab8-4bd0-9837-dca724289b76",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T18:55:30.6266996Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
      "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBdCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
@@ -6049,84 +6116,6 @@
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
         "assignedDateTime": "2026-08-15T18:47:13.3482595Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAdCc=\"",
-     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
-     "title": "Rear Arms - Manufactured",
-     "orderHint": "8584147868150414138P$",
-     "assigneePriority": "",
-     "percentComplete": 100,
-     "createdDateTime": "2026-08-15T18:55:30.6267515Z",
-     "dueDateTime": "2026-09-06T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "checklist",
-     "completedDateTime": "2026-09-09T22:45:19.098903Z",
-     "referenceCount": 0,
-     "checklistItemCount": 2,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "JQRjfuT0vkiQxitoRhIfiWQAOg7w",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "completedBy": {
-      "user": {
-       "displayName": null,
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {
-      "category3": true,
-      "category7": true
-     },
-     "assignments": {
-      "401cf000-dab8-4bd0-9837-dca724289b76": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T18:55:30.6266996Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "401cf000-dab8-4bd0-9837-dca724289b76",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T18:55:30.6266996Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -12381,5 +12370,5 @@
    "displayName": "Ashlee Verdin"
   }
  ],
- "updated": "2026-11-14T19:27:25Z"
+ "updated": "2026-11-14T20:09:22Z"
 }
