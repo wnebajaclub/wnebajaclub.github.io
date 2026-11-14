@@ -102,7 +102,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "PCBs Ordered",
@@ -2186,7 +2186,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAaCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Seat - Ordered",
@@ -2319,7 +2319,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBWCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBZCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Steering Wheel - Manufactured",
@@ -2451,7 +2451,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAYCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Steering Column - Mounted",
@@ -2716,7 +2716,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBaCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBcCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Resin Knuckles - Mounted",
@@ -2800,104 +2800,6 @@
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
         "assignedDateTime": "2026-08-15T18:47:31.7359187Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAZCc=\"",
-     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
-     "title": "Engine Startup",
-     "orderHint": "8584141730011748724PI",
-     "assigneePriority": "8584141729410620523",
-     "percentComplete": 0,
-     "createdDateTime": "2026-08-22T21:25:44.4155457Z",
-     "dueDateTime": "2026-11-02T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "noPreview",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 1,
-     "id": "jxAfs82P-k-PxziSd6PFhGQAC8Oy",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {
-      "category4": true
-     },
-     "assignments": {
-      "fc8b709b-11e6-47da-87da-88a92addc3bb": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-22T21:25:44.4154872Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "aaf95fb1-1c58-4e42-bfbd-e11754350f14": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-22T21:25:44.415491Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-22T21:25:44.4154872Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "aaf95fb1-1c58-4e42-bfbd-e11754350f14",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-22T21:25:44.415491Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -3045,15 +2947,15 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAeCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
+     "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Fuel Tank - Mounted",
      "orderHint": "8584146829240474213P;",
      "assigneePriority": "8584146828640091520",
      "percentComplete": 0,
      "createdDateTime": "2026-08-16T23:47:01.4684437Z",
-     "dueDateTime": "2026-11-15T10:00:00Z",
+     "dueDateTime": "2026-11-23T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -3394,6 +3296,115 @@
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
         "assignedDateTime": "2026-08-22T22:17:54.5679805Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAaCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "2s4s5kGF80yXxLEjI1JOrWQALnlo",
+     "title": "Engine Startup",
+     "orderHint": "8584141730011748724PI",
+     "assigneePriority": "8584141729410620523",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-22T21:25:44.4155457Z",
+     "dueDateTime": "2026-11-02T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "completedDateTime": "2026-11-14T03:00:48.737028Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 1,
+     "id": "jxAfs82P-k-PxziSd6PFhGQAC8Oy",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category4": true
+     },
+     "assignments": {
+      "fc8b709b-11e6-47da-87da-88a92addc3bb": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-22T21:25:44.4154872Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "aaf95fb1-1c58-4e42-bfbd-e11754350f14": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-22T21:25:44.415491Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-22T21:25:44.4154872Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "aaf95fb1-1c58-4e42-bfbd-e11754350f14",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-22T21:25:44.415491Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -7452,23 +7463,23 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAbCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "ByqiFNoCYk2YRuocZQ0znmQAKnUX",
-     "title": "Engine Startup",
-     "orderHint": "8584175402692717534",
-     "assigneePriority": "8584174863555934498",
+     "title": "Benchmark Testing Complete",
+     "orderHint": "8584175402717288423",
+     "assigneePriority": "8584175374598243050",
      "percentComplete": 0,
-     "startDateTime": "2026-10-30T10:00:00Z",
-     "createdDateTime": "2026-07-14T22:03:36.2058404Z",
-     "dueDateTime": "2026-11-02T10:00:00Z",
+     "startDateTime": "2026-11-27T00:00:00Z",
+     "createdDateTime": "2026-07-14T22:03:33.7487506Z",
+     "dueDateTime": "2026-11-27T00:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
      "referenceCount": 0,
      "checklistItemCount": 0,
      "activeChecklistItemCount": 0,
      "priority": 5,
-     "id": "gZW-KRyNbESX07A7FtrDlWQAJ0rL",
+     "id": "u4REYe0o40GWUO31h6vOMWQAE1T-",
      "createdBy": {
       "user": {
        "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
@@ -7479,27 +7490,12 @@
       }
      },
      "appliedCategories": {
-      "category21": true
+      "category9": true
      },
      "assignments": {
       "fc8b709b-11e6-47da-87da-88a92addc3bb": {
        "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-07-15T13:02:09.8840903Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "aaf95fb1-1c58-4e42-bfbd-e11754350f14": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-07-14T22:50:19.2601506Z",
+       "assignedDateTime": "2026-07-14T22:50:25.6532469Z",
        "orderHint": "\"",
        "assignedBy": {
         "user": {
@@ -7518,123 +7514,7 @@
        "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-07-15T13:02:09.8840903Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "aaf95fb1-1c58-4e42-bfbd-e11754350f14",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-07-14T22:50:19.2601506Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBeCc=\"",
-     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
-     "bucketId": "ByqiFNoCYk2YRuocZQ0znmQAKnUX",
-     "title": "DDR Cycle Complete",
-     "orderHint": "8584175402720990419",
-     "assigneePriority": "8584175374476721709",
-     "percentComplete": 0,
-     "startDateTime": "2026-10-15T10:00:00Z",
-     "createdDateTime": "2026-07-14T22:03:33.3785538Z",
-     "dueDateTime": "2026-11-07T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "automatic",
-     "referenceCount": 0,
-     "checklistItemCount": 7,
-     "activeChecklistItemCount": 1,
-     "priority": 5,
-     "id": "Nmf6U3BUW0imBqx1iMDLrWQAPT1R",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "24b2c2bc-4e48-4b69-9c88-33f4cd04c867"
-      }
-     },
-     "appliedCategories": {
-      "category6": true
-     },
-     "assignments": {
-      "fc8b709b-11e6-47da-87da-88a92addc3bb": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-07-14T22:50:37.8053725Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "aaf95fb1-1c58-4e42-bfbd-e11754350f14": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-07-14T22:50:32.8400928Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-07-14T22:50:37.8053725Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "aaf95fb1-1c58-4e42-bfbd-e11754350f14",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-07-14T22:50:32.8400928Z",
+        "assignedDateTime": "2026-07-14T22:50:25.6532469Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -8643,24 +8523,24 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBfCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "ByqiFNoCYk2YRuocZQ0znmQAKnUX",
-     "title": "Benchmark Testing Complete",
-     "orderHint": "8584175402717288423",
-     "assigneePriority": "8584175374598243050",
+     "title": "DDR Cycle Complete",
+     "orderHint": "8584175402720990419",
+     "assigneePriority": "8584175374476721709",
      "percentComplete": 100,
-     "startDateTime": "2026-11-27T00:00:00Z",
-     "createdDateTime": "2026-07-14T22:03:33.7487506Z",
-     "dueDateTime": "2026-11-27T00:00:00Z",
+     "startDateTime": "2026-10-15T10:00:00Z",
+     "createdDateTime": "2026-07-14T22:03:33.3785538Z",
+     "dueDateTime": "2026-11-07T10:00:00Z",
      "hasDescription": false,
      "previewType": "automatic",
-     "completedDateTime": "2026-11-02T18:10:55.6755641Z",
+     "completedDateTime": "2026-11-14T03:04:16.1885735Z",
      "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
+     "checklistItemCount": 7,
+     "activeChecklistItemCount": 1,
      "priority": 5,
-     "id": "u4REYe0o40GWUO31h6vOMWQAE1T-",
+     "id": "Nmf6U3BUW0imBqx1iMDLrWQAPT1R",
      "createdBy": {
       "user": {
        "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
@@ -8681,12 +8561,27 @@
       }
      },
      "appliedCategories": {
-      "category9": true
+      "category6": true
      },
      "assignments": {
       "fc8b709b-11e6-47da-87da-88a92addc3bb": {
        "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-07-14T22:50:25.6532469Z",
+       "assignedDateTime": "2026-07-14T22:50:37.8053725Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "aaf95fb1-1c58-4e42-bfbd-e11754350f14": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-07-14T22:50:32.8400928Z",
        "orderHint": "\"",
        "assignedBy": {
         "user": {
@@ -8705,7 +8600,134 @@
        "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-07-14T22:50:25.6532469Z",
+        "assignedDateTime": "2026-07-14T22:50:37.8053725Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "aaf95fb1-1c58-4e42-bfbd-e11754350f14",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-07-14T22:50:32.8400928Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAcCc=\"",
+     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
+     "bucketId": "ByqiFNoCYk2YRuocZQ0znmQAKnUX",
+     "title": "Engine Startup",
+     "orderHint": "8584175402692717534",
+     "assigneePriority": "8584174863555934498",
+     "percentComplete": 100,
+     "startDateTime": "2026-10-30T10:00:00Z",
+     "createdDateTime": "2026-07-14T22:03:36.2058404Z",
+     "dueDateTime": "2026-11-02T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "automatic",
+     "completedDateTime": "2026-11-14T03:01:31.5130118Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "gZW-KRyNbESX07A7FtrDlWQAJ0rL",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "24b2c2bc-4e48-4b69-9c88-33f4cd04c867"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category21": true
+     },
+     "assignments": {
+      "fc8b709b-11e6-47da-87da-88a92addc3bb": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-07-15T13:02:09.8840903Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "aaf95fb1-1c58-4e42-bfbd-e11754350f14": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-07-14T22:50:19.2601506Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-07-15T13:02:09.8840903Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "aaf95fb1-1c58-4e42-bfbd-e11754350f14",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-07-14T22:50:19.2601506Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -12327,5 +12349,5 @@
    "displayName": "Ashlee Verdin"
   }
  ],
- "updated": "2026-11-13T12:41:11Z"
+ "updated": "2026-11-14T07:33:29Z"
 }
