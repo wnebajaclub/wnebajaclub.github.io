@@ -6703,96 +6703,6 @@
      "_assignments": []
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
-     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
-     "bucketId": "kIp71mwyvUWitNtWnk9R7GQAB3tT",
-     "title": "Extra Resin Infusion Time",
-     "orderHint": "8584147146091629040P@",
-     "assigneePriority": "",
-     "percentComplete": 0,
-     "createdDateTime": "2026-08-16T14:58:56.3474337Z",
-     "dueDateTime": "2026-11-02T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "noPreview",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "vxQ3DUE7n0iD4X9WYT_vRmQAMVUt",
-     "createdBy": {
-      "user": {
-       "id": "7a9a179a-3a80-4551-a66a-7066b94e6724"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {},
-     "assignments": {},
-     "_assignments": []
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
-     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
-     "bucketId": "kIp71mwyvUWitNtWnk9R7GQAB3tT",
-     "title": "Larger Resin Infusion",
-     "orderHint": "8584147146489468277P&",
-     "assigneePriority": "",
-     "percentComplete": 0,
-     "createdDateTime": "2026-08-16T14:58:16.5756807Z",
-     "dueDateTime": "2026-10-31T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "noPreview",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "kloz8-IQUE6mCMVbOhli0mQAAZQb",
-     "createdBy": {
-      "user": {
-       "id": "7a9a179a-3a80-4551-a66a-7066b94e6724"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {},
-     "assignments": {},
-     "_assignments": []
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBASCc=\"",
-     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
-     "bucketId": "kIp71mwyvUWitNtWnk9R7GQAB3tT",
-     "title": "Practice Resin Infusion",
-     "orderHint": "8584147147088004326PD",
-     "assigneePriority": "",
-     "percentComplete": 0,
-     "createdDateTime": "2026-08-16T14:57:16.819558Z",
-     "dueDateTime": "2026-11-12T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "noPreview",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "tjYAI-pU3EuzslMQUQj54WQAKwph",
-     "createdBy": {
-      "user": {
-       "id": "7a9a179a-3a80-4551-a66a-7066b94e6724"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {},
-     "assignments": {},
-     "_assignments": []
-    },
-    {
      "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAYCc=\"",
      "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
      "bucketId": "ByqiFNoCYk2YRuocZQ0znmQAKnUX",
@@ -8542,6 +8452,129 @@
        }
       }
      ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
+     "bucketId": "kIp71mwyvUWitNtWnk9R7GQAB3tT",
+     "title": "Practice Resin Infusion",
+     "orderHint": "8584147147088004326PD",
+     "assigneePriority": "",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-16T14:57:16.819558Z",
+     "dueDateTime": "2026-11-12T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "completedDateTime": "2026-11-15T14:08:24.4424797Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "tjYAI-pU3EuzslMQUQj54WQAKwph",
+     "createdBy": {
+      "user": {
+       "id": "7a9a179a-3a80-4551-a66a-7066b94e6724"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "7a9a179a-3a80-4551-a66a-7066b94e6724"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {},
+     "assignments": {},
+     "_assignments": []
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
+     "bucketId": "kIp71mwyvUWitNtWnk9R7GQAB3tT",
+     "title": "Larger Resin Infusion",
+     "orderHint": "8584147146489468277P&",
+     "assigneePriority": "",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-16T14:58:16.5756807Z",
+     "dueDateTime": "2026-10-31T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "completedDateTime": "2026-11-15T14:08:22.012207Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "kloz8-IQUE6mCMVbOhli0mQAAZQb",
+     "createdBy": {
+      "user": {
+       "id": "7a9a179a-3a80-4551-a66a-7066b94e6724"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "7a9a179a-3a80-4551-a66a-7066b94e6724"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {},
+     "assignments": {},
+     "_assignments": []
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
+     "planId": "8pOlrbAiRkGfzylDUcQVS2QAArt9",
+     "bucketId": "kIp71mwyvUWitNtWnk9R7GQAB3tT",
+     "title": "Extra Resin Infusion Time",
+     "orderHint": "8584147146091629040P@",
+     "assigneePriority": "",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-16T14:58:56.3474337Z",
+     "dueDateTime": "2026-11-02T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "completedDateTime": "2026-11-15T14:08:21.6046181Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "vxQ3DUE7n0iD4X9WYT_vRmQAMVUt",
+     "createdBy": {
+      "user": {
+       "id": "7a9a179a-3a80-4551-a66a-7066b94e6724"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "7a9a179a-3a80-4551-a66a-7066b94e6724"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {},
+     "assignments": {},
+     "_assignments": []
     },
     {
      "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBfCc=\"",
@@ -12370,5 +12403,5 @@
    "displayName": "Ashlee Verdin"
   }
  ],
- "updated": "2026-11-15T10:43:20Z"
+ "updated": "2026-11-15T17:27:33Z"
 }
