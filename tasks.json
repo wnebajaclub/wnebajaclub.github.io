@@ -334,201 +334,6 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBfCc=\"",
-     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
-     "title": "Knuckles - In Hand",
-     "orderHint": "858413:",
-     "assigneePriority": "8584082244581688117",
-     "percentComplete": 50,
-     "createdDateTime": "2026-08-15T18:43:44.2374954Z",
-     "dueDateTime": "2026-11-24T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "noPreview",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "m6YZB1B6oUmkv9sngFgiRWQAJF8L",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {
-      "category3": true,
-      "category7": true
-     },
-     "assignments": {
-      "a469263a-fa64-4c76-9c10-ed7ec3a2e2aa": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-11-14T17:02:27.1796956Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "363d7698-d531-4160-9cef-c943e77c632a": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T18:47:36.7547958Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "fc8b709b-11e6-47da-87da-88a92addc3bb": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-10-30T17:47:07.3087378Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "b205078e-028f-4523-80ae-ad55f496f08e": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-10-30T17:42:17.2894116Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "aaf95fb1-1c58-4e42-bfbd-e11754350f14": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-10-30T17:42:23.840511Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "a469263a-fa64-4c76-9c10-ed7ec3a2e2aa",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-11-14T17:02:27.1796956Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T18:47:36.7547958Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-10-30T17:47:07.3087378Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "b205078e-028f-4523-80ae-ad55f496f08e",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-10-30T17:42:17.2894116Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "aaf95fb1-1c58-4e42-bfbd-e11754350f14",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-10-30T17:42:23.840511Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
      "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
@@ -1278,73 +1083,6 @@
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
         "assignedDateTime": "2026-08-22T22:17:09.3478712Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\"",
-     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
-     "title": "Brakes (Calipers/Rotors)- Mounted",
-     "orderHint": "8584141699442518446P=",
-     "assigneePriority": "",
-     "percentComplete": 0,
-     "createdDateTime": "2026-08-22T22:16:41.3913141Z",
-     "dueDateTime": "2026-11-16T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "noPreview",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "kdkJ9GCZmkaXCwc7WtpgzWQAMK1J",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {
-      "category5": true,
-      "category9": true
-     },
-     "assignments": {
-      "a900a8b3-aa90-4572-a0ca-3f56979bc690": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-22T22:16:41.3912663Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "a900a8b3-aa90-4572-a0ca-3f56979bc690",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-22T22:16:41.3912663Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -2253,105 +1991,6 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBdCc=\"",
-     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
-     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
-     "title": "Resin/Aluminum Knuckles - Mounted",
-     "orderHint": "858414171[0",
-     "assigneePriority": "",
-     "percentComplete": 0,
-     "createdDateTime": "2026-08-15T18:44:32.2235608Z",
-     "dueDateTime": "2026-11-13T10:00:00Z",
-     "hasDescription": false,
-     "previewType": "noPreview",
-     "referenceCount": 0,
-     "checklistItemCount": 0,
-     "activeChecklistItemCount": 0,
-     "priority": 5,
-     "id": "nfQf40IUbEmRE7lIsUqMU2QAIeG4",
-     "createdBy": {
-      "user": {
-       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-      },
-      "application": {
-       "displayName": null,
-       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-      }
-     },
-     "appliedCategories": {
-      "category3": true,
-      "category5": true
-     },
-     "assignments": {
-      "401cf000-dab8-4bd0-9837-dca724289b76": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T18:49:46.6771131Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      },
-      "363d7698-d531-4160-9cef-c943e77c632a": {
-       "@odata.type": "#microsoft.graph.plannerAssignment",
-       "assignedDateTime": "2026-08-15T18:47:31.7359187Z",
-       "orderHint": "\"",
-       "assignedBy": {
-        "user": {
-         "displayName": null,
-         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-        },
-        "application": {
-         "displayName": null,
-         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-        }
-       }
-      }
-     },
-     "_assignments": [
-      {
-       "userId": "401cf000-dab8-4bd0-9837-dca724289b76",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T18:49:46.6771131Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      },
-      {
-       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
-       "value": {
-        "@odata.type": "#microsoft.graph.plannerAssignment",
-        "assignedDateTime": "2026-08-15T18:47:31.7359187Z",
-        "orderHint": "\"",
-        "assignedBy": {
-         "user": {
-          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
-         },
-         "application": {
-          "displayName": null,
-          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
-         }
-        }
-       }
-      }
-     ]
-    },
-    {
      "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBQCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
@@ -2451,7 +2090,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBRCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBSCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
      "title": "Rear Axle - Complete",
@@ -2459,7 +2098,7 @@
      "assigneePriority": "",
      "percentComplete": 50,
      "createdDateTime": "2026-08-15T19:49:46.3379274Z",
-     "dueDateTime": "2026-11-09T10:00:00Z",
+     "dueDateTime": "2026-11-22T10:00:00Z",
      "hasDescription": false,
      "previewType": "noPreview",
      "referenceCount": 0,
@@ -2518,7 +2157,7 @@
      ]
     },
     {
-     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBCRCc=\"",
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBCSCc=\"",
      "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
      "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
      "title": "Brake Components - Purchased",
@@ -2531,7 +2170,7 @@
      "previewType": "checklist",
      "referenceCount": 0,
      "checklistItemCount": 7,
-     "activeChecklistItemCount": 3,
+     "activeChecklistItemCount": 2,
      "priority": 5,
      "id": "Oy4AHqI2mU2H_gonbNzG9WQAAUoe",
      "createdBy": {
@@ -2602,6 +2241,400 @@
        "value": {
         "@odata.type": "#microsoft.graph.plannerAssignment",
         "assignedDateTime": "2026-08-22T22:17:54.5679805Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBBeCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
+     "title": "Resin/Aluminum Knuckles - Mounted",
+     "orderHint": "858414171[0",
+     "assigneePriority": "",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-15T18:44:32.2235608Z",
+     "dueDateTime": "2026-11-13T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "completedDateTime": "2026-11-23T19:42:38.8078464Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "nfQf40IUbEmRE7lIsUqMU2QAIeG4",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "aaf95fb1-1c58-4e42-bfbd-e11754350f14"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category3": true,
+      "category5": true
+     },
+     "assignments": {
+      "401cf000-dab8-4bd0-9837-dca724289b76": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T18:49:46.6771131Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "363d7698-d531-4160-9cef-c943e77c632a": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T18:47:31.7359187Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "401cf000-dab8-4bd0-9837-dca724289b76",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T18:49:46.6771131Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T18:47:31.7359187Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBCQCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "T1zyXCD4fkyXte5X2vSziGQAJK-b",
+     "title": "Knuckles - In Hand",
+     "orderHint": "858413:",
+     "assigneePriority": "8584082244581688117",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-15T18:43:44.2374954Z",
+     "dueDateTime": "2026-11-24T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "completedDateTime": "2026-11-23T19:38:26.9876932Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "m6YZB1B6oUmkv9sngFgiRWQAJF8L",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "aaf95fb1-1c58-4e42-bfbd-e11754350f14"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category3": true,
+      "category7": true
+     },
+     "assignments": {
+      "a469263a-fa64-4c76-9c10-ed7ec3a2e2aa": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-11-14T17:02:27.1796956Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "363d7698-d531-4160-9cef-c943e77c632a": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-15T18:47:36.7547958Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "fc8b709b-11e6-47da-87da-88a92addc3bb": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-10-30T17:47:07.3087378Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "b205078e-028f-4523-80ae-ad55f496f08e": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-10-30T17:42:17.2894116Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      },
+      "aaf95fb1-1c58-4e42-bfbd-e11754350f14": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-10-30T17:42:23.840511Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "a469263a-fa64-4c76-9c10-ed7ec3a2e2aa",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-11-14T17:02:27.1796956Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "363d7698-d531-4160-9cef-c943e77c632a",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-15T18:47:36.7547958Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "fc8b709b-11e6-47da-87da-88a92addc3bb",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-10-30T17:47:07.3087378Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "b205078e-028f-4523-80ae-ad55f496f08e",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-10-30T17:42:17.2894116Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      },
+      {
+       "userId": "aaf95fb1-1c58-4e42-bfbd-e11754350f14",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-10-30T17:42:23.840511Z",
+        "orderHint": "\"",
+        "assignedBy": {
+         "user": {
+          "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+         },
+         "application": {
+          "displayName": null,
+          "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+         }
+        }
+       }
+      }
+     ]
+    },
+    {
+     "@odata.etag": "W/\"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAXCc=\"",
+     "planId": "QtpjjMGmo0-hNxOreCMleGQAAQgU",
+     "bucketId": "JWBN_qeDJUCbwGAuv7oQHWQAIIPA",
+     "title": "Brakes (Calipers/Rotors)- Mounted",
+     "orderHint": "8584141699442518446P=",
+     "assigneePriority": "",
+     "percentComplete": 100,
+     "createdDateTime": "2026-08-22T22:16:41.3913141Z",
+     "dueDateTime": "2026-11-16T10:00:00Z",
+     "hasDescription": false,
+     "previewType": "noPreview",
+     "completedDateTime": "2026-11-23T19:37:28.5500903Z",
+     "referenceCount": 0,
+     "checklistItemCount": 0,
+     "activeChecklistItemCount": 0,
+     "priority": 5,
+     "id": "kdkJ9GCZmkaXCwc7WtpgzWQAMK1J",
+     "createdBy": {
+      "user": {
+       "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "completedBy": {
+      "user": {
+       "displayName": null,
+       "id": "aaf95fb1-1c58-4e42-bfbd-e11754350f14"
+      },
+      "application": {
+       "displayName": null,
+       "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+      }
+     },
+     "appliedCategories": {
+      "category5": true,
+      "category9": true
+     },
+     "assignments": {
+      "a900a8b3-aa90-4572-a0ca-3f56979bc690": {
+       "@odata.type": "#microsoft.graph.plannerAssignment",
+       "assignedDateTime": "2026-08-22T22:16:41.3912663Z",
+       "orderHint": "\"",
+       "assignedBy": {
+        "user": {
+         "displayName": null,
+         "id": "fc8b709b-11e6-47da-87da-88a92addc3bb"
+        },
+        "application": {
+         "displayName": null,
+         "id": "75f31797-37c9-498e-8dc9-53c16a36afca"
+        }
+       }
+      }
+     },
+     "_assignments": [
+      {
+       "userId": "a900a8b3-aa90-4572-a0ca-3f56979bc690",
+       "value": {
+        "@odata.type": "#microsoft.graph.plannerAssignment",
+        "assignedDateTime": "2026-08-22T22:16:41.3912663Z",
         "orderHint": "\"",
         "assignedBy": {
          "user": {
@@ -12502,5 +12535,5 @@
    "displayName": "Ashlee Verdin"
   }
  ],
- "updated": "2026-11-23T08:09:52Z"
+ "updated": "2026-11-23T20:22:35Z"
 }
